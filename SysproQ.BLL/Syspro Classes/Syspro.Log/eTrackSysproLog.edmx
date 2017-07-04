@@ -1,0 +1,130 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+      <Schema Namespace="eTrackSysproLogModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2008" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <EntityType Name="Logs">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="LogType" Type="int" />
+          <Property Name="Reference" Type="varchar" MaxLength="50" />
+          <Property Name="XmlIn" Type="varchar(max)" />
+          <Property Name="XmlParam" Type="varchar(max)" />
+          <Property Name="XmlOut" Type="varchar(max)" />
+          <Property Name="Successful" Type="bit" />
+          <Property Name="TrnTime" Type="varchar" MaxLength="50" />
+          <Property Name="TrnUser" Type="varchar" MaxLength="50" />
+          <Property Name="HostName" Type="varchar" MaxLength="50" />
+          <Property Name="IPAddress" Type="varchar" MaxLength="50" />
+          <Property Name="WindowsUser" Type="varchar" MaxLength="50" />
+          <Property Name="BusinessObject" Type="varchar" MaxLength="50" />
+          <Property Name="ValidateOnly" Type="bit" />
+          <Property Name="DocumentNumber" Type="varchar" MaxLength="50" />
+          <Property Name="IsException" Type="bit" />
+          <Property Name="Note" Type="varchar(max)" />
+        </EntityType>
+        <EntityContainer Name="eTrackSysproLogModelStoreContainer">
+          <EntitySet Name="Logs" EntityType="Self.Logs" Schema="dbo" store:Type="Tables" />
+        </EntityContainer>
+      </Schema>
+    </edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="eTrackSysproLogModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+        <EntityType Name="Log">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="LogType" Type="eTrackSysproLogModel.LogType" />
+          <Property Name="Reference" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="XmlIn" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="XmlParam" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="XmlOut" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="Successful" Type="Boolean" />
+          <Property Name="TrnTime" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="TrnUser" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="HostName" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="IPAddress" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="WindowsUser" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="BusinessObject" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="ValidateOnly" Type="Boolean" />
+          <Property Name="DocumentNumber" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="IsException" Type="Boolean" />
+          <Property Name="Note" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+        </EntityType>
+        <EntityContainer Name="eTrackSysproLogEntities" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="Logs" EntityType="Self.Log" />
+        </EntityContainer>
+        <EnumType Name="LogType">
+          <Member Name="SOCreate" Value="0" />
+          <Member Name="SOCancel" Value="1" />
+          <Member Name="SOStatusChange" Value="2" />
+          <Member Name="SOMoveQty" Value="3" />
+          <Member Name="POCreate" Value="10" />
+          <Member Name="POAddLine" Value="11" />
+          <Member Name="PODeleteLine" Value="12" />
+          <Member Name="POMaintainLine" Value="13" />
+          <Member Name="GRNCreate" Value="20" />
+          <Member Name="InvoiceCreate" Value="30" />
+          <Member Name="POCancel" Value="14" />
+          <Member Name="PONegReceipt" Value="15" />
+          <Member Name="ArInvoice" Value="4" />
+        </EnumType>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="eTrackSysproLogModelStoreContainer" CdmEntityContainer="eTrackSysproLogEntities">
+          <EntitySetMapping Name="Logs">
+            <EntityTypeMapping TypeName="eTrackSysproLogModel.Log">
+              <MappingFragment StoreEntitySet="Logs">
+                <ScalarProperty Name="ID" ColumnName="ID" />
+                <ScalarProperty Name="LogType" ColumnName="LogType" />
+                <ScalarProperty Name="Reference" ColumnName="Reference" />
+                <ScalarProperty Name="XmlIn" ColumnName="XmlIn" />
+                <ScalarProperty Name="XmlParam" ColumnName="XmlParam" />
+                <ScalarProperty Name="XmlOut" ColumnName="XmlOut" />
+                <ScalarProperty Name="Successful" ColumnName="Successful" />
+                <ScalarProperty Name="TrnTime" ColumnName="TrnTime" />
+                <ScalarProperty Name="TrnUser" ColumnName="TrnUser" />
+                <ScalarProperty Name="HostName" ColumnName="HostName" />
+                <ScalarProperty Name="IPAddress" ColumnName="IPAddress" />
+                <ScalarProperty Name="WindowsUser" ColumnName="WindowsUser" />
+                <ScalarProperty Name="BusinessObject" ColumnName="BusinessObject" />
+                <ScalarProperty Name="ValidateOnly" ColumnName="ValidateOnly" />
+                <ScalarProperty Name="DocumentNumber" ColumnName="DocumentNumber" />
+                <ScalarProperty Name="IsException" ColumnName="IsException" />
+                <ScalarProperty Name="Note" ColumnName="Note" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="true" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="true" />
+        <DesignerProperty Name="UseLegacyProvider" Value="false" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="None" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams></Diagrams>
+  </Designer>
+</edmx:Edmx>

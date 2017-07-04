@@ -1,0 +1,44 @@
+<publishData>
+  <publishTarget publishUrl="http://localhost/SysproQWebApp">
+    <file relUrl="Web.config" publishTime="04/25/2017 20:59:14" />
+    <file relUrl="bin/EntityFramework.dll" publishTime="03/02/2015 09:32:26" />
+    <file relUrl="bin/SysproQ.DAL.xml" publishTime="04/25/2017 20:50:07" />
+    <file relUrl="bin/SysproQ.BLL.dll" publishTime="04/25/2017 20:50:08" />
+    <file relUrl="WcfServiceLibrary1.Service1.svc" publishTime="04/25/2017 22:36:52" />
+    <file relUrl="bin/WcfServiceLibrary1.xml" publishTime="04/25/2017 22:36:34" />
+    <file relUrl="bin/WcfServiceLibrary1.dll.config" publishTime="04/25/2017 20:59:14" />
+    <file relUrl="bin/EntityFramework.xml" publishTime="03/02/2015 09:32:26" />
+    <file relUrl="bin/SysproQ.Entity.xml" publishTime="04/25/2017 20:50:06" />
+    <file relUrl="bin/EntityFramework.SqlServer.dll" publishTime="03/02/2015 09:32:26" />
+    <file relUrl="bin/SysproQ.DAL.pdb" publishTime="04/25/2017 20:50:07" />
+    <file relUrl="bin/EntityFramework.SqlServer.xml" publishTime="03/02/2015 09:32:26" />
+    <file relUrl="bin/SysproQ.Entity.dll" publishTime="04/25/2017 20:50:06" />
+    <file relUrl="bin/SysproQ.BLL.xml" publishTime="04/25/2017 20:50:08" />
+    <file relUrl="bin/SysproQ.DAL.dll" publishTime="04/25/2017 20:50:07" />
+    <file relUrl="bin/WcfServiceLibrary1.dll" publishTime="04/25/2017 22:36:34" />
+    <file relUrl="bin/SysproQ.BLL.pdb" publishTime="04/25/2017 20:50:08" />
+    <file relUrl="bin/WcfServiceLibrary1.pdb" publishTime="04/25/2017 22:36:33" />
+    <file relUrl="bin/SysproQ.Entity.pdb" publishTime="04/25/2017 20:50:06" />
+  </publishTarget>
+  <publishTarget publishUrl="http://localhost/">
+    <file relUrl="Web.config" publishTime="04/25/2017 20:59:14" />
+    <file relUrl="bin/EntityFramework.dll" publishTime="03/02/2015 09:32:26" />
+    <file relUrl="bin/SysproQ.BLL.dll" publishTime="04/25/2017 20:50:08" />
+    <file relUrl="WcfServiceLibrary1.Service1.svc" publishTime="04/25/2017 21:01:11" />
+    <file relUrl="bin/WcfServiceLibrary1.xml" publishTime="04/25/2017 21:01:10" />
+    <file relUrl="bin/WcfServiceLibrary1.dll.config" publishTime="04/25/2017 20:59:14" />
+    <file relUrl="bin/SysproQ.Entity.pdb" publishTime="04/25/2017 20:50:06" />
+    <file relUrl="bin/EntityFramework.xml" publishTime="03/02/2015 09:32:26" />
+    <file relUrl="bin/SysproQ.Entity.xml" publishTime="04/25/2017 20:50:06" />
+    <file relUrl="bin/SysproQ.DAL.pdb" publishTime="04/25/2017 20:50:07" />
+    <file relUrl="bin/SysproQ.BLL.pdb" publishTime="04/25/2017 20:50:08" />
+    <file relUrl="bin/EntityFramework.SqlServer.xml" publishTime="03/02/2015 09:32:26" />
+    <file relUrl="bin/SysproQ.Entity.dll" publishTime="04/25/2017 20:50:06" />
+    <file relUrl="bin/SysproQ.BLL.xml" publishTime="04/25/2017 20:50:08" />
+    <file relUrl="bin/SysproQ.DAL.dll" publishTime="04/25/2017 20:50:07" />
+    <file relUrl="bin/EntityFramework.SqlServer.dll" publishTime="03/02/2015 09:32:26" />
+    <file relUrl="bin/WcfServiceLibrary1.dll" publishTime="04/25/2017 21:01:10" />
+    <file relUrl="bin/SysproQ.DAL.xml" publishTime="04/25/2017 20:50:07" />
+    <file relUrl="bin/WcfServiceLibrary1.pdb" publishTime="04/25/2017 21:01:10" />
+  </publishTarget>
+</publishData>

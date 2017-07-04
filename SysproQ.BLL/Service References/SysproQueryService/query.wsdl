@@ -1,0 +1,455 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:mime="http://schemas.xmlsoap.org/wsdl/mime/" xmlns:tns="http://www.syspro.com/ns/query/" xmlns:s="http://www.w3.org/2001/XMLSchema" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:tm="http://microsoft.com/wsdl/mime/textMatching/" xmlns:http="http://schemas.xmlsoap.org/wsdl/http/" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" targetNamespace="http://www.syspro.com/ns/query/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:types>
+    <s:schema elementFormDefault="qualified" targetNamespace="http://www.syspro.com/ns/query/">
+      <s:element name="Browse_With_String">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="UserId" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="XMLIn" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="Browse_With_StringResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="Browse_With_StringResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="Browse_With_ByteArray">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="UserId" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="XMLIn" type="s:base64Binary" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="Browse_With_ByteArrayResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="Browse_With_ByteArrayResult" type="s:base64Binary" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="Fetch_With_String">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="UserId" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="XMLIn" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="Fetch_With_StringResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="Fetch_With_StringResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="Fetch_With_ByteArray">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="UserId" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="XMLIn" type="s:base64Binary" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="Fetch_With_ByteArrayResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="Fetch_With_ByteArrayResult" type="s:base64Binary" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="Query_With_String">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="UserId" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="BusinessObject" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="XMLIn" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="Query_With_StringResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="Query_With_StringResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="Query_With_ByteArray">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="UserId" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="BusinessObject" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="XMLIn" type="s:base64Binary" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="Query_With_ByteArrayResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="Query_With_ByteArrayResult" type="s:base64Binary" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="NextKey_With_String">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="UserId" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="XMLIn" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="NextKey_With_StringResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="NextKey_With_StringResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="NextKey_With_ByteArray">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="UserId" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="XMLIn" type="s:base64Binary" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="NextKey_With_ByteArrayResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="NextKey_With_ByteArrayResult" type="s:base64Binary" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="PreviousKey_With_String">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="UserId" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="XMLIn" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="PreviousKey_With_StringResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="PreviousKey_With_StringResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="PreviousKey_With_ByteArray">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="UserId" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="XMLIn" type="s:base64Binary" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="PreviousKey_With_ByteArrayResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="PreviousKey_With_ByteArrayResult" type="s:base64Binary" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+    </s:schema>
+  </wsdl:types>
+  <wsdl:message name="Browse_With_StringSoapIn">
+    <wsdl:part name="parameters" element="tns:Browse_With_String" />
+  </wsdl:message>
+  <wsdl:message name="Browse_With_StringSoapOut">
+    <wsdl:part name="parameters" element="tns:Browse_With_StringResponse" />
+  </wsdl:message>
+  <wsdl:message name="Browse_With_ByteArraySoapIn">
+    <wsdl:part name="parameters" element="tns:Browse_With_ByteArray" />
+  </wsdl:message>
+  <wsdl:message name="Browse_With_ByteArraySoapOut">
+    <wsdl:part name="parameters" element="tns:Browse_With_ByteArrayResponse" />
+  </wsdl:message>
+  <wsdl:message name="Fetch_With_StringSoapIn">
+    <wsdl:part name="parameters" element="tns:Fetch_With_String" />
+  </wsdl:message>
+  <wsdl:message name="Fetch_With_StringSoapOut">
+    <wsdl:part name="parameters" element="tns:Fetch_With_StringResponse" />
+  </wsdl:message>
+  <wsdl:message name="Fetch_With_ByteArraySoapIn">
+    <wsdl:part name="parameters" element="tns:Fetch_With_ByteArray" />
+  </wsdl:message>
+  <wsdl:message name="Fetch_With_ByteArraySoapOut">
+    <wsdl:part name="parameters" element="tns:Fetch_With_ByteArrayResponse" />
+  </wsdl:message>
+  <wsdl:message name="Query_With_StringSoapIn">
+    <wsdl:part name="parameters" element="tns:Query_With_String" />
+  </wsdl:message>
+  <wsdl:message name="Query_With_StringSoapOut">
+    <wsdl:part name="parameters" element="tns:Query_With_StringResponse" />
+  </wsdl:message>
+  <wsdl:message name="Query_With_ByteArraySoapIn">
+    <wsdl:part name="parameters" element="tns:Query_With_ByteArray" />
+  </wsdl:message>
+  <wsdl:message name="Query_With_ByteArraySoapOut">
+    <wsdl:part name="parameters" element="tns:Query_With_ByteArrayResponse" />
+  </wsdl:message>
+  <wsdl:message name="NextKey_With_StringSoapIn">
+    <wsdl:part name="parameters" element="tns:NextKey_With_String" />
+  </wsdl:message>
+  <wsdl:message name="NextKey_With_StringSoapOut">
+    <wsdl:part name="parameters" element="tns:NextKey_With_StringResponse" />
+  </wsdl:message>
+  <wsdl:message name="NextKey_With_ByteArraySoapIn">
+    <wsdl:part name="parameters" element="tns:NextKey_With_ByteArray" />
+  </wsdl:message>
+  <wsdl:message name="NextKey_With_ByteArraySoapOut">
+    <wsdl:part name="parameters" element="tns:NextKey_With_ByteArrayResponse" />
+  </wsdl:message>
+  <wsdl:message name="PreviousKey_With_StringSoapIn">
+    <wsdl:part name="parameters" element="tns:PreviousKey_With_String" />
+  </wsdl:message>
+  <wsdl:message name="PreviousKey_With_StringSoapOut">
+    <wsdl:part name="parameters" element="tns:PreviousKey_With_StringResponse" />
+  </wsdl:message>
+  <wsdl:message name="PreviousKey_With_ByteArraySoapIn">
+    <wsdl:part name="parameters" element="tns:PreviousKey_With_ByteArray" />
+  </wsdl:message>
+  <wsdl:message name="PreviousKey_With_ByteArraySoapOut">
+    <wsdl:part name="parameters" element="tns:PreviousKey_With_ByteArrayResponse" />
+  </wsdl:message>
+  <wsdl:portType name="queryclassSoap">
+    <wsdl:operation name="Browse">
+      <wsdl:input name="Browse_With_String" message="tns:Browse_With_StringSoapIn" />
+      <wsdl:output name="Browse_With_String" message="tns:Browse_With_StringSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="BrowseW">
+      <wsdl:input name="Browse_With_ByteArray" message="tns:Browse_With_ByteArraySoapIn" />
+      <wsdl:output name="Browse_With_ByteArray" message="tns:Browse_With_ByteArraySoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="Fetch">
+      <wsdl:input name="Fetch_With_String" message="tns:Fetch_With_StringSoapIn" />
+      <wsdl:output name="Fetch_With_String" message="tns:Fetch_With_StringSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="FetchW">
+      <wsdl:input name="Fetch_With_ByteArray" message="tns:Fetch_With_ByteArraySoapIn" />
+      <wsdl:output name="Fetch_With_ByteArray" message="tns:Fetch_With_ByteArraySoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="Query">
+      <wsdl:input name="Query_With_String" message="tns:Query_With_StringSoapIn" />
+      <wsdl:output name="Query_With_String" message="tns:Query_With_StringSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="QueryW">
+      <wsdl:input name="Query_With_ByteArray" message="tns:Query_With_ByteArraySoapIn" />
+      <wsdl:output name="Query_With_ByteArray" message="tns:Query_With_ByteArraySoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="NextKey">
+      <wsdl:input name="NextKey_With_String" message="tns:NextKey_With_StringSoapIn" />
+      <wsdl:output name="NextKey_With_String" message="tns:NextKey_With_StringSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="NextKeyW">
+      <wsdl:input name="NextKey_With_ByteArray" message="tns:NextKey_With_ByteArraySoapIn" />
+      <wsdl:output name="NextKey_With_ByteArray" message="tns:NextKey_With_ByteArraySoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="PreviousKey">
+      <wsdl:input name="PreviousKey_With_String" message="tns:PreviousKey_With_StringSoapIn" />
+      <wsdl:output name="PreviousKey_With_String" message="tns:PreviousKey_With_StringSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="PreviousKeyW">
+      <wsdl:input name="PreviousKey_With_ByteArray" message="tns:PreviousKey_With_ByteArraySoapIn" />
+      <wsdl:output name="PreviousKey_With_ByteArray" message="tns:PreviousKey_With_ByteArraySoapOut" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="queryclassSoap" type="tns:queryclassSoap">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="Browse">
+      <soap:operation soapAction="http://www.syspro.com/ns/query/Browse_With_String" style="document" />
+      <wsdl:input name="Browse_With_String">
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output name="Browse_With_String">
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="BrowseW">
+      <soap:operation soapAction="http://www.syspro.com/ns/query/Browse_With_ByteArray" style="document" />
+      <wsdl:input name="Browse_With_ByteArray">
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output name="Browse_With_ByteArray">
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Fetch">
+      <soap:operation soapAction="http://www.syspro.com/ns/query/Fetch_With_String" style="document" />
+      <wsdl:input name="Fetch_With_String">
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output name="Fetch_With_String">
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="FetchW">
+      <soap:operation soapAction="http://www.syspro.com/ns/query/Fetch_With_ByteArray" style="document" />
+      <wsdl:input name="Fetch_With_ByteArray">
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output name="Fetch_With_ByteArray">
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Query">
+      <soap:operation soapAction="http://www.syspro.com/ns/query/Query_With_String" style="document" />
+      <wsdl:input name="Query_With_String">
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output name="Query_With_String">
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="QueryW">
+      <soap:operation soapAction="http://www.syspro.com/ns/query/Query_With_ByteArray" style="document" />
+      <wsdl:input name="Query_With_ByteArray">
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output name="Query_With_ByteArray">
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="NextKey">
+      <soap:operation soapAction="http://www.syspro.com/ns/query/NextKey_With_String" style="document" />
+      <wsdl:input name="NextKey_With_String">
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output name="NextKey_With_String">
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="NextKeyW">
+      <soap:operation soapAction="http://www.syspro.com/ns/query/NextKey_With_ByteArray" style="document" />
+      <wsdl:input name="NextKey_With_ByteArray">
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output name="NextKey_With_ByteArray">
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="PreviousKey">
+      <soap:operation soapAction="http://www.syspro.com/ns/query/PreviousKey_With_String" style="document" />
+      <wsdl:input name="PreviousKey_With_String">
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output name="PreviousKey_With_String">
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="PreviousKeyW">
+      <soap:operation soapAction="http://www.syspro.com/ns/query/PreviousKey_With_ByteArray" style="document" />
+      <wsdl:input name="PreviousKey_With_ByteArray">
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output name="PreviousKey_With_ByteArray">
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:binding name="queryclassSoap12" type="tns:queryclassSoap">
+    <soap12:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="Browse">
+      <soap12:operation soapAction="http://www.syspro.com/ns/query/Browse_With_String" style="document" />
+      <wsdl:input name="Browse_With_String">
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output name="Browse_With_String">
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="BrowseW">
+      <soap12:operation soapAction="http://www.syspro.com/ns/query/Browse_With_ByteArray" style="document" />
+      <wsdl:input name="Browse_With_ByteArray">
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output name="Browse_With_ByteArray">
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Fetch">
+      <soap12:operation soapAction="http://www.syspro.com/ns/query/Fetch_With_String" style="document" />
+      <wsdl:input name="Fetch_With_String">
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output name="Fetch_With_String">
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="FetchW">
+      <soap12:operation soapAction="http://www.syspro.com/ns/query/Fetch_With_ByteArray" style="document" />
+      <wsdl:input name="Fetch_With_ByteArray">
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output name="Fetch_With_ByteArray">
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Query">
+      <soap12:operation soapAction="http://www.syspro.com/ns/query/Query_With_String" style="document" />
+      <wsdl:input name="Query_With_String">
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output name="Query_With_String">
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="QueryW">
+      <soap12:operation soapAction="http://www.syspro.com/ns/query/Query_With_ByteArray" style="document" />
+      <wsdl:input name="Query_With_ByteArray">
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output name="Query_With_ByteArray">
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="NextKey">
+      <soap12:operation soapAction="http://www.syspro.com/ns/query/NextKey_With_String" style="document" />
+      <wsdl:input name="NextKey_With_String">
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output name="NextKey_With_String">
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="NextKeyW">
+      <soap12:operation soapAction="http://www.syspro.com/ns/query/NextKey_With_ByteArray" style="document" />
+      <wsdl:input name="NextKey_With_ByteArray">
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output name="NextKey_With_ByteArray">
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="PreviousKey">
+      <soap12:operation soapAction="http://www.syspro.com/ns/query/PreviousKey_With_String" style="document" />
+      <wsdl:input name="PreviousKey_With_String">
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output name="PreviousKey_With_String">
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="PreviousKeyW">
+      <soap12:operation soapAction="http://www.syspro.com/ns/query/PreviousKey_With_ByteArray" style="document" />
+      <wsdl:input name="PreviousKey_With_ByteArray">
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output name="PreviousKey_With_ByteArray">
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="queryclass">
+    <wsdl:port name="queryclassSoap" binding="tns:queryclassSoap">
+      <soap:address location="http://localhost/SYSPROWebServices/query.asmx" />
+    </wsdl:port>
+    <wsdl:port name="queryclassSoap12" binding="tns:queryclassSoap12">
+      <soap12:address location="http://localhost/SYSPROWebServices/query.asmx" />
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>

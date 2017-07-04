@@ -1,0 +1,188 @@
+C:\Users\Moe\Documents\Visual Studio 2015\Projects\ServiceConfigurator\ServiceConfigurator\bin\Debug\ServiceConfigurator.exe
+C:\Users\Moe\Documents\Visual Studio 2015\Projects\ServiceConfigurator\ServiceConfigurator\bin\Debug\ServiceConfigurator.pdb
+C:\Users\Moe\Documents\Visual Studio 2015\Projects\ServiceConfigurator\ServiceConfigurator\bin\Debug\DevExpress.BonusSkins.v14.1.dll
+C:\Users\Moe\Documents\Visual Studio 2015\Projects\ServiceConfigurator\ServiceConfigurator\bin\Debug\DevExpress.Data.v14.1.dll
+C:\Users\Moe\Documents\Visual Studio 2015\Projects\ServiceConfigurator\ServiceConfigurator\bin\Debug\DevExpress.Printing.v14.1.Core.dll
+C:\Users\Moe\Documents\Visual Studio 2015\Projects\ServiceConfigurator\ServiceConfigurator\bin\Debug\DevExpress.Sparkline.v14.1.Core.dll
+C:\Users\Moe\Documents\Visual Studio 2015\Projects\ServiceConfigurator\ServiceConfigurator\bin\Debug\DevExpress.Utils.v14.1.dll
+C:\Users\Moe\Documents\Visual Studio 2015\Projects\ServiceConfigurator\ServiceConfigurator\bin\Debug\DevExpress.XtraBars.v14.1.dll
+C:\Users\Moe\Documents\Visual Studio 2015\Projects\ServiceConfigurator\ServiceConfigurator\bin\Debug\DevExpress.XtraEditors.v14.1.dll
+C:\Users\Moe\Documents\Visual Studio 2015\Projects\ServiceConfigurator\ServiceConfigurator\bin\Debug\DevExpress.XtraGrid.v14.1.dll
+C:\Users\Moe\Documents\Visual Studio 2015\Projects\ServiceConfigurator\ServiceConfigurator\bin\Debug\DevExpress.XtraLayout.v14.1.dll
+C:\Users\Moe\Documents\Visual Studio 2015\Projects\ServiceConfigurator\ServiceConfigurator\bin\Debug\DevExpress.XtraPrinting.v14.1.dll
+C:\Users\Moe\Documents\Visual Studio 2015\Projects\ServiceConfigurator\ServiceConfigurator\bin\Debug\DevExpress.XtraVerticalGrid.v14.1.dll
+C:\Users\Moe\Documents\Visual Studio 2015\Projects\ServiceConfigurator\ServiceConfigurator\bin\Debug\DevExpress.RichEdit.v14.1.Core.dll
+C:\Users\Moe\Documents\Visual Studio 2015\Projects\ServiceConfigurator\ServiceConfigurator\bin\Debug\DevExpress.XtraTreeList.v14.1.dll
+C:\Users\Moe\Documents\Visual Studio 2015\Projects\ServiceConfigurator\ServiceConfigurator\bin\Debug\DevExpress.Office.v14.1.Core.dll
+C:\Users\Moe\Documents\Visual Studio 2015\Projects\ServiceConfigurator\ServiceConfigurator\bin\Debug\DevExpress.Data.v14.1.xml
+C:\Users\Moe\Documents\Visual Studio 2015\Projects\ServiceConfigurator\ServiceConfigurator\bin\Debug\DevExpress.Printing.v14.1.Core.xml
+C:\Users\Moe\Documents\Visual Studio 2015\Projects\ServiceConfigurator\ServiceConfigurator\bin\Debug\DevExpress.Utils.v14.1.xml
+C:\Users\Moe\Documents\Visual Studio 2015\Projects\ServiceConfigurator\ServiceConfigurator\bin\Debug\DevExpress.XtraBars.v14.1.xml
+C:\Users\Moe\Documents\Visual Studio 2015\Projects\ServiceConfigurator\ServiceConfigurator\bin\Debug\DevExpress.Sparkline.v14.1.Core.xml
+C:\Users\Moe\Documents\Visual Studio 2015\Projects\ServiceConfigurator\ServiceConfigurator\bin\Debug\DevExpress.XtraEditors.v14.1.xml
+C:\Users\Moe\Documents\Visual Studio 2015\Projects\ServiceConfigurator\ServiceConfigurator\bin\Debug\DevExpress.XtraGrid.v14.1.xml
+C:\Users\Moe\Documents\Visual Studio 2015\Projects\ServiceConfigurator\ServiceConfigurator\bin\Debug\DevExpress.XtraLayout.v14.1.xml
+C:\Users\Moe\Documents\Visual Studio 2015\Projects\ServiceConfigurator\ServiceConfigurator\bin\Debug\DevExpress.XtraPrinting.v14.1.xml
+C:\Users\Moe\Documents\Visual Studio 2015\Projects\ServiceConfigurator\ServiceConfigurator\bin\Debug\DevExpress.XtraVerticalGrid.v14.1.xml
+C:\Users\Moe\Documents\Visual Studio 2015\Projects\ServiceConfigurator\ServiceConfigurator\bin\Debug\DevExpress.RichEdit.v14.1.Core.xml
+C:\Users\Moe\Documents\Visual Studio 2015\Projects\ServiceConfigurator\ServiceConfigurator\bin\Debug\DevExpress.XtraTreeList.v14.1.xml
+C:\Users\Moe\Documents\Visual Studio 2015\Projects\ServiceConfigurator\ServiceConfigurator\bin\Debug\DevExpress.Office.v14.1.Core.xml
+C:\Users\Moe\Documents\Visual Studio 2015\Projects\ServiceConfigurator\ServiceConfigurator\bin\Debug\de\DevExpress.Data.v14.1.resources.dll
+C:\Users\Moe\Documents\Visual Studio 2015\Projects\ServiceConfigurator\ServiceConfigurator\bin\Debug\es\DevExpress.Data.v14.1.resources.dll
+C:\Users\Moe\Documents\Visual Studio 2015\Projects\ServiceConfigurator\ServiceConfigurator\bin\Debug\ja\DevExpress.Data.v14.1.resources.dll
+C:\Users\Moe\Documents\Visual Studio 2015\Projects\ServiceConfigurator\ServiceConfigurator\bin\Debug\ru\DevExpress.Data.v14.1.resources.dll
+C:\Users\Moe\Documents\Visual Studio 2015\Projects\ServiceConfigurator\ServiceConfigurator\bin\Debug\de\DevExpress.Printing.v14.1.Core.resources.dll
+C:\Users\Moe\Documents\Visual Studio 2015\Projects\ServiceConfigurator\ServiceConfigurator\bin\Debug\es\DevExpress.Printing.v14.1.Core.resources.dll
+C:\Users\Moe\Documents\Visual Studio 2015\Projects\ServiceConfigurator\ServiceConfigurator\bin\Debug\ja\DevExpress.Printing.v14.1.Core.resources.dll
+C:\Users\Moe\Documents\Visual Studio 2015\Projects\ServiceConfigurator\ServiceConfigurator\bin\Debug\ru\DevExpress.Printing.v14.1.Core.resources.dll
+C:\Users\Moe\Documents\Visual Studio 2015\Projects\ServiceConfigurator\ServiceConfigurator\bin\Debug\de\DevExpress.Utils.v14.1.resources.dll
+C:\Users\Moe\Documents\Visual Studio 2015\Projects\ServiceConfigurator\ServiceConfigurator\bin\Debug\es\DevExpress.Utils.v14.1.resources.dll
+C:\Users\Moe\Documents\Visual Studio 2015\Projects\ServiceConfigurator\ServiceConfigurator\bin\Debug\ja\DevExpress.Utils.v14.1.resources.dll
+C:\Users\Moe\Documents\Visual Studio 2015\Projects\ServiceConfigurator\ServiceConfigurator\bin\Debug\ru\DevExpress.Utils.v14.1.resources.dll
+C:\Users\Moe\Documents\Visual Studio 2015\Projects\ServiceConfigurator\ServiceConfigurator\bin\Debug\de\DevExpress.XtraBars.v14.1.resources.dll
+C:\Users\Moe\Documents\Visual Studio 2015\Projects\ServiceConfigurator\ServiceConfigurator\bin\Debug\es\DevExpress.XtraBars.v14.1.resources.dll
+C:\Users\Moe\Documents\Visual Studio 2015\Projects\ServiceConfigurator\ServiceConfigurator\bin\Debug\ja\DevExpress.XtraBars.v14.1.resources.dll
+C:\Users\Moe\Documents\Visual Studio 2015\Projects\ServiceConfigurator\ServiceConfigurator\bin\Debug\ru\DevExpress.XtraBars.v14.1.resources.dll
+C:\Users\Moe\Documents\Visual Studio 2015\Projects\ServiceConfigurator\ServiceConfigurator\bin\Debug\de\DevExpress.Sparkline.v14.1.Core.resources.dll
+C:\Users\Moe\Documents\Visual Studio 2015\Projects\ServiceConfigurator\ServiceConfigurator\bin\Debug\es\DevExpress.Sparkline.v14.1.Core.resources.dll
+C:\Users\Moe\Documents\Visual Studio 2015\Projects\ServiceConfigurator\ServiceConfigurator\bin\Debug\ja\DevExpress.Sparkline.v14.1.Core.resources.dll
+C:\Users\Moe\Documents\Visual Studio 2015\Projects\ServiceConfigurator\ServiceConfigurator\bin\Debug\ru\DevExpress.Sparkline.v14.1.Core.resources.dll
+C:\Users\Moe\Documents\Visual Studio 2015\Projects\ServiceConfigurator\ServiceConfigurator\bin\Debug\de\DevExpress.XtraEditors.v14.1.resources.dll
+C:\Users\Moe\Documents\Visual Studio 2015\Projects\ServiceConfigurator\ServiceConfigurator\bin\Debug\es\DevExpress.XtraEditors.v14.1.resources.dll
+C:\Users\Moe\Documents\Visual Studio 2015\Projects\ServiceConfigurator\ServiceConfigurator\bin\Debug\ja\DevExpress.XtraEditors.v14.1.resources.dll
+C:\Users\Moe\Documents\Visual Studio 2015\Projects\ServiceConfigurator\ServiceConfigurator\bin\Debug\ru\DevExpress.XtraEditors.v14.1.resources.dll
+C:\Users\Moe\Documents\Visual Studio 2015\Projects\ServiceConfigurator\ServiceConfigurator\bin\Debug\de\DevExpress.XtraGrid.v14.1.resources.dll
+C:\Users\Moe\Documents\Visual Studio 2015\Projects\ServiceConfigurator\ServiceConfigurator\bin\Debug\es\DevExpress.XtraGrid.v14.1.resources.dll
+C:\Users\Moe\Documents\Visual Studio 2015\Projects\ServiceConfigurator\ServiceConfigurator\bin\Debug\ja\DevExpress.XtraGrid.v14.1.resources.dll
+C:\Users\Moe\Documents\Visual Studio 2015\Projects\ServiceConfigurator\ServiceConfigurator\bin\Debug\ru\DevExpress.XtraGrid.v14.1.resources.dll
+C:\Users\Moe\Documents\Visual Studio 2015\Projects\ServiceConfigurator\ServiceConfigurator\bin\Debug\de\DevExpress.XtraLayout.v14.1.resources.dll
+C:\Users\Moe\Documents\Visual Studio 2015\Projects\ServiceConfigurator\ServiceConfigurator\bin\Debug\es\DevExpress.XtraLayout.v14.1.resources.dll
+C:\Users\Moe\Documents\Visual Studio 2015\Projects\ServiceConfigurator\ServiceConfigurator\bin\Debug\ja\DevExpress.XtraLayout.v14.1.resources.dll
+C:\Users\Moe\Documents\Visual Studio 2015\Projects\ServiceConfigurator\ServiceConfigurator\bin\Debug\ru\DevExpress.XtraLayout.v14.1.resources.dll
+C:\Users\Moe\Documents\Visual Studio 2015\Projects\ServiceConfigurator\ServiceConfigurator\bin\Debug\de\DevExpress.XtraPrinting.v14.1.resources.dll
+C:\Users\Moe\Documents\Visual Studio 2015\Projects\ServiceConfigurator\ServiceConfigurator\bin\Debug\es\DevExpress.XtraPrinting.v14.1.resources.dll
+C:\Users\Moe\Documents\Visual Studio 2015\Projects\ServiceConfigurator\ServiceConfigurator\bin\Debug\ja\DevExpress.XtraPrinting.v14.1.resources.dll
+C:\Users\Moe\Documents\Visual Studio 2015\Projects\ServiceConfigurator\ServiceConfigurator\bin\Debug\ru\DevExpress.XtraPrinting.v14.1.resources.dll
+C:\Users\Moe\Documents\Visual Studio 2015\Projects\ServiceConfigurator\ServiceConfigurator\bin\Debug\de\DevExpress.XtraVerticalGrid.v14.1.resources.dll
+C:\Users\Moe\Documents\Visual Studio 2015\Projects\ServiceConfigurator\ServiceConfigurator\bin\Debug\es\DevExpress.XtraVerticalGrid.v14.1.resources.dll
+C:\Users\Moe\Documents\Visual Studio 2015\Projects\ServiceConfigurator\ServiceConfigurator\bin\Debug\ja\DevExpress.XtraVerticalGrid.v14.1.resources.dll
+C:\Users\Moe\Documents\Visual Studio 2015\Projects\ServiceConfigurator\ServiceConfigurator\bin\Debug\ru\DevExpress.XtraVerticalGrid.v14.1.resources.dll
+C:\Users\Moe\Documents\Visual Studio 2015\Projects\ServiceConfigurator\ServiceConfigurator\bin\Debug\de\DevExpress.RichEdit.v14.1.Core.resources.dll
+C:\Users\Moe\Documents\Visual Studio 2015\Projects\ServiceConfigurator\ServiceConfigurator\bin\Debug\es\DevExpress.RichEdit.v14.1.Core.resources.dll
+C:\Users\Moe\Documents\Visual Studio 2015\Projects\ServiceConfigurator\ServiceConfigurator\bin\Debug\ja\DevExpress.RichEdit.v14.1.Core.resources.dll
+C:\Users\Moe\Documents\Visual Studio 2015\Projects\ServiceConfigurator\ServiceConfigurator\bin\Debug\ru\DevExpress.RichEdit.v14.1.Core.resources.dll
+C:\Users\Moe\Documents\Visual Studio 2015\Projects\ServiceConfigurator\ServiceConfigurator\bin\Debug\de\DevExpress.XtraTreeList.v14.1.resources.dll
+C:\Users\Moe\Documents\Visual Studio 2015\Projects\ServiceConfigurator\ServiceConfigurator\bin\Debug\es\DevExpress.XtraTreeList.v14.1.resources.dll
+C:\Users\Moe\Documents\Visual Studio 2015\Projects\ServiceConfigurator\ServiceConfigurator\bin\Debug\ja\DevExpress.XtraTreeList.v14.1.resources.dll
+C:\Users\Moe\Documents\Visual Studio 2015\Projects\ServiceConfigurator\ServiceConfigurator\bin\Debug\ru\DevExpress.XtraTreeList.v14.1.resources.dll
+C:\Users\Moe\Documents\Visual Studio 2015\Projects\ServiceConfigurator\ServiceConfigurator\bin\Debug\de\DevExpress.Office.v14.1.Core.resources.dll
+C:\Users\Moe\Documents\Visual Studio 2015\Projects\ServiceConfigurator\ServiceConfigurator\bin\Debug\es\DevExpress.Office.v14.1.Core.resources.dll
+C:\Users\Moe\Documents\Visual Studio 2015\Projects\ServiceConfigurator\ServiceConfigurator\bin\Debug\ja\DevExpress.Office.v14.1.Core.resources.dll
+C:\Users\Moe\Documents\Visual Studio 2015\Projects\ServiceConfigurator\ServiceConfigurator\bin\Debug\ru\DevExpress.Office.v14.1.Core.resources.dll
+C:\Users\Moe\Documents\Visual Studio 2015\Projects\ServiceConfigurator\ServiceConfigurator\obj\Debug\ServiceConfigurator.Form1.resources
+C:\Users\Moe\Documents\Visual Studio 2015\Projects\ServiceConfigurator\ServiceConfigurator\obj\Debug\ServiceConfigurator.Resources.resources
+C:\Users\Moe\Documents\Visual Studio 2015\Projects\ServiceConfigurator\ServiceConfigurator\obj\Debug\ServiceConfigurator.vbproj.GenerateResource.Cache
+C:\Users\Moe\Documents\Visual Studio 2015\Projects\ServiceConfigurator\ServiceConfigurator\obj\Debug\ServiceConfigurator.exe.licenses
+C:\Users\Moe\Documents\Visual Studio 2015\Projects\ServiceConfigurator\ServiceConfigurator\obj\Debug\ServiceConfigurator.exe
+C:\Users\Moe\Documents\Visual Studio 2015\Projects\ServiceConfigurator\ServiceConfigurator\obj\Debug\ServiceConfigurator.pdb
+C:\Users\Moe\Documents\Visual Studio 2015\Projects\ServiceConfigurator\ServiceConfigurator\bin\Debug\ServiceConfigurator.exe.config
+C:\Users\Moe\Documents\Visual Studio 2015\Projects\ServiceConfigurator\ServiceConfigurator\bin\Debug\EntityFramework.dll
+C:\Users\Moe\Documents\Visual Studio 2015\Projects\ServiceConfigurator\ServiceConfigurator\bin\Debug\EntityFramework.xml
+C:\Users\Moe\Documents\Visual Studio 2015\Projects\ServiceConfigurator\ServiceConfigurator\bin\Debug\EntityFramework.SqlServer.dll
+C:\Users\Moe\Documents\Visual Studio 2015\Projects\ServiceConfigurator\ServiceConfigurator\bin\Debug\EntityFramework.SqlServer.xml
+D:\SOFTWARE2\SysproQ\ServiceConfigurator\ServiceConfigurator\bin\Debug\ServiceConfigurator.exe.config
+D:\SOFTWARE2\SysproQ\ServiceConfigurator\ServiceConfigurator\bin\Debug\ServiceConfigurator.exe
+D:\SOFTWARE2\SysproQ\ServiceConfigurator\ServiceConfigurator\bin\Debug\ServiceConfigurator.pdb
+D:\SOFTWARE2\SysproQ\ServiceConfigurator\ServiceConfigurator\bin\Debug\DevExpress.BonusSkins.v17.1.dll
+D:\SOFTWARE2\SysproQ\ServiceConfigurator\ServiceConfigurator\bin\Debug\DevExpress.Data.v17.1.dll
+D:\SOFTWARE2\SysproQ\ServiceConfigurator\ServiceConfigurator\bin\Debug\DevExpress.Pdf.v17.1.Core.dll
+D:\SOFTWARE2\SysproQ\ServiceConfigurator\ServiceConfigurator\bin\Debug\DevExpress.Printing.v17.1.Core.dll
+D:\SOFTWARE2\SysproQ\ServiceConfigurator\ServiceConfigurator\bin\Debug\DevExpress.RichEdit.v17.1.Export.dll
+D:\SOFTWARE2\SysproQ\ServiceConfigurator\ServiceConfigurator\bin\Debug\DevExpress.Sparkline.v17.1.Core.dll
+D:\SOFTWARE2\SysproQ\ServiceConfigurator\ServiceConfigurator\bin\Debug\DevExpress.Utils.v17.1.dll
+D:\SOFTWARE2\SysproQ\ServiceConfigurator\ServiceConfigurator\bin\Debug\DevExpress.XtraBars.v17.1.dll
+D:\SOFTWARE2\SysproQ\ServiceConfigurator\ServiceConfigurator\bin\Debug\DevExpress.XtraEditors.v17.1.dll
+D:\SOFTWARE2\SysproQ\ServiceConfigurator\ServiceConfigurator\bin\Debug\DevExpress.XtraGrid.v17.1.dll
+D:\SOFTWARE2\SysproQ\ServiceConfigurator\ServiceConfigurator\bin\Debug\DevExpress.XtraLayout.v17.1.dll
+D:\SOFTWARE2\SysproQ\ServiceConfigurator\ServiceConfigurator\bin\Debug\DevExpress.XtraPrinting.v17.1.dll
+D:\SOFTWARE2\SysproQ\ServiceConfigurator\ServiceConfigurator\bin\Debug\DevExpress.XtraVerticalGrid.v17.1.dll
+D:\SOFTWARE2\SysproQ\ServiceConfigurator\ServiceConfigurator\bin\Debug\DevExpress.RichEdit.v17.1.Core.dll
+D:\SOFTWARE2\SysproQ\ServiceConfigurator\ServiceConfigurator\bin\Debug\DevExpress.Office.v17.1.Core.dll
+D:\SOFTWARE2\SysproQ\ServiceConfigurator\ServiceConfigurator\bin\Debug\DevExpress.XtraTreeList.v17.1.dll
+D:\SOFTWARE2\SysproQ\ServiceConfigurator\ServiceConfigurator\bin\Debug\DevExpress.Data.v17.1.xml
+D:\SOFTWARE2\SysproQ\ServiceConfigurator\ServiceConfigurator\bin\Debug\DevExpress.Pdf.v17.1.Core.xml
+D:\SOFTWARE2\SysproQ\ServiceConfigurator\ServiceConfigurator\bin\Debug\DevExpress.Printing.v17.1.Core.xml
+D:\SOFTWARE2\SysproQ\ServiceConfigurator\ServiceConfigurator\bin\Debug\DevExpress.Utils.v17.1.xml
+D:\SOFTWARE2\SysproQ\ServiceConfigurator\ServiceConfigurator\bin\Debug\DevExpress.XtraBars.v17.1.xml
+D:\SOFTWARE2\SysproQ\ServiceConfigurator\ServiceConfigurator\bin\Debug\DevExpress.Sparkline.v17.1.Core.xml
+D:\SOFTWARE2\SysproQ\ServiceConfigurator\ServiceConfigurator\bin\Debug\DevExpress.XtraEditors.v17.1.xml
+D:\SOFTWARE2\SysproQ\ServiceConfigurator\ServiceConfigurator\bin\Debug\DevExpress.XtraGrid.v17.1.xml
+D:\SOFTWARE2\SysproQ\ServiceConfigurator\ServiceConfigurator\bin\Debug\DevExpress.XtraLayout.v17.1.xml
+D:\SOFTWARE2\SysproQ\ServiceConfigurator\ServiceConfigurator\bin\Debug\DevExpress.XtraPrinting.v17.1.xml
+D:\SOFTWARE2\SysproQ\ServiceConfigurator\ServiceConfigurator\bin\Debug\DevExpress.XtraVerticalGrid.v17.1.xml
+D:\SOFTWARE2\SysproQ\ServiceConfigurator\ServiceConfigurator\bin\Debug\DevExpress.RichEdit.v17.1.Core.xml
+D:\SOFTWARE2\SysproQ\ServiceConfigurator\ServiceConfigurator\bin\Debug\DevExpress.Office.v17.1.Core.xml
+D:\SOFTWARE2\SysproQ\ServiceConfigurator\ServiceConfigurator\bin\Debug\DevExpress.XtraTreeList.v17.1.xml
+D:\SOFTWARE2\SysproQ\ServiceConfigurator\ServiceConfigurator\bin\Debug\de\DevExpress.Data.v17.1.resources.dll
+D:\SOFTWARE2\SysproQ\ServiceConfigurator\ServiceConfigurator\bin\Debug\es\DevExpress.Data.v17.1.resources.dll
+D:\SOFTWARE2\SysproQ\ServiceConfigurator\ServiceConfigurator\bin\Debug\ja\DevExpress.Data.v17.1.resources.dll
+D:\SOFTWARE2\SysproQ\ServiceConfigurator\ServiceConfigurator\bin\Debug\ru\DevExpress.Data.v17.1.resources.dll
+D:\SOFTWARE2\SysproQ\ServiceConfigurator\ServiceConfigurator\bin\Debug\de\DevExpress.Pdf.v17.1.Core.resources.dll
+D:\SOFTWARE2\SysproQ\ServiceConfigurator\ServiceConfigurator\bin\Debug\es\DevExpress.Pdf.v17.1.Core.resources.dll
+D:\SOFTWARE2\SysproQ\ServiceConfigurator\ServiceConfigurator\bin\Debug\ja\DevExpress.Pdf.v17.1.Core.resources.dll
+D:\SOFTWARE2\SysproQ\ServiceConfigurator\ServiceConfigurator\bin\Debug\ru\DevExpress.Pdf.v17.1.Core.resources.dll
+D:\SOFTWARE2\SysproQ\ServiceConfigurator\ServiceConfigurator\bin\Debug\de\DevExpress.Printing.v17.1.Core.resources.dll
+D:\SOFTWARE2\SysproQ\ServiceConfigurator\ServiceConfigurator\bin\Debug\es\DevExpress.Printing.v17.1.Core.resources.dll
+D:\SOFTWARE2\SysproQ\ServiceConfigurator\ServiceConfigurator\bin\Debug\ja\DevExpress.Printing.v17.1.Core.resources.dll
+D:\SOFTWARE2\SysproQ\ServiceConfigurator\ServiceConfigurator\bin\Debug\ru\DevExpress.Printing.v17.1.Core.resources.dll
+D:\SOFTWARE2\SysproQ\ServiceConfigurator\ServiceConfigurator\bin\Debug\de\DevExpress.Utils.v17.1.resources.dll
+D:\SOFTWARE2\SysproQ\ServiceConfigurator\ServiceConfigurator\bin\Debug\es\DevExpress.Utils.v17.1.resources.dll
+D:\SOFTWARE2\SysproQ\ServiceConfigurator\ServiceConfigurator\bin\Debug\ja\DevExpress.Utils.v17.1.resources.dll
+D:\SOFTWARE2\SysproQ\ServiceConfigurator\ServiceConfigurator\bin\Debug\ru\DevExpress.Utils.v17.1.resources.dll
+D:\SOFTWARE2\SysproQ\ServiceConfigurator\ServiceConfigurator\bin\Debug\de\DevExpress.XtraBars.v17.1.resources.dll
+D:\SOFTWARE2\SysproQ\ServiceConfigurator\ServiceConfigurator\bin\Debug\es\DevExpress.XtraBars.v17.1.resources.dll
+D:\SOFTWARE2\SysproQ\ServiceConfigurator\ServiceConfigurator\bin\Debug\ja\DevExpress.XtraBars.v17.1.resources.dll
+D:\SOFTWARE2\SysproQ\ServiceConfigurator\ServiceConfigurator\bin\Debug\ru\DevExpress.XtraBars.v17.1.resources.dll
+D:\SOFTWARE2\SysproQ\ServiceConfigurator\ServiceConfigurator\bin\Debug\de\DevExpress.Sparkline.v17.1.Core.resources.dll
+D:\SOFTWARE2\SysproQ\ServiceConfigurator\ServiceConfigurator\bin\Debug\es\DevExpress.Sparkline.v17.1.Core.resources.dll
+D:\SOFTWARE2\SysproQ\ServiceConfigurator\ServiceConfigurator\bin\Debug\ja\DevExpress.Sparkline.v17.1.Core.resources.dll
+D:\SOFTWARE2\SysproQ\ServiceConfigurator\ServiceConfigurator\bin\Debug\ru\DevExpress.Sparkline.v17.1.Core.resources.dll
+D:\SOFTWARE2\SysproQ\ServiceConfigurator\ServiceConfigurator\bin\Debug\de\DevExpress.XtraEditors.v17.1.resources.dll
+D:\SOFTWARE2\SysproQ\ServiceConfigurator\ServiceConfigurator\bin\Debug\es\DevExpress.XtraEditors.v17.1.resources.dll
+D:\SOFTWARE2\SysproQ\ServiceConfigurator\ServiceConfigurator\bin\Debug\ja\DevExpress.XtraEditors.v17.1.resources.dll
+D:\SOFTWARE2\SysproQ\ServiceConfigurator\ServiceConfigurator\bin\Debug\ru\DevExpress.XtraEditors.v17.1.resources.dll
+D:\SOFTWARE2\SysproQ\ServiceConfigurator\ServiceConfigurator\bin\Debug\de\DevExpress.XtraGrid.v17.1.resources.dll
+D:\SOFTWARE2\SysproQ\ServiceConfigurator\ServiceConfigurator\bin\Debug\es\DevExpress.XtraGrid.v17.1.resources.dll
+D:\SOFTWARE2\SysproQ\ServiceConfigurator\ServiceConfigurator\bin\Debug\ja\DevExpress.XtraGrid.v17.1.resources.dll
+D:\SOFTWARE2\SysproQ\ServiceConfigurator\ServiceConfigurator\bin\Debug\ru\DevExpress.XtraGrid.v17.1.resources.dll
+D:\SOFTWARE2\SysproQ\ServiceConfigurator\ServiceConfigurator\bin\Debug\de\DevExpress.XtraLayout.v17.1.resources.dll
+D:\SOFTWARE2\SysproQ\ServiceConfigurator\ServiceConfigurator\bin\Debug\es\DevExpress.XtraLayout.v17.1.resources.dll
+D:\SOFTWARE2\SysproQ\ServiceConfigurator\ServiceConfigurator\bin\Debug\ja\DevExpress.XtraLayout.v17.1.resources.dll
+D:\SOFTWARE2\SysproQ\ServiceConfigurator\ServiceConfigurator\bin\Debug\ru\DevExpress.XtraLayout.v17.1.resources.dll
+D:\SOFTWARE2\SysproQ\ServiceConfigurator\ServiceConfigurator\bin\Debug\de\DevExpress.XtraPrinting.v17.1.resources.dll
+D:\SOFTWARE2\SysproQ\ServiceConfigurator\ServiceConfigurator\bin\Debug\es\DevExpress.XtraPrinting.v17.1.resources.dll
+D:\SOFTWARE2\SysproQ\ServiceConfigurator\ServiceConfigurator\bin\Debug\ja\DevExpress.XtraPrinting.v17.1.resources.dll
+D:\SOFTWARE2\SysproQ\ServiceConfigurator\ServiceConfigurator\bin\Debug\ru\DevExpress.XtraPrinting.v17.1.resources.dll
+D:\SOFTWARE2\SysproQ\ServiceConfigurator\ServiceConfigurator\bin\Debug\de\DevExpress.XtraVerticalGrid.v17.1.resources.dll
+D:\SOFTWARE2\SysproQ\ServiceConfigurator\ServiceConfigurator\bin\Debug\es\DevExpress.XtraVerticalGrid.v17.1.resources.dll
+D:\SOFTWARE2\SysproQ\ServiceConfigurator\ServiceConfigurator\bin\Debug\ja\DevExpress.XtraVerticalGrid.v17.1.resources.dll
+D:\SOFTWARE2\SysproQ\ServiceConfigurator\ServiceConfigurator\bin\Debug\ru\DevExpress.XtraVerticalGrid.v17.1.resources.dll
+D:\SOFTWARE2\SysproQ\ServiceConfigurator\ServiceConfigurator\bin\Debug\de\DevExpress.RichEdit.v17.1.Core.resources.dll
+D:\SOFTWARE2\SysproQ\ServiceConfigurator\ServiceConfigurator\bin\Debug\es\DevExpress.RichEdit.v17.1.Core.resources.dll
+D:\SOFTWARE2\SysproQ\ServiceConfigurator\ServiceConfigurator\bin\Debug\ja\DevExpress.RichEdit.v17.1.Core.resources.dll
+D:\SOFTWARE2\SysproQ\ServiceConfigurator\ServiceConfigurator\bin\Debug\ru\DevExpress.RichEdit.v17.1.Core.resources.dll
+D:\SOFTWARE2\SysproQ\ServiceConfigurator\ServiceConfigurator\bin\Debug\de\DevExpress.Office.v17.1.Core.resources.dll
+D:\SOFTWARE2\SysproQ\ServiceConfigurator\ServiceConfigurator\bin\Debug\es\DevExpress.Office.v17.1.Core.resources.dll
+D:\SOFTWARE2\SysproQ\ServiceConfigurator\ServiceConfigurator\bin\Debug\ja\DevExpress.Office.v17.1.Core.resources.dll
+D:\SOFTWARE2\SysproQ\ServiceConfigurator\ServiceConfigurator\bin\Debug\ru\DevExpress.Office.v17.1.Core.resources.dll
+D:\SOFTWARE2\SysproQ\ServiceConfigurator\ServiceConfigurator\bin\Debug\de\DevExpress.XtraTreeList.v17.1.resources.dll
+D:\SOFTWARE2\SysproQ\ServiceConfigurator\ServiceConfigurator\bin\Debug\es\DevExpress.XtraTreeList.v17.1.resources.dll
+D:\SOFTWARE2\SysproQ\ServiceConfigurator\ServiceConfigurator\bin\Debug\ja\DevExpress.XtraTreeList.v17.1.resources.dll
+D:\SOFTWARE2\SysproQ\ServiceConfigurator\ServiceConfigurator\bin\Debug\ru\DevExpress.XtraTreeList.v17.1.resources.dll
+D:\SOFTWARE2\SysproQ\ServiceConfigurator\ServiceConfigurator\obj\Debug\ServiceConfigurator.vbprojResolveAssemblyReference.cache
+D:\SOFTWARE2\SysproQ\ServiceConfigurator\ServiceConfigurator\obj\Debug\ServiceConfigurator.Form1.resources
+D:\SOFTWARE2\SysproQ\ServiceConfigurator\ServiceConfigurator\obj\Debug\ServiceConfigurator.Resources.resources
+D:\SOFTWARE2\SysproQ\ServiceConfigurator\ServiceConfigurator\obj\Debug\ServiceConfigurator.vbproj.GenerateResource.Cache
+D:\SOFTWARE2\SysproQ\ServiceConfigurator\ServiceConfigurator\obj\Debug\ServiceConfigurator.exe.licenses
+D:\SOFTWARE2\SysproQ\ServiceConfigurator\ServiceConfigurator\obj\Debug\ServiceConfigurator.exe
+D:\SOFTWARE2\SysproQ\ServiceConfigurator\ServiceConfigurator\obj\Debug\ServiceConfigurator.pdb

@@ -1,0 +1,10 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<parameters>
+  <parameter name="IIS Web Application Name" description="" value="Default Web Site/SysproQWebApp" tags="IisApp">
+    <parameterEntry kind="ProviderPath" scope="IisApp" match="^C:\\Users\\Moe\\Documents\\Visual\ Studio\ 2015\\Projects\\SysproQ\\SysproqWebApp\\obj\\Release\\Package\\PackageTmp$" />
+    <parameterEntry kind="ProviderPath" scope="setAcl" match="^C:\\Users\\Moe\\Documents\\Visual\ Studio\ 2015\\Projects\\SysproQ\\SysproqWebApp\\obj\\Release\\Package\\PackageTmp$" />
+  </parameter>
+  <parameter name="SysproEntities-Web.config Connection String" description="" value="metadata=res://*/Model1.csdl|res://*/Model1.ssdl|res://*/Model1.msl;provider=System.Data.SqlClient;provider connection string=&quot;data source=.\SQLEXPRESS;initial catalog=SysproCompanyC_7;persist security info=True;user id=sa;password=P@$$w0rd;MultipleActiveResultSets=True;App=EntityFramework&quot;" tags="">
+    <parameterEntry kind="XmlFile" scope="C:\\Users\\Moe\\Documents\\Visual\ Studio\ 2015\\Projects\\SysproQ\\SysproqWebApp\\obj\\Release\\Package\\PackageTmp\\Web\.config$" match="/configuration/connectionStrings/add[@name='SysproEntities']/@connectionString" />
+  </parameter>
+</parameters>

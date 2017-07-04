@@ -1,0 +1,28 @@
+C:\Users\Moe\Documents\Visual Studio 2015\Projects\SysproQ\SysproQ.Entity\bin\Release\SysproQ.Entity.dll.config
+C:\Users\Moe\Documents\Visual Studio 2015\Projects\SysproQ\SysproQ.Entity\bin\Release\SysproQ.Entity.dll
+C:\Users\Moe\Documents\Visual Studio 2015\Projects\SysproQ\SysproQ.Entity\bin\Release\SysproQ.Entity.pdb
+C:\Users\Moe\Documents\Visual Studio 2015\Projects\SysproQ\SysproQ.Entity\bin\Release\SysproQ.Entity.xml
+C:\Users\Moe\Documents\Visual Studio 2015\Projects\SysproQ\SysproQ.Entity\bin\Release\EntityFramework.dll
+C:\Users\Moe\Documents\Visual Studio 2015\Projects\SysproQ\SysproQ.Entity\bin\Release\EntityFramework.SqlServer.dll
+C:\Users\Moe\Documents\Visual Studio 2015\Projects\SysproQ\SysproQ.Entity\bin\Release\EntityFramework.xml
+C:\Users\Moe\Documents\Visual Studio 2015\Projects\SysproQ\SysproQ.Entity\bin\Release\EntityFramework.SqlServer.xml
+C:\Users\Moe\Documents\Visual Studio 2015\Projects\SysproQ\SysproQ.Entity\obj\Release\SysproQ.Entity.vbprojResolveAssemblyReference.cache
+C:\Users\Moe\Documents\Visual Studio 2015\Projects\SysproQ\SysproQ.Entity\obj\Release\SysproQ.Entity.Resources.resources
+C:\Users\Moe\Documents\Visual Studio 2015\Projects\SysproQ\SysproQ.Entity\obj\Release\SysproQ.Entity.vbproj.GenerateResource.Cache
+C:\Users\Moe\Documents\Visual Studio 2015\Projects\SysproQ\SysproQ.Entity\obj\Release\SysproQ.Entity.dll
+C:\Users\Moe\Documents\Visual Studio 2015\Projects\SysproQ\SysproQ.Entity\obj\Release\SysproQ.Entity.xml
+C:\Users\Moe\Documents\Visual Studio 2015\Projects\SysproQ\SysproQ.Entity\obj\Release\SysproQ.Entity.pdb
+D:\SOFTWARE2\SysproQ\SysproQ.Entity\bin\Release\SysproQ.Entity.dll.config
+D:\SOFTWARE2\SysproQ\SysproQ.Entity\bin\Release\SysproQ.Entity.dll
+D:\SOFTWARE2\SysproQ\SysproQ.Entity\bin\Release\SysproQ.Entity.pdb
+D:\SOFTWARE2\SysproQ\SysproQ.Entity\bin\Release\SysproQ.Entity.xml
+D:\SOFTWARE2\SysproQ\SysproQ.Entity\bin\Release\EntityFramework.dll
+D:\SOFTWARE2\SysproQ\SysproQ.Entity\bin\Release\EntityFramework.SqlServer.dll
+D:\SOFTWARE2\SysproQ\SysproQ.Entity\bin\Release\EntityFramework.xml
+D:\SOFTWARE2\SysproQ\SysproQ.Entity\bin\Release\EntityFramework.SqlServer.xml
+D:\SOFTWARE2\SysproQ\SysproQ.Entity\obj\Release\SysproQ.Entity.vbprojResolveAssemblyReference.cache
+D:\SOFTWARE2\SysproQ\SysproQ.Entity\obj\Release\SysproQ.Entity.Resources.resources
+D:\SOFTWARE2\SysproQ\SysproQ.Entity\obj\Release\SysproQ.Entity.vbproj.GenerateResource.Cache
+D:\SOFTWARE2\SysproQ\SysproQ.Entity\obj\Release\SysproQ.Entity.dll
+D:\SOFTWARE2\SysproQ\SysproQ.Entity\obj\Release\SysproQ.Entity.xml
+D:\SOFTWARE2\SysproQ\SysproQ.Entity\obj\Release\SysproQ.Entity.pdb

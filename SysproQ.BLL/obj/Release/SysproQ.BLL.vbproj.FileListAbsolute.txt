@@ -1,0 +1,43 @@
+C:\Users\Moe\Documents\Visual Studio 2015\Projects\SysproQ\SysproQ.BLL\bin\Release\SysproQ.BLL.dll.config
+C:\Users\Moe\Documents\Visual Studio 2015\Projects\SysproQ\SysproQ.BLL\bin\Release\SysproQ.BLL.dll
+C:\Users\Moe\Documents\Visual Studio 2015\Projects\SysproQ\SysproQ.BLL\bin\Release\SysproQ.BLL.XmlSerializers.dll
+C:\Users\Moe\Documents\Visual Studio 2015\Projects\SysproQ\SysproQ.BLL\bin\Release\SysproQ.BLL.pdb
+C:\Users\Moe\Documents\Visual Studio 2015\Projects\SysproQ\SysproQ.BLL\bin\Release\SysproQ.BLL.xml
+C:\Users\Moe\Documents\Visual Studio 2015\Projects\SysproQ\SysproQ.BLL\bin\Release\EntityFramework.dll
+C:\Users\Moe\Documents\Visual Studio 2015\Projects\SysproQ\SysproQ.BLL\bin\Release\EntityFramework.SqlServer.dll
+C:\Users\Moe\Documents\Visual Studio 2015\Projects\SysproQ\SysproQ.BLL\bin\Release\SysproQ.DAL.dll
+C:\Users\Moe\Documents\Visual Studio 2015\Projects\SysproQ\SysproQ.BLL\bin\Release\SysproQ.Entity.dll
+C:\Users\Moe\Documents\Visual Studio 2015\Projects\SysproQ\SysproQ.BLL\bin\Release\SysproQ.DAL.pdb
+C:\Users\Moe\Documents\Visual Studio 2015\Projects\SysproQ\SysproQ.BLL\bin\Release\SysproQ.DAL.xml
+C:\Users\Moe\Documents\Visual Studio 2015\Projects\SysproQ\SysproQ.BLL\bin\Release\SysproQ.Entity.pdb
+C:\Users\Moe\Documents\Visual Studio 2015\Projects\SysproQ\SysproQ.BLL\bin\Release\SysproQ.Entity.xml
+C:\Users\Moe\Documents\Visual Studio 2015\Projects\SysproQ\SysproQ.BLL\bin\Release\EntityFramework.xml
+C:\Users\Moe\Documents\Visual Studio 2015\Projects\SysproQ\SysproQ.BLL\bin\Release\EntityFramework.SqlServer.xml
+C:\Users\Moe\Documents\Visual Studio 2015\Projects\SysproQ\SysproQ.BLL\obj\Release\SysproQ.BLL.vbprojResolveAssemblyReference.cache
+C:\Users\Moe\Documents\Visual Studio 2015\Projects\SysproQ\SysproQ.BLL\obj\Release\SysproQ.BLL.Resources.resources
+C:\Users\Moe\Documents\Visual Studio 2015\Projects\SysproQ\SysproQ.BLL\obj\Release\SysproQ.BLL.vbproj.GenerateResource.Cache
+C:\Users\Moe\Documents\Visual Studio 2015\Projects\SysproQ\SysproQ.BLL\obj\Release\SysproQ.BLL.dll
+C:\Users\Moe\Documents\Visual Studio 2015\Projects\SysproQ\SysproQ.BLL\obj\Release\SysproQ.BLL.xml
+C:\Users\Moe\Documents\Visual Studio 2015\Projects\SysproQ\SysproQ.BLL\obj\Release\SysproQ.BLL.pdb
+C:\Users\Moe\Documents\Visual Studio 2015\Projects\SysproQ\SysproQ.BLL\obj\Release\SysproQ.BLL.XmlSerializers.dll
+D:\SOFTWARE2\SysproQ\SysproQ.BLL\bin\Release\SysproQ.BLL.dll.config
+D:\SOFTWARE2\SysproQ\SysproQ.BLL\bin\Release\SysproQ.BLL.dll
+D:\SOFTWARE2\SysproQ\SysproQ.BLL\bin\Release\SysproQ.BLL.pdb
+D:\SOFTWARE2\SysproQ\SysproQ.BLL\bin\Release\SysproQ.BLL.xml
+D:\SOFTWARE2\SysproQ\SysproQ.BLL\bin\Release\EntityFramework.dll
+D:\SOFTWARE2\SysproQ\SysproQ.BLL\bin\Release\EntityFramework.SqlServer.dll
+D:\SOFTWARE2\SysproQ\SysproQ.BLL\bin\Release\SysproQ.DAL.dll
+D:\SOFTWARE2\SysproQ\SysproQ.BLL\bin\Release\SysproQ.Entity.dll
+D:\SOFTWARE2\SysproQ\SysproQ.BLL\bin\Release\SysproQ.DAL.pdb
+D:\SOFTWARE2\SysproQ\SysproQ.BLL\bin\Release\SysproQ.DAL.xml
+D:\SOFTWARE2\SysproQ\SysproQ.BLL\bin\Release\SysproQ.Entity.pdb
+D:\SOFTWARE2\SysproQ\SysproQ.BLL\bin\Release\SysproQ.Entity.xml
+D:\SOFTWARE2\SysproQ\SysproQ.BLL\bin\Release\EntityFramework.xml
+D:\SOFTWARE2\SysproQ\SysproQ.BLL\bin\Release\EntityFramework.SqlServer.xml
+D:\SOFTWARE2\SysproQ\SysproQ.BLL\obj\Release\SysproQ.BLL.vbprojResolveAssemblyReference.cache
+D:\SOFTWARE2\SysproQ\SysproQ.BLL\obj\Release\SysproQ.BLL.Resources.resources
+D:\SOFTWARE2\SysproQ\SysproQ.BLL\obj\Release\SysproQ.BLL.vbproj.GenerateResource.Cache
+D:\SOFTWARE2\SysproQ\SysproQ.BLL\obj\Release\SysproQ.BLL.dll
+D:\SOFTWARE2\SysproQ\SysproQ.BLL\obj\Release\SysproQ.BLL.xml
+D:\SOFTWARE2\SysproQ\SysproQ.BLL\obj\Release\SysproQ.BLL.pdb
+D:\SOFTWARE2\SysproQ\SysproQ.BLL\bin\Release\SYSPROWCFServicesClientLibrary40.dll

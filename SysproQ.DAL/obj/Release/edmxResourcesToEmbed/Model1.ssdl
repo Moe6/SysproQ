@@ -1,0 +1,146 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="SysproModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+  <EntityType Name="SorDetail">
+    <Key>
+      <PropertyRef Name="SalesOrder" />
+      <PropertyRef Name="SalesOrderLine" />
+    </Key>
+    <Property Name="SalesOrder" Type="varchar" MaxLength="20" Nullable="false" />
+    <Property Name="SalesOrderLine" Type="decimal" Precision="4" Scale="0" Nullable="false" />
+    <Property Name="LineType" Type="char" MaxLength="1" Nullable="false" />
+    <Property Name="MStockCode" Type="varchar" MaxLength="30" Nullable="false" />
+    <Property Name="MStockDes" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="MWarehouse" Type="varchar" MaxLength="10" Nullable="false" />
+    <Property Name="MBin" Type="varchar" MaxLength="20" Nullable="false" />
+    <Property Name="MOrderQty" Type="decimal" Precision="18" Scale="6" Nullable="false" />
+    <Property Name="MShipQty" Type="decimal" Precision="18" Scale="6" Nullable="false" />
+    <Property Name="MBackOrderQty" Type="decimal" Precision="18" Scale="6" Nullable="false" />
+    <Property Name="MUnitCost" Type="decimal" Precision="15" Scale="5" Nullable="false" />
+    <Property Name="MBomFlag" Type="char" MaxLength="1" Nullable="false" />
+    <Property Name="MParentKitType" Type="char" MaxLength="1" Nullable="false" />
+    <Property Name="MQtyPer" Type="decimal" Precision="18" Scale="6" Nullable="false" />
+    <Property Name="MScrapPercentage" Type="decimal" Precision="4" Scale="2" Nullable="false" />
+    <Property Name="MPrintComponent" Type="char" MaxLength="1" Nullable="false" />
+    <Property Name="MComponentSeq" Type="varchar" MaxLength="6" Nullable="false" />
+    <Property Name="MQtyChangesFlag" Type="char" MaxLength="1" Nullable="false" />
+    <Property Name="MOptionalFlag" Type="char" MaxLength="1" Nullable="false" />
+    <Property Name="MDecimals" Type="decimal" Precision="1" Scale="0" Nullable="false" />
+    <Property Name="MOrderUom" Type="varchar" MaxLength="10" Nullable="false" />
+    <Property Name="MStockQtyToShp" Type="decimal" Precision="18" Scale="6" Nullable="false" />
+    <Property Name="MStockingUom" Type="varchar" MaxLength="10" Nullable="false" />
+    <Property Name="MConvFactOrdUm" Type="decimal" Precision="12" Scale="6" Nullable="false" />
+    <Property Name="MMulDivPrcFct" Type="char" MaxLength="1" Nullable="false" />
+    <Property Name="MPrice" Type="decimal" Precision="15" Scale="5" Nullable="false" />
+    <Property Name="MPriceUom" Type="varchar" MaxLength="10" Nullable="false" />
+    <Property Name="MCommissionCode" Type="char" MaxLength="2" Nullable="false" />
+    <Property Name="MDiscPct1" Type="decimal" Precision="5" Scale="2" Nullable="false" />
+    <Property Name="MDiscPct2" Type="decimal" Precision="5" Scale="2" Nullable="false" />
+    <Property Name="MDiscPct3" Type="decimal" Precision="5" Scale="2" Nullable="false" />
+    <Property Name="MDiscValFlag" Type="char" MaxLength="1" Nullable="false" />
+    <Property Name="MDiscValue" Type="decimal" Precision="14" Scale="2" Nullable="false" />
+    <Property Name="MProductClass" Type="varchar" MaxLength="20" Nullable="false" />
+    <Property Name="MTaxCode" Type="char" MaxLength="3" Nullable="false" />
+    <Property Name="MLineShipDate" Type="datetime" />
+    <Property Name="MAllocStatSched" Type="char" MaxLength="1" Nullable="false" />
+    <Property Name="MFstTaxCode" Type="char" MaxLength="3" Nullable="false" />
+    <Property Name="MStockUnitMass" Type="decimal" Precision="18" Scale="6" Nullable="false" />
+    <Property Name="MStockUnitVol" Type="decimal" Precision="18" Scale="6" Nullable="false" />
+    <Property Name="MPriceCode" Type="varchar" MaxLength="10" Nullable="false" />
+    <Property Name="MConvFactAlloc" Type="decimal" Precision="12" Scale="6" Nullable="false" />
+    <Property Name="MMulDivQtyFct" Type="char" MaxLength="1" Nullable="false" />
+    <Property Name="MTraceableType" Type="char" MaxLength="1" Nullable="false" />
+    <Property Name="MMpsFlag" Type="char" MaxLength="1" Nullable="false" />
+    <Property Name="MPickingSlip" Type="char" MaxLength="1" Nullable="false" />
+    <Property Name="MMovementReqd" Type="char" MaxLength="1" Nullable="false" />
+    <Property Name="MSerialMethod" Type="char" MaxLength="1" Nullable="false" />
+    <Property Name="MZeroQtyCrNote" Type="char" MaxLength="1" Nullable="false" />
+    <Property Name="MAbcApplied" Type="char" MaxLength="1" Nullable="false" />
+    <Property Name="MMpsGrossReqd" Type="char" MaxLength="1" Nullable="false" />
+    <Property Name="MContract" Type="varchar" MaxLength="20" Nullable="false" />
+    <Property Name="MBuyingGroup" Type="varchar" MaxLength="10" Nullable="false" />
+    <Property Name="MCusSupStkCode" Type="varchar" MaxLength="30" Nullable="false" />
+    <Property Name="MCusRetailPrice" Type="decimal" Precision="15" Scale="5" Nullable="false" />
+    <Property Name="MTariffCode" Type="varchar" MaxLength="15" Nullable="false" />
+    <Property Name="MLineReceiptDat" Type="datetime" />
+    <Property Name="MLeadTime" Type="decimal" Precision="10" Scale="0" Nullable="false" />
+    <Property Name="MTrfCostMult" Type="decimal" Precision="9" Scale="6" Nullable="false" />
+    <Property Name="MSupplementaryUn" Type="char" MaxLength="1" Nullable="false" />
+    <Property Name="MReviewFlag" Type="char" MaxLength="1" Nullable="false" />
+    <Property Name="MReviewStatus" Type="char" MaxLength="1" Nullable="false" />
+    <Property Name="MInvoicePrinted" Type="char" MaxLength="1" Nullable="false" />
+    <Property Name="MDelNotePrinted" Type="char" MaxLength="1" Nullable="false" />
+    <Property Name="MOrdAckPrinted" Type="char" MaxLength="1" Nullable="false" />
+    <Property Name="MHierarchyJob" Type="varchar" MaxLength="20" Nullable="false" />
+    <Property Name="MCustRequestDat" Type="datetime" />
+    <Property Name="MLastDelNote" Type="varchar" MaxLength="20" Nullable="false" />
+    <Property Name="MUserDef" Type="char" MaxLength="4" Nullable="false" />
+    <Property Name="MQtyDispatched" Type="decimal" Precision="18" Scale="6" Nullable="false" />
+    <Property Name="MDiscChanged" Type="char" MaxLength="1" Nullable="false" />
+    <Property Name="MCreditOrderNo" Type="varchar" MaxLength="20" Nullable="false" />
+    <Property Name="MCreditOrderLine" Type="decimal" Precision="4" Scale="0" Nullable="false" />
+    <Property Name="MUnitQuantity" Type="char" MaxLength="1" Nullable="false" />
+    <Property Name="MConvFactUnitQ" Type="decimal" Precision="6" Scale="0" Nullable="false" />
+    <Property Name="MAltUomUnitQ" Type="varchar" MaxLength="10" Nullable="false" />
+    <Property Name="MDecimalsUnitQ" Type="decimal" Precision="1" Scale="0" Nullable="false" />
+    <Property Name="MEccFlag" Type="char" MaxLength="1" Nullable="false" />
+    <Property Name="MVersion" Type="char" MaxLength="5" Nullable="false" />
+    <Property Name="MRelease" Type="char" MaxLength="5" Nullable="false" />
+    <Property Name="MCommitDate" Type="datetime" />
+    <Property Name="QtyReserved" Type="decimal" Precision="18" Scale="6" Nullable="false" />
+    <Property Name="NComment" Type="varchar" MaxLength="100" Nullable="false" />
+    <Property Name="NCommentFromLin" Type="decimal" Precision="4" Scale="0" Nullable="false" />
+    <Property Name="NMscChargeValue" Type="decimal" Precision="14" Scale="2" Nullable="false" />
+    <Property Name="NMscProductCls" Type="varchar" MaxLength="20" Nullable="false" />
+    <Property Name="NMscChargeCost" Type="decimal" Precision="14" Scale="2" Nullable="false" />
+    <Property Name="NMscInvCharge" Type="char" MaxLength="1" Nullable="false" />
+    <Property Name="NCommentType" Type="char" MaxLength="2" Nullable="false" />
+    <Property Name="NMscTaxCode" Type="char" MaxLength="3" Nullable="false" />
+    <Property Name="NMscFstCode" Type="char" MaxLength="3" Nullable="false" />
+    <Property Name="NCommentTextTyp" Type="char" MaxLength="1" Nullable="false" />
+    <Property Name="NMscChargeQty" Type="decimal" Precision="18" Scale="6" Nullable="false" />
+    <Property Name="NSrvIncTotal" Type="char" MaxLength="1" Nullable="false" />
+    <Property Name="NSrvSummary" Type="char" MaxLength="1" Nullable="false" />
+    <Property Name="NSrvChargeType" Type="char" MaxLength="1" Nullable="false" />
+    <Property Name="NSrvParentLine" Type="decimal" Precision="4" Scale="0" Nullable="false" />
+    <Property Name="NSrvUnitPrice" Type="decimal" Precision="15" Scale="5" Nullable="false" />
+    <Property Name="NSrvUnitCost" Type="decimal" Precision="15" Scale="5" Nullable="false" />
+    <Property Name="NSrvQtyFactor" Type="decimal" Precision="12" Scale="6" Nullable="false" />
+    <Property Name="NSrvApplyFactor" Type="char" MaxLength="1" Nullable="false" />
+    <Property Name="NSrvDecimalRnd" Type="decimal" Precision="1" Scale="0" Nullable="false" />
+    <Property Name="NSrvDecRndFlag" Type="char" MaxLength="1" Nullable="false" />
+    <Property Name="NSrvMinValue" Type="decimal" Precision="14" Scale="2" Nullable="false" />
+    <Property Name="NSrvMaxValue" Type="decimal" Precision="14" Scale="2" Nullable="false" />
+    <Property Name="NSrvMulDiv" Type="char" MaxLength="1" Nullable="false" />
+    <Property Name="NPrtOnInv" Type="char" MaxLength="1" Nullable="false" />
+    <Property Name="NPrtOnDel" Type="char" MaxLength="1" Nullable="false" />
+    <Property Name="NPrtOnAck" Type="char" MaxLength="1" Nullable="false" />
+    <Property Name="NTaxAmountFlag" Type="char" MaxLength="1" Nullable="false" />
+    <Property Name="NDepRetFlagProj" Type="char" MaxLength="1" Nullable="false" />
+    <Property Name="NRetentionJob" Type="varchar" MaxLength="20" Nullable="false" />
+    <Property Name="NSrvMinQuantity" Type="decimal" Precision="18" Scale="6" Nullable="false" />
+    <Property Name="NChargeCode" Type="varchar" MaxLength="6" Nullable="false" />
+    <Property Name="IncludeInMrp" Type="char" MaxLength="1" Nullable="false" />
+    <Property Name="ProductCode" Type="varchar" MaxLength="15" Nullable="false" />
+    <Property Name="LibraryCode" Type="char" MaxLength="5" Nullable="false" />
+    <Property Name="MaterialAllocLine" Type="char" MaxLength="2" Nullable="false" />
+    <Property Name="ScrapQuantity" Type="decimal" Precision="18" Scale="6" Nullable="false" />
+    <Property Name="FixedQtyPerFlag" Type="char" MaxLength="1" Nullable="false" />
+    <Property Name="FixedQtyPer" Type="decimal" Precision="18" Scale="6" Nullable="false" />
+    <Property Name="MultiShipCode" Type="char" MaxLength="5" Nullable="false" />
+    <Property Name="User1" Type="char" MaxLength="1" Nullable="false" />
+    <Property Name="CreditReason" Type="varchar" MaxLength="6" Nullable="false" />
+    <Property Name="OrigShipDateAps" Type="datetime" />
+    <Property Name="TpmUsageFlag" Type="char" MaxLength="1" Nullable="false" />
+    <Property Name="PromotionCode" Type="varchar" MaxLength="10" Nullable="false" />
+    <Property Name="TpmSequence" Type="decimal" Precision="6" Scale="0" Nullable="false" />
+    <Property Name="SalesOrderInitLine" Type="decimal" Precision="4" Scale="0" Nullable="false" />
+    <Property Name="PreactorPriority" Type="decimal" Precision="2" Scale="0" Nullable="false" />
+    <Property Name="SalesOrderDetStat" Type="char" MaxLength="1" Nullable="false" />
+    <Property Name="SalesOrderResStat" Type="char" MaxLength="1" Nullable="false" />
+    <Property Name="QtyReservedShip" Type="decimal" Precision="18" Scale="6" Nullable="false" />
+    <Property Name="TimeStamp" Type="timestamp" StoreGeneratedPattern="Computed" />
+  </EntityType>
+  <EntityContainer Name="SysproModelStoreContainer">
+    <EntitySet Name="SorDetail" EntityType="Self.SorDetail" Schema="dbo" store:Type="Tables" />
+  </EntityContainer>
+</Schema>

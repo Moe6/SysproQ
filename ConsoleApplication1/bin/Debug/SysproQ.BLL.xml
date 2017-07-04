@@ -1,0 +1,581 @@
+﻿<?xml version="1.0"?>
+<doc>
+<assembly>
+<name>
+SysproQ.BLL
+</name>
+</assembly>
+<members>
+<member name="T:SysproQ.BLL.My.Resources.Resources">
+<summary>
+  A strongly-typed resource class, for looking up localized strings, etc.
+</summary>
+</member>
+<member name="P:SysproQ.BLL.My.Resources.Resources.ResourceManager">
+<summary>
+  Returns the cached ResourceManager instance used by this class.
+</summary>
+</member>
+<member name="P:SysproQ.BLL.My.Resources.Resources.Culture">
+<summary>
+  Overrides the current thread's CurrentUICulture property for all
+  resource lookups using this strongly typed resource class.
+</summary>
+</member>
+<member name="M:SysproQ.BLL.SORTOI.ProcessPost.CreateOrderMasterChangeOnlyXmlIn">
+ <summary>
+ Create or maintain sales order master data only
+ Customer
+ Delivery Address
+ Purchase Order No
+ </summary>
+ 
+ <returns></returns>
+ <remarks></remarks>
+</member>
+<member name="M:SysproQ.BLL.SORTOI.ProcessPost.CreateOrderMasterAndDetailXmlIn">
+ <summary>
+ Create or maintain all item lines supplied
+ </summary>
+ <returns></returns>
+ <remarks></remarks>
+</member>
+<member name="T:SysproQ.BLL.SysproQueryService.queryclass">
+<remarks/>
+</member>
+<member name="M:SysproQ.BLL.SysproQueryService.queryclass.#ctor">
+<remarks/>
+</member>
+<member name="E:SysproQ.BLL.SysproQueryService.queryclass.BrowseCompleted">
+<remarks/>
+</member>
+<member name="E:SysproQ.BLL.SysproQueryService.queryclass.BrowseWCompleted">
+<remarks/>
+</member>
+<member name="E:SysproQ.BLL.SysproQueryService.queryclass.FetchCompleted">
+<remarks/>
+</member>
+<member name="E:SysproQ.BLL.SysproQueryService.queryclass.FetchWCompleted">
+<remarks/>
+</member>
+<member name="E:SysproQ.BLL.SysproQueryService.queryclass.QueryCompleted">
+<remarks/>
+</member>
+<member name="E:SysproQ.BLL.SysproQueryService.queryclass.QueryWCompleted">
+<remarks/>
+</member>
+<member name="E:SysproQ.BLL.SysproQueryService.queryclass.NextKeyCompleted">
+<remarks/>
+</member>
+<member name="E:SysproQ.BLL.SysproQueryService.queryclass.NextKeyWCompleted">
+<remarks/>
+</member>
+<member name="E:SysproQ.BLL.SysproQueryService.queryclass.PreviousKeyCompleted">
+<remarks/>
+</member>
+<member name="E:SysproQ.BLL.SysproQueryService.queryclass.PreviousKeyWCompleted">
+<remarks/>
+</member>
+<member name="M:SysproQ.BLL.SysproQueryService.queryclass.Browse(System.String,System.String)">
+<remarks/>
+</member>
+<member name="M:SysproQ.BLL.SysproQueryService.queryclass.BrowseAsync(System.String,System.String)">
+<remarks/>
+</member>
+<member name="M:SysproQ.BLL.SysproQueryService.queryclass.BrowseAsync(System.String,System.String,System.Object)">
+<remarks/>
+</member>
+<member name="M:SysproQ.BLL.SysproQueryService.queryclass.BrowseW(System.String,System.Byte[])">
+<remarks/>
+</member>
+<member name="M:SysproQ.BLL.SysproQueryService.queryclass.BrowseWAsync(System.String,System.Byte[])">
+<remarks/>
+</member>
+<member name="M:SysproQ.BLL.SysproQueryService.queryclass.BrowseWAsync(System.String,System.Byte[],System.Object)">
+<remarks/>
+</member>
+<member name="M:SysproQ.BLL.SysproQueryService.queryclass.Fetch(System.String,System.String)">
+<remarks/>
+</member>
+<member name="M:SysproQ.BLL.SysproQueryService.queryclass.FetchAsync(System.String,System.String)">
+<remarks/>
+</member>
+<member name="M:SysproQ.BLL.SysproQueryService.queryclass.FetchAsync(System.String,System.String,System.Object)">
+<remarks/>
+</member>
+<member name="M:SysproQ.BLL.SysproQueryService.queryclass.FetchW(System.String,System.Byte[])">
+<remarks/>
+</member>
+<member name="M:SysproQ.BLL.SysproQueryService.queryclass.FetchWAsync(System.String,System.Byte[])">
+<remarks/>
+</member>
+<member name="M:SysproQ.BLL.SysproQueryService.queryclass.FetchWAsync(System.String,System.Byte[],System.Object)">
+<remarks/>
+</member>
+<member name="M:SysproQ.BLL.SysproQueryService.queryclass.Query(System.String,System.String,System.String)">
+<remarks/>
+</member>
+<member name="M:SysproQ.BLL.SysproQueryService.queryclass.QueryAsync(System.String,System.String,System.String)">
+<remarks/>
+</member>
+<member name="M:SysproQ.BLL.SysproQueryService.queryclass.QueryAsync(System.String,System.String,System.String,System.Object)">
+<remarks/>
+</member>
+<member name="M:SysproQ.BLL.SysproQueryService.queryclass.QueryW(System.String,System.String,System.Byte[])">
+<remarks/>
+</member>
+<member name="M:SysproQ.BLL.SysproQueryService.queryclass.QueryWAsync(System.String,System.String,System.Byte[])">
+<remarks/>
+</member>
+<member name="M:SysproQ.BLL.SysproQueryService.queryclass.QueryWAsync(System.String,System.String,System.Byte[],System.Object)">
+<remarks/>
+</member>
+<member name="M:SysproQ.BLL.SysproQueryService.queryclass.NextKey(System.String,System.String)">
+<remarks/>
+</member>
+<member name="M:SysproQ.BLL.SysproQueryService.queryclass.NextKeyAsync(System.String,System.String)">
+<remarks/>
+</member>
+<member name="M:SysproQ.BLL.SysproQueryService.queryclass.NextKeyAsync(System.String,System.String,System.Object)">
+<remarks/>
+</member>
+<member name="M:SysproQ.BLL.SysproQueryService.queryclass.NextKeyW(System.String,System.Byte[])">
+<remarks/>
+</member>
+<member name="M:SysproQ.BLL.SysproQueryService.queryclass.NextKeyWAsync(System.String,System.Byte[])">
+<remarks/>
+</member>
+<member name="M:SysproQ.BLL.SysproQueryService.queryclass.NextKeyWAsync(System.String,System.Byte[],System.Object)">
+<remarks/>
+</member>
+<member name="M:SysproQ.BLL.SysproQueryService.queryclass.PreviousKey(System.String,System.String)">
+<remarks/>
+</member>
+<member name="M:SysproQ.BLL.SysproQueryService.queryclass.PreviousKeyAsync(System.String,System.String)">
+<remarks/>
+</member>
+<member name="M:SysproQ.BLL.SysproQueryService.queryclass.PreviousKeyAsync(System.String,System.String,System.Object)">
+<remarks/>
+</member>
+<member name="M:SysproQ.BLL.SysproQueryService.queryclass.PreviousKeyW(System.String,System.Byte[])">
+<remarks/>
+</member>
+<member name="M:SysproQ.BLL.SysproQueryService.queryclass.PreviousKeyWAsync(System.String,System.Byte[])">
+<remarks/>
+</member>
+<member name="M:SysproQ.BLL.SysproQueryService.queryclass.PreviousKeyWAsync(System.String,System.Byte[],System.Object)">
+<remarks/>
+</member>
+<member name="M:SysproQ.BLL.SysproQueryService.queryclass.CancelAsync(System.Object)">
+<remarks/>
+</member>
+<member name="T:SysproQ.BLL.SysproQueryService.BrowseCompletedEventHandler">
+<remarks/>
+</member>
+<member name="T:SysproQ.BLL.SysproQueryService.BrowseCompletedEventArgs">
+<remarks/>
+</member>
+<member name="P:SysproQ.BLL.SysproQueryService.BrowseCompletedEventArgs.Result">
+<remarks/>
+</member>
+<member name="T:SysproQ.BLL.SysproQueryService.BrowseWCompletedEventHandler">
+<remarks/>
+</member>
+<member name="T:SysproQ.BLL.SysproQueryService.BrowseWCompletedEventArgs">
+<remarks/>
+</member>
+<member name="P:SysproQ.BLL.SysproQueryService.BrowseWCompletedEventArgs.Result">
+<remarks/>
+</member>
+<member name="T:SysproQ.BLL.SysproQueryService.FetchCompletedEventHandler">
+<remarks/>
+</member>
+<member name="T:SysproQ.BLL.SysproQueryService.FetchCompletedEventArgs">
+<remarks/>
+</member>
+<member name="P:SysproQ.BLL.SysproQueryService.FetchCompletedEventArgs.Result">
+<remarks/>
+</member>
+<member name="T:SysproQ.BLL.SysproQueryService.FetchWCompletedEventHandler">
+<remarks/>
+</member>
+<member name="T:SysproQ.BLL.SysproQueryService.FetchWCompletedEventArgs">
+<remarks/>
+</member>
+<member name="P:SysproQ.BLL.SysproQueryService.FetchWCompletedEventArgs.Result">
+<remarks/>
+</member>
+<member name="T:SysproQ.BLL.SysproQueryService.QueryCompletedEventHandler">
+<remarks/>
+</member>
+<member name="T:SysproQ.BLL.SysproQueryService.QueryCompletedEventArgs">
+<remarks/>
+</member>
+<member name="P:SysproQ.BLL.SysproQueryService.QueryCompletedEventArgs.Result">
+<remarks/>
+</member>
+<member name="T:SysproQ.BLL.SysproQueryService.QueryWCompletedEventHandler">
+<remarks/>
+</member>
+<member name="T:SysproQ.BLL.SysproQueryService.QueryWCompletedEventArgs">
+<remarks/>
+</member>
+<member name="P:SysproQ.BLL.SysproQueryService.QueryWCompletedEventArgs.Result">
+<remarks/>
+</member>
+<member name="T:SysproQ.BLL.SysproQueryService.NextKeyCompletedEventHandler">
+<remarks/>
+</member>
+<member name="T:SysproQ.BLL.SysproQueryService.NextKeyCompletedEventArgs">
+<remarks/>
+</member>
+<member name="P:SysproQ.BLL.SysproQueryService.NextKeyCompletedEventArgs.Result">
+<remarks/>
+</member>
+<member name="T:SysproQ.BLL.SysproQueryService.NextKeyWCompletedEventHandler">
+<remarks/>
+</member>
+<member name="T:SysproQ.BLL.SysproQueryService.NextKeyWCompletedEventArgs">
+<remarks/>
+</member>
+<member name="P:SysproQ.BLL.SysproQueryService.NextKeyWCompletedEventArgs.Result">
+<remarks/>
+</member>
+<member name="T:SysproQ.BLL.SysproQueryService.PreviousKeyCompletedEventHandler">
+<remarks/>
+</member>
+<member name="T:SysproQ.BLL.SysproQueryService.PreviousKeyCompletedEventArgs">
+<remarks/>
+</member>
+<member name="P:SysproQ.BLL.SysproQueryService.PreviousKeyCompletedEventArgs.Result">
+<remarks/>
+</member>
+<member name="T:SysproQ.BLL.SysproQueryService.PreviousKeyWCompletedEventHandler">
+<remarks/>
+</member>
+<member name="T:SysproQ.BLL.SysproQueryService.PreviousKeyWCompletedEventArgs">
+<remarks/>
+</member>
+<member name="P:SysproQ.BLL.SysproQueryService.PreviousKeyWCompletedEventArgs.Result">
+<remarks/>
+</member>
+<member name="T:SysproQ.BLL.SysproTransService.transactionclass">
+<remarks/>
+</member>
+<member name="M:SysproQ.BLL.SysproTransService.transactionclass.#ctor">
+<remarks/>
+</member>
+<member name="E:SysproQ.BLL.SysproTransService.transactionclass.BuildCompleted">
+<remarks/>
+</member>
+<member name="E:SysproQ.BLL.SysproTransService.transactionclass.BuildWCompleted">
+<remarks/>
+</member>
+<member name="E:SysproQ.BLL.SysproTransService.transactionclass.PostCompleted">
+<remarks/>
+</member>
+<member name="E:SysproQ.BLL.SysproTransService.transactionclass.PostWCompleted">
+<remarks/>
+</member>
+<member name="M:SysproQ.BLL.SysproTransService.transactionclass.Build(System.String,System.String,System.String)">
+<remarks/>
+</member>
+<member name="M:SysproQ.BLL.SysproTransService.transactionclass.BuildAsync(System.String,System.String,System.String)">
+<remarks/>
+</member>
+<member name="M:SysproQ.BLL.SysproTransService.transactionclass.BuildAsync(System.String,System.String,System.String,System.Object)">
+<remarks/>
+</member>
+<member name="M:SysproQ.BLL.SysproTransService.transactionclass.BuildW(System.String,System.String,System.Byte[])">
+<remarks/>
+</member>
+<member name="M:SysproQ.BLL.SysproTransService.transactionclass.BuildWAsync(System.String,System.String,System.Byte[])">
+<remarks/>
+</member>
+<member name="M:SysproQ.BLL.SysproTransService.transactionclass.BuildWAsync(System.String,System.String,System.Byte[],System.Object)">
+<remarks/>
+</member>
+<member name="M:SysproQ.BLL.SysproTransService.transactionclass.Post(System.String,System.String,System.String,System.String)">
+<remarks/>
+</member>
+<member name="M:SysproQ.BLL.SysproTransService.transactionclass.PostAsync(System.String,System.String,System.String,System.String)">
+<remarks/>
+</member>
+<member name="M:SysproQ.BLL.SysproTransService.transactionclass.PostAsync(System.String,System.String,System.String,System.String,System.Object)">
+<remarks/>
+</member>
+<member name="M:SysproQ.BLL.SysproTransService.transactionclass.PostW(System.String,System.String,System.Byte[],System.Byte[])">
+<remarks/>
+</member>
+<member name="M:SysproQ.BLL.SysproTransService.transactionclass.PostWAsync(System.String,System.String,System.Byte[],System.Byte[])">
+<remarks/>
+</member>
+<member name="M:SysproQ.BLL.SysproTransService.transactionclass.PostWAsync(System.String,System.String,System.Byte[],System.Byte[],System.Object)">
+<remarks/>
+</member>
+<member name="M:SysproQ.BLL.SysproTransService.transactionclass.CancelAsync(System.Object)">
+<remarks/>
+</member>
+<member name="T:SysproQ.BLL.SysproTransService.BuildCompletedEventHandler">
+<remarks/>
+</member>
+<member name="T:SysproQ.BLL.SysproTransService.BuildCompletedEventArgs">
+<remarks/>
+</member>
+<member name="P:SysproQ.BLL.SysproTransService.BuildCompletedEventArgs.Result">
+<remarks/>
+</member>
+<member name="T:SysproQ.BLL.SysproTransService.BuildWCompletedEventHandler">
+<remarks/>
+</member>
+<member name="T:SysproQ.BLL.SysproTransService.BuildWCompletedEventArgs">
+<remarks/>
+</member>
+<member name="P:SysproQ.BLL.SysproTransService.BuildWCompletedEventArgs.Result">
+<remarks/>
+</member>
+<member name="T:SysproQ.BLL.SysproTransService.PostCompletedEventHandler">
+<remarks/>
+</member>
+<member name="T:SysproQ.BLL.SysproTransService.PostCompletedEventArgs">
+<remarks/>
+</member>
+<member name="P:SysproQ.BLL.SysproTransService.PostCompletedEventArgs.Result">
+<remarks/>
+</member>
+<member name="T:SysproQ.BLL.SysproTransService.PostWCompletedEventHandler">
+<remarks/>
+</member>
+<member name="T:SysproQ.BLL.SysproTransService.PostWCompletedEventArgs">
+<remarks/>
+</member>
+<member name="P:SysproQ.BLL.SysproTransService.PostWCompletedEventArgs.Result">
+<remarks/>
+</member>
+<member name="T:SysproQ.BLL.SysproUtilitiesService.utilitiesclass">
+<remarks/>
+</member>
+<member name="M:SysproQ.BLL.SysproUtilitiesService.utilitiesclass.#ctor">
+<remarks/>
+</member>
+<member name="E:SysproQ.BLL.SysproUtilitiesService.utilitiesclass.LogonCompleted">
+<remarks/>
+</member>
+<member name="E:SysproQ.BLL.SysproUtilitiesService.utilitiesclass.LogonWCompleted">
+<remarks/>
+</member>
+<member name="E:SysproQ.BLL.SysproUtilitiesService.utilitiesclass.LogoffCompleted">
+<remarks/>
+</member>
+<member name="E:SysproQ.BLL.SysproUtilitiesService.utilitiesclass.GetLogonProfileCompleted">
+<remarks/>
+</member>
+<member name="E:SysproQ.BLL.SysproUtilitiesService.utilitiesclass.GetLogonProfileWCompleted">
+<remarks/>
+</member>
+<member name="E:SysproQ.BLL.SysproUtilitiesService.utilitiesclass.RunCompleted">
+<remarks/>
+</member>
+<member name="M:SysproQ.BLL.SysproUtilitiesService.utilitiesclass.Logon(System.String,System.String,System.String,System.String,SysproQ.BLL.SysproUtilitiesService.Language,SysproQ.BLL.SysproUtilitiesService.LogDetail,SysproQ.BLL.SysproUtilitiesService.Instance,System.String)">
+<remarks/>
+</member>
+<member name="M:SysproQ.BLL.SysproUtilitiesService.utilitiesclass.LogonAsync(System.String,System.String,System.String,System.String,SysproQ.BLL.SysproUtilitiesService.Language,SysproQ.BLL.SysproUtilitiesService.LogDetail,SysproQ.BLL.SysproUtilitiesService.Instance,System.String)">
+<remarks/>
+</member>
+<member name="M:SysproQ.BLL.SysproUtilitiesService.utilitiesclass.LogonAsync(System.String,System.String,System.String,System.String,SysproQ.BLL.SysproUtilitiesService.Language,SysproQ.BLL.SysproUtilitiesService.LogDetail,SysproQ.BLL.SysproUtilitiesService.Instance,System.String,System.Object)">
+<remarks/>
+</member>
+<member name="M:SysproQ.BLL.SysproUtilitiesService.utilitiesclass.LogonW(System.String,System.String,System.String,System.String,SysproQ.BLL.SysproUtilitiesService.Language,SysproQ.BLL.SysproUtilitiesService.LogDetail,SysproQ.BLL.SysproUtilitiesService.Instance,System.Byte[])">
+<remarks/>
+</member>
+<member name="M:SysproQ.BLL.SysproUtilitiesService.utilitiesclass.LogonWAsync(System.String,System.String,System.String,System.String,SysproQ.BLL.SysproUtilitiesService.Language,SysproQ.BLL.SysproUtilitiesService.LogDetail,SysproQ.BLL.SysproUtilitiesService.Instance,System.Byte[])">
+<remarks/>
+</member>
+<member name="M:SysproQ.BLL.SysproUtilitiesService.utilitiesclass.LogonWAsync(System.String,System.String,System.String,System.String,SysproQ.BLL.SysproUtilitiesService.Language,SysproQ.BLL.SysproUtilitiesService.LogDetail,SysproQ.BLL.SysproUtilitiesService.Instance,System.Byte[],System.Object)">
+<remarks/>
+</member>
+<member name="M:SysproQ.BLL.SysproUtilitiesService.utilitiesclass.Logoff(System.String)">
+<remarks/>
+</member>
+<member name="M:SysproQ.BLL.SysproUtilitiesService.utilitiesclass.LogoffAsync(System.String)">
+<remarks/>
+</member>
+<member name="M:SysproQ.BLL.SysproUtilitiesService.utilitiesclass.LogoffAsync(System.String,System.Object)">
+<remarks/>
+</member>
+<member name="M:SysproQ.BLL.SysproUtilitiesService.utilitiesclass.GetLogonProfile(System.String)">
+<remarks/>
+</member>
+<member name="M:SysproQ.BLL.SysproUtilitiesService.utilitiesclass.GetLogonProfileAsync(System.String)">
+<remarks/>
+</member>
+<member name="M:SysproQ.BLL.SysproUtilitiesService.utilitiesclass.GetLogonProfileAsync(System.String,System.Object)">
+<remarks/>
+</member>
+<member name="M:SysproQ.BLL.SysproUtilitiesService.utilitiesclass.GetLogonProfileW(System.String)">
+<remarks/>
+</member>
+<member name="M:SysproQ.BLL.SysproUtilitiesService.utilitiesclass.GetLogonProfileWAsync(System.String)">
+<remarks/>
+</member>
+<member name="M:SysproQ.BLL.SysproUtilitiesService.utilitiesclass.GetLogonProfileWAsync(System.String,System.Object)">
+<remarks/>
+</member>
+<member name="M:SysproQ.BLL.SysproUtilitiesService.utilitiesclass.Run(System.String,System.String,System.String)">
+<remarks/>
+</member>
+<member name="M:SysproQ.BLL.SysproUtilitiesService.utilitiesclass.RunAsync(System.String,System.String,System.String)">
+<remarks/>
+</member>
+<member name="M:SysproQ.BLL.SysproUtilitiesService.utilitiesclass.RunAsync(System.String,System.String,System.String,System.Object)">
+<remarks/>
+</member>
+<member name="M:SysproQ.BLL.SysproUtilitiesService.utilitiesclass.CancelAsync(System.Object)">
+<remarks/>
+</member>
+<member name="T:SysproQ.BLL.SysproUtilitiesService.Language">
+<remarks/>
+</member>
+<member name="F:SysproQ.BLL.SysproUtilitiesService.Language.AUTO">
+<remarks/>
+</member>
+<member name="F:SysproQ.BLL.SysproUtilitiesService.Language.ENGLISH_US">
+<remarks/>
+</member>
+<member name="F:SysproQ.BLL.SysproUtilitiesService.Language.FRENCH_CANADIAN">
+<remarks/>
+</member>
+<member name="F:SysproQ.BLL.SysproUtilitiesService.Language.DANISH">
+<remarks/>
+</member>
+<member name="F:SysproQ.BLL.SysproUtilitiesService.Language.DUTCH">
+<remarks/>
+</member>
+<member name="F:SysproQ.BLL.SysproUtilitiesService.Language.ENGLISH">
+<remarks/>
+</member>
+<member name="F:SysproQ.BLL.SysproUtilitiesService.Language.FINNISH">
+<remarks/>
+</member>
+<member name="F:SysproQ.BLL.SysproUtilitiesService.Language.FRENCH">
+<remarks/>
+</member>
+<member name="F:SysproQ.BLL.SysproUtilitiesService.Language.GERMAN">
+<remarks/>
+</member>
+<member name="F:SysproQ.BLL.SysproUtilitiesService.Language.ITALIAN">
+<remarks/>
+</member>
+<member name="F:SysproQ.BLL.SysproUtilitiesService.Language.NORWEGIAN">
+<remarks/>
+</member>
+<member name="F:SysproQ.BLL.SysproUtilitiesService.Language.PORTUGUESE">
+<remarks/>
+</member>
+<member name="F:SysproQ.BLL.SysproUtilitiesService.Language.SPANISH">
+<remarks/>
+</member>
+<member name="F:SysproQ.BLL.SysproUtilitiesService.Language.SWEDISH">
+<remarks/>
+</member>
+<member name="T:SysproQ.BLL.SysproUtilitiesService.LogDetail">
+<remarks/>
+</member>
+<member name="F:SysproQ.BLL.SysproUtilitiesService.LogDetail.ldNoDebug">
+<remarks/>
+</member>
+<member name="F:SysproQ.BLL.SysproUtilitiesService.LogDetail.ldDebug">
+<remarks/>
+</member>
+<member name="T:SysproQ.BLL.SysproUtilitiesService.Instance">
+<remarks/>
+</member>
+<member name="F:SysproQ.BLL.SysproUtilitiesService.Instance.EncoreInstance_0">
+<remarks/>
+</member>
+<member name="F:SysproQ.BLL.SysproUtilitiesService.Instance.EncoreInstance_1">
+<remarks/>
+</member>
+<member name="F:SysproQ.BLL.SysproUtilitiesService.Instance.EncoreInstance_2">
+<remarks/>
+</member>
+<member name="F:SysproQ.BLL.SysproUtilitiesService.Instance.EncoreInstance_3">
+<remarks/>
+</member>
+<member name="F:SysproQ.BLL.SysproUtilitiesService.Instance.EncoreInstance_4">
+<remarks/>
+</member>
+<member name="F:SysproQ.BLL.SysproUtilitiesService.Instance.EncoreInstance_5">
+<remarks/>
+</member>
+<member name="F:SysproQ.BLL.SysproUtilitiesService.Instance.EncoreInstance_6">
+<remarks/>
+</member>
+<member name="F:SysproQ.BLL.SysproUtilitiesService.Instance.EncoreInstance_7">
+<remarks/>
+</member>
+<member name="F:SysproQ.BLL.SysproUtilitiesService.Instance.EncoreInstance_8">
+<remarks/>
+</member>
+<member name="F:SysproQ.BLL.SysproUtilitiesService.Instance.EncoreInstance_9">
+<remarks/>
+</member>
+<member name="F:SysproQ.BLL.SysproUtilitiesService.Instance.EncoreInstanceTostring_10">
+<remarks/>
+</member>
+<member name="T:SysproQ.BLL.SysproUtilitiesService.LogonCompletedEventHandler">
+<remarks/>
+</member>
+<member name="T:SysproQ.BLL.SysproUtilitiesService.LogonCompletedEventArgs">
+<remarks/>
+</member>
+<member name="P:SysproQ.BLL.SysproUtilitiesService.LogonCompletedEventArgs.Result">
+<remarks/>
+</member>
+<member name="T:SysproQ.BLL.SysproUtilitiesService.LogonWCompletedEventHandler">
+<remarks/>
+</member>
+<member name="T:SysproQ.BLL.SysproUtilitiesService.LogonWCompletedEventArgs">
+<remarks/>
+</member>
+<member name="P:SysproQ.BLL.SysproUtilitiesService.LogonWCompletedEventArgs.Result">
+<remarks/>
+</member>
+<member name="T:SysproQ.BLL.SysproUtilitiesService.LogoffCompletedEventHandler">
+<remarks/>
+</member>
+<member name="T:SysproQ.BLL.SysproUtilitiesService.LogoffCompletedEventArgs">
+<remarks/>
+</member>
+<member name="P:SysproQ.BLL.SysproUtilitiesService.LogoffCompletedEventArgs.Result">
+<remarks/>
+</member>
+<member name="T:SysproQ.BLL.SysproUtilitiesService.GetLogonProfileCompletedEventHandler">
+<remarks/>
+</member>
+<member name="T:SysproQ.BLL.SysproUtilitiesService.GetLogonProfileCompletedEventArgs">
+<remarks/>
+</member>
+<member name="P:SysproQ.BLL.SysproUtilitiesService.GetLogonProfileCompletedEventArgs.Result">
+<remarks/>
+</member>
+<member name="T:SysproQ.BLL.SysproUtilitiesService.GetLogonProfileWCompletedEventHandler">
+<remarks/>
+</member>
+<member name="T:SysproQ.BLL.SysproUtilitiesService.GetLogonProfileWCompletedEventArgs">
+<remarks/>
+</member>
+<member name="P:SysproQ.BLL.SysproUtilitiesService.GetLogonProfileWCompletedEventArgs.Result">
+<remarks/>
+</member>
+<member name="T:SysproQ.BLL.SysproUtilitiesService.RunCompletedEventHandler">
+<remarks/>
+</member>
+<member name="T:SysproQ.BLL.SysproUtilitiesService.RunCompletedEventArgs">
+<remarks/>
+</member>
+<member name="P:SysproQ.BLL.SysproUtilitiesService.RunCompletedEventArgs.Result">
+<remarks/>
+</member>
+</members>
+</doc>

@@ -1,0 +1,46 @@
+C:\Users\Moe\Documents\Visual Studio 2015\Projects\SysproQ\WcfService1\bin\ApplicationInsights.config
+C:\Users\Moe\Documents\Visual Studio 2015\Projects\SysproQ\WcfService1\bin\WcfService1.dll.config
+C:\Users\Moe\Documents\Visual Studio 2015\Projects\SysproQ\WcfService1\bin\WcfService1.dll
+C:\Users\Moe\Documents\Visual Studio 2015\Projects\SysproQ\WcfService1\bin\WcfService1.pdb
+C:\Users\Moe\Documents\Visual Studio 2015\Projects\SysproQ\WcfService1\bin\WcfService1.xml
+C:\Users\Moe\Documents\Visual Studio 2015\Projects\SysproQ\WcfService1\bin\Microsoft.AI.Agent.Intercept.dll
+C:\Users\Moe\Documents\Visual Studio 2015\Projects\SysproQ\WcfService1\bin\Microsoft.AI.DependencyCollector.dll
+C:\Users\Moe\Documents\Visual Studio 2015\Projects\SysproQ\WcfService1\bin\Microsoft.AI.PerfCounterCollector.dll
+C:\Users\Moe\Documents\Visual Studio 2015\Projects\SysproQ\WcfService1\bin\Microsoft.AI.ServerTelemetryChannel.dll
+C:\Users\Moe\Documents\Visual Studio 2015\Projects\SysproQ\WcfService1\bin\Microsoft.AI.Web.dll
+C:\Users\Moe\Documents\Visual Studio 2015\Projects\SysproQ\WcfService1\bin\Microsoft.AI.WindowsServer.dll
+C:\Users\Moe\Documents\Visual Studio 2015\Projects\SysproQ\WcfService1\bin\Microsoft.ApplicationInsights.dll
+C:\Users\Moe\Documents\Visual Studio 2015\Projects\SysproQ\WcfService1\bin\Microsoft.AI.DependencyCollector.xml
+C:\Users\Moe\Documents\Visual Studio 2015\Projects\SysproQ\WcfService1\bin\Microsoft.AI.ServerTelemetryChannel.xml
+C:\Users\Moe\Documents\Visual Studio 2015\Projects\SysproQ\WcfService1\bin\Microsoft.AI.Web.xml
+C:\Users\Moe\Documents\Visual Studio 2015\Projects\SysproQ\WcfService1\bin\Microsoft.AI.WindowsServer.xml
+C:\Users\Moe\Documents\Visual Studio 2015\Projects\SysproQ\WcfService1\bin\Microsoft.ApplicationInsights.xml
+C:\Users\Moe\Documents\Visual Studio 2015\Projects\SysproQ\WcfService1\obj\Debug\WcfService1.vbprojResolveAssemblyReference.cache
+C:\Users\Moe\Documents\Visual Studio 2015\Projects\SysproQ\WcfService1\obj\Debug\WcfService1.Resources.resources
+C:\Users\Moe\Documents\Visual Studio 2015\Projects\SysproQ\WcfService1\obj\Debug\WcfService1.vbproj.GenerateResource.Cache
+C:\Users\Moe\Documents\Visual Studio 2015\Projects\SysproQ\WcfService1\obj\Debug\WcfService1.dll
+C:\Users\Moe\Documents\Visual Studio 2015\Projects\SysproQ\WcfService1\obj\Debug\WcfService1.xml
+C:\Users\Moe\Documents\Visual Studio 2015\Projects\SysproQ\WcfService1\obj\Debug\WcfService1.pdb
+D:\SOFTWARE2\SysproQ\WcfService1\bin\ApplicationInsights.config
+D:\SOFTWARE2\SysproQ\WcfService1\bin\WcfService1.dll.config
+D:\SOFTWARE2\SysproQ\WcfService1\bin\WcfService1.dll
+D:\SOFTWARE2\SysproQ\WcfService1\bin\WcfService1.pdb
+D:\SOFTWARE2\SysproQ\WcfService1\bin\WcfService1.xml
+D:\SOFTWARE2\SysproQ\WcfService1\bin\Microsoft.AI.Agent.Intercept.dll
+D:\SOFTWARE2\SysproQ\WcfService1\bin\Microsoft.AI.DependencyCollector.dll
+D:\SOFTWARE2\SysproQ\WcfService1\bin\Microsoft.AI.PerfCounterCollector.dll
+D:\SOFTWARE2\SysproQ\WcfService1\bin\Microsoft.AI.ServerTelemetryChannel.dll
+D:\SOFTWARE2\SysproQ\WcfService1\bin\Microsoft.AI.Web.dll
+D:\SOFTWARE2\SysproQ\WcfService1\bin\Microsoft.AI.WindowsServer.dll
+D:\SOFTWARE2\SysproQ\WcfService1\bin\Microsoft.ApplicationInsights.dll
+D:\SOFTWARE2\SysproQ\WcfService1\bin\Microsoft.AI.DependencyCollector.xml
+D:\SOFTWARE2\SysproQ\WcfService1\bin\Microsoft.AI.ServerTelemetryChannel.xml
+D:\SOFTWARE2\SysproQ\WcfService1\bin\Microsoft.AI.Web.xml
+D:\SOFTWARE2\SysproQ\WcfService1\bin\Microsoft.AI.WindowsServer.xml
+D:\SOFTWARE2\SysproQ\WcfService1\bin\Microsoft.ApplicationInsights.xml
+D:\SOFTWARE2\SysproQ\WcfService1\obj\Debug\WcfService1.vbprojResolveAssemblyReference.cache
+D:\SOFTWARE2\SysproQ\WcfService1\obj\Debug\WcfService1.Resources.resources
+D:\SOFTWARE2\SysproQ\WcfService1\obj\Debug\WcfService1.vbproj.GenerateResource.Cache
+D:\SOFTWARE2\SysproQ\WcfService1\obj\Debug\WcfService1.dll
+D:\SOFTWARE2\SysproQ\WcfService1\obj\Debug\WcfService1.xml
+D:\SOFTWARE2\SysproQ\WcfService1\obj\Debug\WcfService1.pdb

@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<discovery xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns="http://schemas.xmlsoap.org/disco/">
+  <contractRef ref="http://localhost/SYSPROWebServices/query.asmx?wsdl" docRef="http://localhost/SYSPROWebServices/query.asmx" xmlns="http://schemas.xmlsoap.org/disco/scl/" />
+  <soap address="http://localhost/SYSPROWebServices/query.asmx" xmlns:q1="http://www.syspro.com/ns/query/" binding="q1:queryclassSoap" xmlns="http://schemas.xmlsoap.org/disco/soap/" />
+  <soap address="http://localhost/SYSPROWebServices/query.asmx" xmlns:q2="http://www.syspro.com/ns/query/" binding="q2:queryclassSoap12" xmlns="http://schemas.xmlsoap.org/disco/soap/" />
+</discovery>
