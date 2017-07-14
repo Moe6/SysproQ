@@ -5,17 +5,19 @@ Imports System.Xml
 
 Partial Public Class Form1
     Inherits DevExpress.XtraBars.Ribbon.RibbonForm
-
     Private _OrderHeader As SalesOrderHeader.OrderHeader
     Private _orderDetails As List(Of StockLine)
     Private _trnMsg As String
+
     Shared Sub New()
         DevExpress.UserSkins.BonusSkins.Register()
         DevExpress.Skins.SkinManager.EnableFormSkins()
     End Sub
+
     Public Sub New()
         InitializeComponent()
     End Sub
+
     Private Sub AppendTrnMessage(msg As String)
         If _trnmsg IsNot Nothing Then
             _trnMsg &= Environment.NewLine
@@ -24,6 +26,7 @@ Partial Public Class Form1
         End If
 
     End Sub
+
     Private Sub btnNew_ItemClick(sender As Object, e As DevExpress.XtraBars.ItemClickEventArgs) Handles btnNew.ItemClick
         _orderDetails = New List(Of StockLine)
         _OrderHeader = New SalesOrderHeader.OrderHeader
@@ -45,6 +48,7 @@ Partial Public Class Form1
         GridView1.OptionsBehavior.ReadOnly = False
         GridView1.OptionsBehavior.Editable = True
     End Sub
+
     Private Sub addNewRowInGroupMode(ByVal View As DevExpress.XtraGrid.Views.Grid.GridView)
         'Get the handle of the source data row 
         'The row will provide group column values for a new row 
@@ -148,6 +152,7 @@ Partial Public Class Form1
         End Try
 
     End Sub
+
 #Region "Xmlin build"
     Private Function CreateXmlin(hdr As SalesOrderHeader.OrderHeader, detail As List(Of StockLine)) As String
         'create hdr element
@@ -196,7 +201,6 @@ Partial Public Class Form1
                </StockLine>
     End Function
 #End Region
-
 
 #Region "Xml Serialization Deserialization"
     Private Sub SerializeToFile(obj As SalesOrderHeader.OrderHeader)
@@ -289,6 +293,7 @@ Partial Public Class Form1
         attr.Value & "'"))
     End Sub 'serializer_UnknownAttribute
 #End Region
+
     Private Function GetFullMessage(ex As Exception) As String
         Dim strBuild As New System.Text.StringBuilder
         If ex IsNot Nothing Then
@@ -314,4 +319,5 @@ Partial Public Class Form1
 
         Return strBuild.ToString
     End Function
+
 End Class

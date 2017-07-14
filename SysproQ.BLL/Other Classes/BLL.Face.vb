@@ -24,7 +24,7 @@ Public Class Face
         End If
         _trnmsg &= msg
     End Sub
-    Public Function CreateSalesOrder(Xmlin As String, salesorder As String, actiontype As String) As Enums.PostResults
+    Public Function CreateSalesOrder(Xmlin As String, salesorder As String, actiontype As String, sl As List(Of SoLines)) As Enums.PostResults
         Return PostSORTOI(Xmlin, salesorder, actiontype)
     End Function
 
@@ -34,7 +34,7 @@ Public Class Face
     Public Function ReserveStock(xmlin As String) As Enums.PostResults
         Return PostSORTRA(xmlin)
     End Function
-    Private Function PostSORTOI(xmlin As String, salesorder As String, actionType As String) As Enums.PostResults
+    Private Function PostSORTOI(xmlin As String, salesorder As String, actionType As String, slines As List(Of SoLines)) As Enums.PostResults
         ' xmlin = ReadFile("c:\temp\SysproQ_Test.xml")
         'xmlin = ReadFile(xmlin)
         'Parse xml in to object as xml

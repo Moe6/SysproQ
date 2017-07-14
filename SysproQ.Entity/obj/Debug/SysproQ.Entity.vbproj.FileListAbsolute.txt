@@ -38,4 +38,3 @@ D:\github\GyxiDev\SysproQ\SysproQ.Entity\obj\Debug\SysproQ.Entity.vbproj.Generat
 D:\github\GyxiDev\SysproQ\SysproQ.Entity\obj\Debug\SysproQ.Entity.dll
 D:\github\GyxiDev\SysproQ\SysproQ.Entity\obj\Debug\SysproQ.Entity.xml
 D:\github\GyxiDev\SysproQ\SysproQ.Entity\obj\Debug\SysproQ.Entity.pdb
-D:\github\GyxiDev\SysproQ\SysproQ.Entity\obj\Debug\SysproQ.Entity.vbprojResolveAssemblyReference.cache

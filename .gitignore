@@ -46,3 +46,8 @@ Network Trash Folder
 Temporary Items
 .apdisk
 *.cache
+*.pdb
+*.cache
+*.dll
+WcfServiceLibrary1/obj/Debug/WcfServiceLibrary1.vbprojResolveAssemblyReference.cache
+*.pdb

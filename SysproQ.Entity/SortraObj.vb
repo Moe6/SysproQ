@@ -7,3 +7,11 @@
     Public Property Qty As Decimal
     ' Public Property Lot As Decimal
 End Class
+
+Public Class SoLines
+    Public Property SalesOrder As String
+    Public Property PoLine As String
+    Public Property StockCode As String
+    Public Property LineAction As String
+
+End Class

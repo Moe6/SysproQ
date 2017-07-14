@@ -11,6 +11,7 @@ Partial Public Class SORTOI
         Private _trnMessage As String
         Public msgHelper As New Entity.MessagingHelper
         Private _transactionType As TransactionType
+        Private _soLines As List(Of SoLines)
 
         Private Sub AppendTrnMessage(msg As String)
             If _trnMessage IsNot Nothing Then
@@ -30,9 +31,10 @@ Partial Public Class SORTOI
             OrderMasterOnlyMaintain
         End Enum
 
-        Public Sub New(orderHdr As OrderHeaderDataObject, orderDetail As List(Of OrderDetailDataObject))
+        Public Sub New(orderHdr As OrderHeaderDataObject, orderDetail As List(Of OrderDetailDataObject), solns As List(Of SoLines))
             _masterData = orderHdr
             _detailData = orderDetail
+            _soLines = solns
         End Sub
 
         Private Function CreateXmlIn2(obj As SortraObj) As String Implements IBusinessObjects.CreateXmlIn2

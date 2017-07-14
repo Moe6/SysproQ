@@ -97,6 +97,7 @@ Public Class Service1
         Try
             ''get sales order into var
             If GetSalesOrderAndActionType(Xmlin) Then
+                Dim sls = GetSalesOrderLines(Xmlin)
                 result = f.CreateSalesOrder(Xmlin, _salesorder, _actionType)
                 'If sales order has been created then run sortra to reserve Stock
                 If result = PostResults.Success Then
@@ -126,6 +127,22 @@ Public Class Service1
         End If
         Return False
     End Function
+
+    Private Function GetSalesOrderLines(xmlin As String) As List(Of SoLines)
+        Dim foundLines As New List(Of SoLines)
+        Dim xele As XElement = XElement.Parse(xmlin)
+        Dim xLines = xele.Descendants("StockLine")
+        'Loop to get each line in xmlin
+        For Each line In xLines
+            Dim sl As New SoLines
+            sl.StockCode = line.Element("StockCode").Value
+            sl.PoLine = line.Element("PoLine")
+            sl.LineAction = line.Element("LineAction").Value
+            foundLines.Add(sl)
+        Next
+        Return foundLines
+    End Function
+
 
     Private Function CreateMyOwnXmlTemplate() As String
         Dim a = <Order>

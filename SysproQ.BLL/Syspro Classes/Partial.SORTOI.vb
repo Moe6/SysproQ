@@ -12,14 +12,16 @@ Partial Public Class SORTOI
     Private _msg As String
     Private _actionType As String
     Public ReadOnly Property PostResult As Enums.PostResults
+    Private _solines As List(Of SoLines)
     Public ReadOnly Property TrnMessage As String
         Get
             Return _msg
         End Get
     End Property
-    Public Sub New(Xmlin As String, signIn As SysproSignInObj, actionType As String)
+    Public Sub New(Xmlin As String, signIn As SysproSignInObj, actionType As String, slns As List(Of SoLines))
         _Xmlin = Xmlin
         _actionType = actionType
+        _solines = slns
         With signIn
             _signInInfo = New SysproSignInObj(.Username, .UserPassWord, .Company, .CompanyPassword)
         End With

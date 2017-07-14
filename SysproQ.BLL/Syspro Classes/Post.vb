@@ -204,12 +204,6 @@ Public Class Post
         End If
     End Sub
 
-    Private Function ParseXmlin(xmlin As String) As XElement
-        Dim parsedXml As XElement
-        parsedXml = XElement.Parse(xmlin)
-        Return parsedXml
-    End Function
-
     Private Function CheckSalesOrderPost(salesorder As String) As Boolean
         Dim b As New BLL.Query
         Dim result As Boolean
@@ -286,6 +280,12 @@ Public Class Post
     Private Sub GetCancellationResult()
 
     End Sub
+
+    Private Function ParseXmlin(xmlin As String) As XElement
+        Dim parsedXml As XElement
+        parsedXml = XElement.Parse(xmlin)
+        Return parsedXml
+    End Function
 
     'Private Function GetTransationReferenceValue(xDoc As XDocument, bo As Enums.BusinessObjectUsed) As String
     '    Dim reference As String = Nothing
