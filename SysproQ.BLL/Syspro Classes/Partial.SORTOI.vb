@@ -10,14 +10,16 @@ Partial Public Class SORTOI
     Private _PostOut As New SysproPostXmlOutResult
     Private _signInInfo As SysproSignInObj
     Private _msg As String
+    Private _actionType As String
     Public ReadOnly Property PostResult As Enums.PostResults
     Public ReadOnly Property TrnMessage As String
         Get
             Return _msg
         End Get
     End Property
-    Public Sub New(Xmlin As String, signIn As SysproSignInObj)
+    Public Sub New(Xmlin As String, signIn As SysproSignInObj, actionType As String)
         _Xmlin = Xmlin
+        _actionType = actionType
         With signIn
             _signInInfo = New SysproSignInObj(.Username, .UserPassWord, .Company, .CompanyPassword)
         End With
@@ -29,7 +31,7 @@ Partial Public Class SORTOI
         LoadDataIntoSalesObject()
         'Post To Syspro
         Dim p As New SORTOI.ProcessPost(OrderHdr.FirstOrDefault, orderDetails)
-        _PostOut = p.Execute(_signInInfo, salesorder)
+        _PostOut = p.Execute(_signInInfo, salesorder, _actionType)
         AppendTrnMessage(_msg, p.TrnMessage)
         Return Enums.PostResults.Success
     End Function

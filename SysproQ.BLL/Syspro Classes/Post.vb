@@ -22,18 +22,21 @@ Public Class Post
     Private signinInfo As SysproSignInObj
     Private _sorDetails As List(Of SorDetail)
     Private _postedOrder As List(Of SorDetail)
+    Private _actionType As String
+    Private _trnMessage As String = Nothing
+
     Public ReadOnly Property PostResult As SysproPostXmlOutResult
         Get
             Return _transactionXmlOut
         End Get
     End Property
 
-    Private _trnMessage As String = Nothing
     Public ReadOnly Property TrnMessage As String
         Get
             Return _trnMessage
         End Get
     End Property
+
     Private Sub AppendTrnMessage(msg As String)
         If _trnMessage IsNot Nothing Then
             _trnMessage &= Environment.NewLine
@@ -42,14 +45,16 @@ Public Class Post
     End Sub
 
     Public Sub New(loginInfo As SysproSignInObj, ByVal businessObj As String, ByVal xmlIn As String,
-                   ByVal xmlParam As String, Action)
+                   ByVal xmlParam As String, ActionType As String)
         _businessObject = businessObj
         _xmlIn = xmlIn
         _xmlParams = xmlParam
         _xmlOut = Nothing
         _transactionXmlOut = New SysproPostXmlOutResult
         signinInfo = loginInfo
+        _actionType = ActionType
     End Sub
+
     Public Sub New(loginInfo As SysproSignInObj, ByVal businessObj As String, ByVal xmlIn As String,
                    ByVal xmlParam As String, soDetails As List(Of SorDetail))
         _businessObject = businessObj
@@ -59,7 +64,9 @@ Public Class Post
         _transactionXmlOut = New SysproPostXmlOutResult
         signinInfo = loginInfo
         _sorDetails = soDetails
+
     End Sub
+
     Public Function Excecute() As Boolean
         Try
             With signinInfo
@@ -82,16 +89,20 @@ Public Class Post
             returnObj.XmlOut = _transactionXmlOut.XmlOut
 
             If _businessObject = "SORTOI" Then
-                'Query db to check if sales order items were succefully reserved
-                If CheckSalesOrderPost(salesorder) Then
-                    returnObj.Successful = True
-                    If _trnMessage Is Nothing Then
+                If _actionType = "A" Then
+                    'Query db to check if sales order items were succefully reserved
+                    If CheckSalesOrderPost(salesorder) Then
+                        returnObj.Successful = True
+                        If _trnMessage Is Nothing Then
+                            'Error would have occured in posting
+                            GetOtherErrors(returnObj)
+                        End If
+                    Else
                         'Error would have occured in posting
                         GetOtherErrors(returnObj)
                     End If
                 Else
-                    'Error would have occured in posting
-                    GetOtherErrors(returnObj)
+
                 End If
             Else
                 'read xml data
@@ -193,25 +204,6 @@ Public Class Post
         End If
     End Sub
 
-    Private Function GetTransationReferenceValue(xDoc As XDocument, bo As Enums.BusinessObjectUsed) As String
-        Dim reference As String = Nothing
-        Select Case bo
-            Case Enums.BusinessObjectUsed.PORTOI
-                'purchase order number
-                reference = xDoc.<postpurchaseorders>.<Order>.<Key>.<PurchaseOrder>.Value
-            Case Enums.BusinessObjectUsed.PORTOR
-                'grn number 
-                reference = xDoc.<postpurchaseorderreceipts>.<Item>.<Receipt>.<Grn>.Value
-            Case Enums.BusinessObjectUsed.SORTIC
-                'invoice number
-                reference = xDoc.<postsalesorderinvoice>.<Item>.<Key>.<InvoiceNumber>.Value
-            Case Enums.BusinessObjectUsed.SORTOI
-                'reserve stock
-                reference = xDoc.<PostSorAllocateReserved>.<item>.<key>.<SalesOrder>.Value
-        End Select
-        Return reference
-    End Function
-
     Private Function ParseXmlin(xmlin As String) As XElement
         Dim parsedXml As XElement
         parsedXml = XElement.Parse(xmlin)
@@ -290,6 +282,29 @@ Public Class Post
         'End If
         AppendTrnMessage("<StockLine><Status>NOK</Status></StockLine>")
     End Sub
+
+    Private Sub GetCancellationResult()
+
+    End Sub
+
+    'Private Function GetTransationReferenceValue(xDoc As XDocument, bo As Enums.BusinessObjectUsed) As String
+    '    Dim reference As String = Nothing
+    '    Select Case bo
+    '        Case Enums.BusinessObjectUsed.PORTOI
+    '            'purchase order number
+    '            reference = xDoc.<postpurchaseorders>.<Order>.<Key>.<PurchaseOrder>.Value
+    '        Case Enums.BusinessObjectUsed.PORTOR
+    '            'grn number 
+    '            reference = xDoc.<postpurchaseorderreceipts>.<Item>.<Receipt>.<Grn>.Value
+    '        Case Enums.BusinessObjectUsed.SORTIC
+    '            'invoice number
+    '            reference = xDoc.<postsalesorderinvoice>.<Item>.<Key>.<InvoiceNumber>.Value
+    '        Case Enums.BusinessObjectUsed.SORTOI
+    '            'reserve stock
+    '            reference = xDoc.<PostSorAllocateReserved>.<item>.<key>.<SalesOrder>.Value
+    '    End Select
+    '    Return reference
+    'End Function
 
 End Class
 

@@ -7,6 +7,7 @@ Public Class Service1
     Private msgHelper As New MessagingHelper
     Private _salesorder As String
     Private _trnMessage As String
+    Private _actionType As String
 
     Private Sub AppendTrnMessage(msg As String)
         If _trnMessage IsNot Nothing Then
@@ -95,8 +96,8 @@ Public Class Service1
         _salesorder = Nothing
         Try
             ''get sales order into var
-            If GetSalesOrder(Xmlin) Then
-                result = f.CreateSalesOrder(Xmlin, _salesorder)
+            If GetSalesOrderAndActionType(Xmlin) Then
+                result = f.CreateSalesOrder(Xmlin, _salesorder, _actionType)
                 'If sales order has been created then run sortra to reserve Stock
                 If result = PostResults.Success Then
                     _trnMessage = f.TrnMessage
@@ -115,10 +116,11 @@ Public Class Service1
         ' AppendTrnMessage("Post failed.")
         Return _trnMessage
     End Function
-    Private Function GetSalesOrder(xmlin As String) As Boolean
+    Private Function GetSalesOrderAndActionType(xmlin As String) As Boolean
         Dim xl As XElement
         xl = XElement.Parse(xmlin)
         _salesorder = xl.Element("SalesOrder").Value
+        _actionType = xl.Element("OrderActionType").Value
         If _salesorder IsNot Nothing Then
             Return True
         End If

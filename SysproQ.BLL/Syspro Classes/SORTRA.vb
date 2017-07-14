@@ -183,7 +183,7 @@ Public Class SORTRA
             Dim xmlin As String = CreateXmlIn2(item)
             Dim xmlparam As String = CreateXmlParams(False)
             Dim postResult As SysproPostXmlOutResult
-            Dim po As New Post(_signInInfo, GetName, xmlin, xmlparam)
+            Dim po As New Post(_signInInfo, GetName, xmlin, xmlparam, "A")
 
             postResult = po.ConfirmXmlOut()
             If postResult IsNot Nothing Then

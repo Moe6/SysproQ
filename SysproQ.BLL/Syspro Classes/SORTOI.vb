@@ -10,6 +10,7 @@ Partial Public Class SORTOI
         Private _detailData As List(Of OrderDetailDataObject)
         Private _trnMessage As String
         Public msgHelper As New Entity.MessagingHelper
+        Private _transactionType As TransactionType
 
         Private Sub AppendTrnMessage(msg As String)
             If _trnMessage IsNot Nothing Then
@@ -17,13 +18,12 @@ Partial Public Class SORTOI
             End If
             _trnMessage &= msg
         End Sub
+
         Public ReadOnly Property TrnMessage As String Implements IBusinessObjects.TrnMessage
             Get
                 Return _trnMessage
             End Get
         End Property
-        Private _transactionType As TransactionType
-
 
         Private Enum TransactionType
             SalesOrderCreateMaintain
@@ -34,9 +34,11 @@ Partial Public Class SORTOI
             _masterData = orderHdr
             _detailData = orderDetail
         End Sub
+
         Private Function CreateXmlIn2(obj As SortraObj) As String Implements IBusinessObjects.CreateXmlIn2
             Return Nothing
         End Function
+
         Private Function CreateTransmissionHeaderElement() As XElement
             Return <TransmissionHeader>
                        <TransmissionReference></TransmissionReference>
@@ -295,14 +297,14 @@ Partial Public Class SORTOI
             Return valid
         End Function
 
-        Public Function Execute(sigInfo As SysproSignInObj, salesorder As String) As SysproPostXmlOutResult
+        Public Function Execute(sigInfo As SysproSignInObj, salesorder As String, actiontype As String) As SysproPostXmlOutResult
             Dim postResult As SysproPostXmlOutResult = Nothing
             Dim xmlin As String = CreateXmlIn()
             Dim xmlParam As String = CreateXmlParams(False)
-            Dim P As New Post(sigInfo, "SORTOI", xmlin, xmlParam)
-            'PROCESS POST
+            Dim P As New Post(sigInfo, "SORTOI", xmlin, xmlParam, actiontype)
+            'Process Post
             If P.Excecute() Then
-                'READ REUTRNED RESULT
+                'Read returned result
                 postResult = P.ConfirmXmlOut(salesorder)
                 AppendTrnMessage(P.TrnMessage)
             Else
