@@ -174,52 +174,52 @@ Public Class SORTRA
     End Function
 
     Public Sub PostPerItem()
-        itemsPostFail = New List(Of SortraObj)
-        itemsPostSuccess = New List(Of SortraObj)
-        itemsPostWarning = New List(Of SortraObj)
-        Dim successCount As Integer
+        'itemsPostFail = New List(Of SortraObj)
+        'itemsPostSuccess = New List(Of SortraObj)
+        'itemsPostWarning = New List(Of SortraObj)
+        'Dim successCount As Integer
 
-        For Each item In obj
-            Dim xmlin As String = CreateXmlIn2(item)
-            Dim xmlparam As String = CreateXmlParams(False)
-            Dim postResult As SysproPostXmlOutResult
-            Dim po As New Post(_signInInfo, GetName, xmlin, xmlparam, "A")
+        'For Each item In obj
+        '    Dim xmlin As String = CreateXmlIn2(item)
+        '    Dim xmlparam As String = CreateXmlParams(False)
+        '    Dim postResult As SysproPostXmlOutResult
+        '    Dim po As New Post(_signInInfo, GetName, xmlin, xmlparam, "A")
 
-            postResult = po.ConfirmXmlOut()
-            If postResult IsNot Nothing Then
-                'Check for messages in Xml out
-                If postResult.WarningsFound Then
-                    ' If postResult.WarningMessages.Any(Function(c) c.ToUpper = "") Then
-                    For Each errm In postResult.WarningMessages
-                        AppendTrnMessage(errm.ToString & vbNewLine)
-                    Next
-                    '  End If
-                ElseIf postResult.ErrorsFound Then
-                    'If postResult.ErrorMessages.Any(Function(c) c.ToUpper = "") Then
-                    For Each errm In postResult.ErrorMessages
-                        AppendTrnMessage("Fail")
-                        AppendTrnMessage(errm.ToString & vbNewLine)
-                        itemsPostFail.Add(item)
-                    Next
-                    'End If
-                ElseIf postResult.Successful Then
-                    AppendTrnMessage("Success")
-                    successCount += 1
-                    itemsPostSuccess.Add(item)
-                End If
-            Else
-                'MsgBox(po.TrnMessage, ServiceNotification)
-            End If
-        Next
+        '    postResult = po.ConfirmXmlOut()
+        '    If postResult IsNot Nothing Then
+        '        'Check for messages in Xml out
+        '        If postResult.WarningsFound Then
+        '            ' If postResult.WarningMessages.Any(Function(c) c.ToUpper = "") Then
+        '            For Each errm In postResult.WarningMessages
+        '                AppendTrnMessage(errm.ToString & vbNewLine)
+        '            Next
+        '            '  End If
+        '        ElseIf postResult.ErrorsFound Then
+        '            'If postResult.ErrorMessages.Any(Function(c) c.ToUpper = "") Then
+        '            For Each errm In postResult.ErrorMessages
+        '                AppendTrnMessage("Fail")
+        '                AppendTrnMessage(errm.ToString & vbNewLine)
+        '                itemsPostFail.Add(item)
+        '            Next
+        '            'End If
+        '        ElseIf postResult.Successful Then
+        '            AppendTrnMessage("Success")
+        '            successCount += 1
+        '            itemsPostSuccess.Add(item)
+        '        End If
+        '    Else
+        '        'MsgBox(po.TrnMessage, ServiceNotification)
+        '    End If
+        'Next
 
-        'Evaluate Result
-        If successCount = itemsCount Then
-            TotalSuccess = True
-        ElseIf successCount > 0 Then
-            PartSuccess = True
-        Else
-            TotalFail = True
-        End If
+        ''Evaluate Result
+        'If successCount = itemsCount Then
+        '    TotalSuccess = True
+        'ElseIf successCount > 0 Then
+        '    PartSuccess = True
+        'Else
+        '    TotalFail = True
+        'End If
 
     End Sub
 

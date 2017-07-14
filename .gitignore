@@ -51,3 +51,7 @@ Temporary Items
 *.dll
 WcfServiceLibrary1/obj/Debug/WcfServiceLibrary1.vbprojResolveAssemblyReference.cache
 *.pdb
+*.dll
+*.tmp
+*.dll
+*.pdb

@@ -123,7 +123,7 @@ Partial Public Class SORTOI
 
         Private Function CreateStockLineElement(item As OrderDetailDataObject) As XElement
             Return <StockLine>
-                       <CustomerPoLine/>
+                       <CustomerPoLine><%= item.CustomerPoLine %></CustomerPoLine>
                        <LineActionType><%= item.LineActionType %></LineActionType>
                        <LineCancelCode/>
                        <StockCode><%= item.StockCode %></StockCode>
@@ -303,7 +303,7 @@ Partial Public Class SORTOI
             Dim postResult As SysproPostXmlOutResult = Nothing
             Dim xmlin As String = CreateXmlIn()
             Dim xmlParam As String = CreateXmlParams(False)
-            Dim P As New Post(sigInfo, "SORTOI", xmlin, xmlParam, actiontype)
+            Dim P As New Post(sigInfo, "SORTOI", xmlin, xmlParam, actiontype, _soLines)
             'Process Post
             If P.Excecute() Then
                 'Read returned result

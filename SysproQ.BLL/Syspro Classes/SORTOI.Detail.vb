@@ -24,7 +24,7 @@
         Public Property Price As String
         Public Property PriceUom As String
         Public Property UserDefined As String
-        Public Property NsProductClass As String
+        Public Property CustomerPoLine As String
 
         'Private Shared Function GetLineActionType(action As SysproActionType) As String
         '    Select Case action

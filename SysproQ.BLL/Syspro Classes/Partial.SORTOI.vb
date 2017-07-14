@@ -32,7 +32,7 @@ Partial Public Class SORTOI
         'Create the Objects to post to Syspro
         LoadDataIntoSalesObject()
         'Post To Syspro
-        Dim p As New SORTOI.ProcessPost(OrderHdr.FirstOrDefault, orderDetails)
+        Dim p As New SORTOI.ProcessPost(OrderHdr.FirstOrDefault, orderDetails, _solines)
         _PostOut = p.Execute(_signInInfo, salesorder, _actionType)
         AppendTrnMessage(_msg, p.TrnMessage)
         Return Enums.PostResults.Success
@@ -73,6 +73,7 @@ Partial Public Class SORTOI
                 .Price = detail.Element("Price").Value
                 .Warehouse = detail.Element("City").Value
                 .LineActionType = detail.Element("LineAction").Value
+                .CustomerPoLine = detail.Element("PoLine").Value
             End With
             orderDetails.Add(ordDet)
         Next

@@ -98,7 +98,7 @@ Public Class Service1
             ''get sales order into var
             If GetSalesOrderAndActionType(Xmlin) Then
                 Dim sls = GetSalesOrderLines(Xmlin)
-                result = f.CreateSalesOrder(Xmlin, _salesorder, _actionType)
+                result = f.CreateSalesOrder(Xmlin, _salesorder, _actionType, sls)
                 'If sales order has been created then run sortra to reserve Stock
                 If result = PostResults.Success Then
                     _trnMessage = f.TrnMessage
@@ -121,7 +121,7 @@ Public Class Service1
         Dim xl As XElement
         xl = XElement.Parse(xmlin)
         _salesorder = xl.Element("SalesOrder").Value
-        _actionType = xl.Element("OrderActionType").Value
+        _actionType = xl.Element("ActionType").Value
         If _salesorder IsNot Nothing Then
             Return True
         End If
@@ -143,18 +143,17 @@ Public Class Service1
         Return foundLines
     End Function
 
-
     Private Function CreateMyOwnXmlTemplate() As String
         Dim a = <Order>
                     <OrderHeader>
                         <SalesOrder>50006</SalesOrder>
                         <CustomerPoNumber>C1000</CustomerPoNumber>
                         <Customer>610001</Customer>
-                        <OrderActionType>A</OrderActionType>
+                        <ActionType>A</ActionType>
                     </OrderHeader>
                     <OrderDetails>
                         <StockLine>
-                            <CustomerPoLine>1</CustomerPoLine>
+                            <PoLine>1</PoLine>
                             <StockCode>0101</StockCode>
                             <OrderQty>5</OrderQty>
                             <Price>40000</Price>
@@ -162,7 +161,7 @@ Public Class Service1
                             <LineAction>A</LineAction>
                         </StockLine>
                         <StockLine>
-                            <CustomerPoLine>2</CustomerPoLine>
+                            <PoLine>2</PoLine>
                             <StockCode>0103</StockCode>
                             <OrderQty>20</OrderQty>
                             <Price>500000</Price>
@@ -171,7 +170,6 @@ Public Class Service1
                         </StockLine>
                     </OrderDetails>
                 </Order>
-
         Return a.ToString
     End Function
 
