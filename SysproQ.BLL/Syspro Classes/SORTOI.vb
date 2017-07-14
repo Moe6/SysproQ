@@ -33,9 +33,6 @@ Partial Public Class SORTOI
         Public Sub New(orderHdr As OrderHeaderDataObject, orderDetail As List(Of OrderDetailDataObject))
             _masterData = orderHdr
             _detailData = orderDetail
-            For Each item In _detailData
-                item.LineActionType = _masterData.OrderActionType
-            Next
         End Sub
         Private Function CreateXmlIn2(obj As SortraObj) As String Implements IBusinessObjects.CreateXmlIn2
             Return Nothing
@@ -169,23 +166,23 @@ Partial Public Class SORTOI
                    </StockLine>
         End Function
 
-        Private Function CreateFreightLineElement() As XElement
-            'If _masterData.DeliveryCharge > 0 Then
-            '    Return <FreightLine>
-            '               <CustomerPoLine>1</CustomerPoLine>
-            '               <LineActionType><%= _masterData.OrderActionType %></LineActionType>
-            '               <LineCancelCode/>
-            '               <FreightValue><%= _masterData.DeliveryCharge %></FreightValue>
-            '               <FreightCost>0</FreightCost>
-            '               <FreightTaxCode>A</FreightTaxCode>
-            '               <FreightNotTaxable/>
-            '               <FreightFstCode>B</FreightFstCode>
-            '               <FreightNotFstTaxable/>
-            '           </FreightLine>
-            'Else
-            '    Return Nothing
-            'End If
-        End Function
+        'Private Function CreateFreightLineElement() As XElement
+        '    'If _masterData.DeliveryCharge > 0 Then
+        '    '    Return <FreightLine>
+        '    '               <CustomerPoLine>1</CustomerPoLine>
+        '    '               <LineActionType><%= _masterData.OrderActionType %></LineActionType>
+        '    '               <LineCancelCode/>
+        '    '               <FreightValue><%= _masterData.DeliveryCharge %></FreightValue>
+        '    '               <FreightCost>0</FreightCost>
+        '    '               <FreightTaxCode>A</FreightTaxCode>
+        '    '               <FreightNotTaxable/>
+        '    '               <FreightFstCode>B</FreightFstCode>
+        '    '               <FreightNotFstTaxable/>
+        '    '           </FreightLine>
+        '    'Else
+        '    '    Return Nothing
+        '    'End If
+        'End Function
 
         Public Function CreateXmlParams(validateOnly As Boolean) As String Implements IBusinessObjects.CreateXmlParams
             Dim xmlparams = <?xml version="1.0" encoding="Windows-1252"?>
@@ -237,14 +234,14 @@ Partial Public Class SORTOI
         End Function
 
         Public Function CreateXmlIn() As String Implements IBusinessObjects.CreateXmlIn
-            Select Case _transactionType
-                Case TransactionType.OrderMasterOnlyMaintain
-                    Return CreateOrderMasterChangeOnlyXmlIn()
-                Case TransactionType.SalesOrderCreateMaintain
-                    Return CreateOrderMasterAndDetailXmlIn()
-                Case Else
-                    Return Nothing
-            End Select
+            'Select Case _transactionType
+            '    Case TransactionType.OrderMasterOnlyMaintain
+            '        Return CreateOrderMasterChangeOnlyXmlIn()
+            '    Case TransactionType.SalesOrderCreateMaintain
+            Return CreateOrderMasterAndDetailXmlIn()
+            '    Case Else
+            '        Return Nothing
+            'End Select
         End Function
 
         ''' <summary>
@@ -280,7 +277,6 @@ Partial Public Class SORTOI
                                 <%= CreateOrderMasterElement() %>
                                 <OrderDetails>
                                     <%= CreateOrderDetails() %>
-                                    <%= CreateFreightLineElement() %>
                                 </OrderDetails>
                             </Orders>
                         </SalesOrders>
@@ -304,32 +300,11 @@ Partial Public Class SORTOI
             Dim xmlin As String = CreateXmlIn()
             Dim xmlParam As String = CreateXmlParams(False)
             Dim P As New Post(sigInfo, "SORTOI", xmlin, xmlParam)
-            'pROCESS POST
+            'PROCESS POST
             If P.Excecute() Then
                 'READ REUTRNED RESULT
                 postResult = P.ConfirmXmlOut(salesorder)
                 AppendTrnMessage(P.TrnMessage)
-                'If postResult IsNot Nothing Then
-                '    'Check for messages in Xml out
-                '    If postResult.WarningsFound Then
-                '        ' If postResult.WarningMessages.Any(Function(c) c.ToUpper = "") Then
-                '        '  For Each errm In postResult.WarningMessages
-                '        AppendTrnMessage(P.TrnMessage)
-                '        ' Next
-                '        '  End If
-                '    ElseIf postResult.ErrorsFound Then
-                '        'If postResult.ErrorMessages.Any(Function(c) c.ToUpper = "") Then
-                '        postResult.Successful = False
-                '        'For Each errm In postResult.ErrorMessages
-                '        AppendTrnMessage(P.TrnMessage)
-                '        ' Next
-                '        'End If
-                '    ElseIf postResult.Successful Then
-
-                '    End If
-                'Else
-                '    AppendTrnMessage(P.TrnMessage)
-                'End If
             Else
                 AppendTrnMessage("Sales order creation failed.")
                 AppendTrnMessage(P.TrnMessage)

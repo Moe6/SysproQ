@@ -100,7 +100,7 @@ Partial Public Class Form1
             obj = New List(Of StockLine)
         End If
 
-        Dim ar As New StockLine With {.PoLine = line, .Qty = qty, .Price = price, .StockCode = stockcode, .City = wh}
+        Dim ar As New StockLine With {.PoLine = line, .Qty = qty, .Price = price, .StockCode = stockcode, .City = wh, .LineAction = "A"}
         obj.Add(ar)
     End Sub
     Private Sub btnAddLine_ItemClick(sender As Object, e As DevExpress.XtraBars.ItemClickEventArgs) Handles btnAddLine.ItemClick
@@ -172,7 +172,7 @@ Partial Public Class Form1
                    <SalesOrder><%= hdr.SalesOrder %></SalesOrder>
                    <CustomerPoNumber><%= hdr.PO %></CustomerPoNumber>
                    <Customer><%= hdr.Customer %></Customer>
-                   <OrderActionType>A</OrderActionType>
+                   <OrderActionType><%= hdr.ActionType %></OrderActionType>
                </OrderHeader>
     End Function
     Private Function CreateDetailElement(details As List(Of StockLine)) As XElement()
@@ -191,6 +191,8 @@ Partial Public Class Form1
                    <StockCode><%= detail.StockCode %></StockCode>
                    <OrderQty><%= detail.Qty %></OrderQty>
                    <Price><%= detail.Price %></Price>
+                   <LineAction><%= detail.LineAction %></LineAction>
+                   <Warehouse><%= detail.City %></Warehouse>
                </StockLine>
     End Function
 #End Region

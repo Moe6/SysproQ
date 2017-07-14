@@ -32,26 +32,6 @@ Partial Public Class SORTOI
         _PostOut = p.Execute(_signInInfo, salesorder)
         AppendTrnMessage(_msg, p.TrnMessage)
         Return Enums.PostResults.Success
-        'If _PostOut IsNot Nothing Then
-        '    If _PostOut.ErrorsFound Then
-        '        AppendTrnMessage(_msg, p.TrnMessage)
-        '        Return Enums.PostResults.Fail
-        '    End If
-
-        '    If _PostOut.Successful Then
-        '        Return Enums.PostResults.Success
-        '    Else
-        '        AppendTrnMessage(_msg, p.TrnMessage)
-        '        Return Enums.PostResults.Partly
-        '    End If
-        'Else
-        '    If p.TrnMessage IsNot Nothing Then
-        '        AppendTrnMessage(_msg, p.TrnMessage)
-        '    Else
-        '        AppendTrnMessage(_msg, "Sales order creation failed.")
-        '    End If
-        'End If
-        'Return Nothing
     End Function
 
     Private Function ParseXmlin() As XElement
@@ -88,6 +68,7 @@ Partial Public Class SORTOI
                 .OrderQty = detail.Element("Qty").Value
                 .Price = detail.Element("Price").Value
                 .Warehouse = detail.Element("City").Value
+                .LineActionType = detail.Element("LineAction").Value
             End With
             orderDetails.Add(ordDet)
         Next

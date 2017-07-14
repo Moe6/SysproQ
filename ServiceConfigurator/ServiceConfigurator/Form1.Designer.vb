@@ -52,6 +52,7 @@
         Me.PanelControl1 = New DevExpress.XtraEditors.PanelControl()
         Me.rowPO = New DevExpress.XtraVerticalGrid.Rows.EditorRow()
         Me.rowCustomer = New DevExpress.XtraVerticalGrid.Rows.EditorRow()
+        Me.colLineAction = New DevExpress.XtraGrid.Columns.GridColumn()
         CType(Me.ribbonControl1, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.LayoutControl1, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.LayoutControl1.SuspendLayout()
@@ -76,30 +77,30 @@
         Me.ribbonControl1.Name = "ribbonControl1"
         Me.ribbonControl1.Pages.AddRange(New DevExpress.XtraBars.Ribbon.RibbonPage() {Me.ribbonPage1})
         Me.ribbonControl1.RibbonStyle = DevExpress.XtraBars.Ribbon.RibbonControlStyle.Office2010
-        Me.ribbonControl1.Size = New System.Drawing.Size(974, 144)
+        Me.ribbonControl1.Size = New System.Drawing.Size(974, 143)
         '
         'btnNew
         '
         Me.btnNew.Caption = "Create New Order"
-        Me.btnNew.Glyph = CType(resources.GetObject("btnNew.Glyph"), System.Drawing.Image)
         Me.btnNew.Id = 1
-        Me.btnNew.LargeGlyph = CType(resources.GetObject("btnNew.LargeGlyph"), System.Drawing.Image)
+        Me.btnNew.ImageOptions.Image = CType(resources.GetObject("btnNew.ImageOptions.Image"), System.Drawing.Image)
+        Me.btnNew.ImageOptions.LargeImage = CType(resources.GetObject("btnNew.ImageOptions.LargeImage"), System.Drawing.Image)
         Me.btnNew.Name = "btnNew"
         '
         'btnAddLine
         '
         Me.btnAddLine.Caption = "Add New Line"
-        Me.btnAddLine.Glyph = CType(resources.GetObject("btnAddLine.Glyph"), System.Drawing.Image)
         Me.btnAddLine.Id = 2
-        Me.btnAddLine.LargeGlyph = CType(resources.GetObject("btnAddLine.LargeGlyph"), System.Drawing.Image)
+        Me.btnAddLine.ImageOptions.Image = CType(resources.GetObject("btnAddLine.ImageOptions.Image"), System.Drawing.Image)
+        Me.btnAddLine.ImageOptions.LargeImage = CType(resources.GetObject("btnAddLine.ImageOptions.LargeImage"), System.Drawing.Image)
         Me.btnAddLine.Name = "btnAddLine"
         '
         'btnPost
         '
         Me.btnPost.Caption = "Post"
-        Me.btnPost.Glyph = CType(resources.GetObject("btnPost.Glyph"), System.Drawing.Image)
         Me.btnPost.Id = 3
-        Me.btnPost.LargeGlyph = CType(resources.GetObject("btnPost.LargeGlyph"), System.Drawing.Image)
+        Me.btnPost.ImageOptions.Image = CType(resources.GetObject("btnPost.ImageOptions.Image"), System.Drawing.Image)
+        Me.btnPost.ImageOptions.LargeImage = CType(resources.GetObject("btnPost.ImageOptions.LargeImage"), System.Drawing.Image)
         Me.btnPost.Name = "btnPost"
         '
         'ribbonPage1
@@ -126,7 +127,7 @@
         Me.LayoutControl1.Location = New System.Drawing.Point(2, 2)
         Me.LayoutControl1.Name = "LayoutControl1"
         Me.LayoutControl1.Root = Me.LayoutControlGroup1
-        Me.LayoutControl1.Size = New System.Drawing.Size(970, 426)
+        Me.LayoutControl1.Size = New System.Drawing.Size(970, 427)
         Me.LayoutControl1.TabIndex = 1
         Me.LayoutControl1.Text = "LayoutControl1"
         '
@@ -171,7 +172,7 @@
         Me.GridControl1.MainView = Me.GridView1
         Me.GridControl1.MenuManager = Me.ribbonControl1
         Me.GridControl1.Name = "GridControl1"
-        Me.GridControl1.Size = New System.Drawing.Size(946, 274)
+        Me.GridControl1.Size = New System.Drawing.Size(946, 275)
         Me.GridControl1.TabIndex = 4
         Me.GridControl1.ViewCollection.AddRange(New DevExpress.XtraGrid.Views.Base.BaseView() {Me.GridView1})
         '
@@ -181,7 +182,7 @@
         '
         'GridView1
         '
-        Me.GridView1.Columns.AddRange(New DevExpress.XtraGrid.Columns.GridColumn() {Me.colPoLine, Me.colWarehouse, Me.colStockCode, Me.colQty, Me.colPrice})
+        Me.GridView1.Columns.AddRange(New DevExpress.XtraGrid.Columns.GridColumn() {Me.colPoLine, Me.colWarehouse, Me.colStockCode, Me.colLineAction, Me.colQty, Me.colPrice})
         Me.GridView1.GridControl = Me.GridControl1
         Me.GridView1.Name = "GridView1"
         '
@@ -205,21 +206,21 @@
         Me.colStockCode.FieldName = "StockCode"
         Me.colStockCode.Name = "colStockCode"
         Me.colStockCode.Visible = True
-        Me.colStockCode.VisibleIndex = 2
+        Me.colStockCode.VisibleIndex = 3
         '
         'colQty
         '
         Me.colQty.FieldName = "Qty"
         Me.colQty.Name = "colQty"
         Me.colQty.Visible = True
-        Me.colQty.VisibleIndex = 3
+        Me.colQty.VisibleIndex = 4
         '
         'colPrice
         '
         Me.colPrice.FieldName = "Price"
         Me.colPrice.Name = "colPrice"
         Me.colPrice.Visible = True
-        Me.colPrice.VisibleIndex = 4
+        Me.colPrice.VisibleIndex = 5
         '
         'LayoutControlGroup1
         '
@@ -229,8 +230,7 @@
         Me.LayoutControlGroup1.Items.AddRange(New DevExpress.XtraLayout.BaseLayoutItem() {Me.LayoutControlItem1, Me.LayoutControlItem2})
         Me.LayoutControlGroup1.Location = New System.Drawing.Point(0, 0)
         Me.LayoutControlGroup1.Name = "LayoutControlGroup1"
-        Me.LayoutControlGroup1.Size = New System.Drawing.Size(970, 426)
-        Me.LayoutControlGroup1.Text = "LayoutControlGroup1"
+        Me.LayoutControlGroup1.Size = New System.Drawing.Size(970, 427)
         Me.LayoutControlGroup1.TextVisible = False
         '
         'LayoutControlItem1
@@ -239,8 +239,7 @@
         Me.LayoutControlItem1.CustomizationFormText = "LayoutControlItem1"
         Me.LayoutControlItem1.Location = New System.Drawing.Point(0, 128)
         Me.LayoutControlItem1.Name = "LayoutControlItem1"
-        Me.LayoutControlItem1.Size = New System.Drawing.Size(950, 278)
-        Me.LayoutControlItem1.Text = "LayoutControlItem1"
+        Me.LayoutControlItem1.Size = New System.Drawing.Size(950, 279)
         Me.LayoutControlItem1.TextSize = New System.Drawing.Size(0, 0)
         Me.LayoutControlItem1.TextVisible = False
         '
@@ -251,7 +250,6 @@
         Me.LayoutControlItem2.Location = New System.Drawing.Point(0, 0)
         Me.LayoutControlItem2.Name = "LayoutControlItem2"
         Me.LayoutControlItem2.Size = New System.Drawing.Size(950, 128)
-        Me.LayoutControlItem2.Text = "LayoutControlItem2"
         Me.LayoutControlItem2.TextSize = New System.Drawing.Size(0, 0)
         Me.LayoutControlItem2.TextVisible = False
         '
@@ -259,9 +257,9 @@
         '
         Me.PanelControl1.Controls.Add(Me.LayoutControl1)
         Me.PanelControl1.Dock = System.Windows.Forms.DockStyle.Fill
-        Me.PanelControl1.Location = New System.Drawing.Point(0, 144)
+        Me.PanelControl1.Location = New System.Drawing.Point(0, 143)
         Me.PanelControl1.Name = "PanelControl1"
-        Me.PanelControl1.Size = New System.Drawing.Size(974, 430)
+        Me.PanelControl1.Size = New System.Drawing.Size(974, 431)
         Me.PanelControl1.TabIndex = 2
         '
         'rowPO
@@ -275,6 +273,14 @@
         Me.rowCustomer.Name = "rowCustomer"
         Me.rowCustomer.Properties.Caption = "Customer"
         Me.rowCustomer.Properties.FieldName = "Customer"
+        '
+        'colLineAction
+        '
+        Me.colLineAction.Caption = "Line Action"
+        Me.colLineAction.FieldName = "LineAction"
+        Me.colLineAction.Name = "colLineAction"
+        Me.colLineAction.Visible = True
+        Me.colLineAction.VisibleIndex = 2
         '
         'Form1
         '
@@ -335,4 +341,5 @@
     Friend WithEvents rowCustomer1 As DevExpress.XtraVerticalGrid.Rows.EditorRow
     Friend WithEvents rowActionType As DevExpress.XtraVerticalGrid.Rows.EditorRow
     Friend WithEvents colWarehouse As DevExpress.XtraGrid.Columns.GridColumn
+    Friend WithEvents colLineAction As DevExpress.XtraGrid.Columns.GridColumn
 End Class

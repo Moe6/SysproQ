@@ -56,14 +56,14 @@ Public Class Face
     End Function
 
     Private Function GetLogininfo() As SysproSignInObj
-        'username = "ARPOS"
-        'uPass = ""
-        'company = "T"
-        'coPass = ""
-        username = "ADMIN"
-        uPass = "admin"
-        company = "C"
+        username = "ARPOS"
+        uPass = ""
+        company = "T"
         coPass = ""
+        'username = "ADMIN"
+        'uPass = "admin"
+        'company = "C"
+        'coPass = ""
         Return New SysproSignInObj(username, uPass, company, coPass)
     End Function
 

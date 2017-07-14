@@ -42,7 +42,7 @@ Public Class Post
     End Sub
 
     Public Sub New(loginInfo As SysproSignInObj, ByVal businessObj As String, ByVal xmlIn As String,
-                   ByVal xmlParam As String)
+                   ByVal xmlParam As String, Action)
         _businessObject = businessObj
         _xmlIn = xmlIn
         _xmlParams = xmlParam
@@ -70,52 +70,10 @@ Public Class Post
 
         Catch ex As Exception
             AppendTrnMessage("Syspro Posting Failure" & vbCrLf & vbCrLf & "Exception: " & msgHelper.GetFullMessage(ex))
-        Finally
-            ' Logoff(sysproUser)
         End Try
-        'End If
+
         Return _transactionXmlOut.XmlOut IsNot Nothing
     End Function
-
-    Private Function Logon(utilityObj As SysproUtilityObject) As String
-        Dim sysproUser As String = Nothing
-        Try
-            With utilityObj
-                'Using c As New SysproUtilitiesService.utilitiesclassSoapClient
-                '    sysproUser = c.Logon(.Username, .UserPW, .Company, .CompanyPW, 0, 0, 0, "")
-                'End Using
-                'Create the WCF Instance
-                _wcf = New SYSPROWCFServicesClient("net.tcp://localhost:20000/SYSPROWCFService/Rest", SYSPROWCFBinding.NetTcp, .Username, .UserPW, .Company, .CompanyPW)
-                'Using wsUtils As New SysproUtilitiesService.utilitiesclass
-                '    sysproUser = wsUtils.Logon(.Username, .UserPW, .Company, .CompanyPW, 0, 0, 0, "")
-                'End Using
-            End With
-        Catch ex As Exception
-            AppendTrnMessage("Syspro Logon Failure for " & utilityObj.Username &
-                             utilityObj.UserPW & utilityObj.Company & utilityObj.CompanyPW & vbCrLf & vbCrLf &
-                             "Exception: " & msgHelper.GetFullMessage(ex))
-            sysproUser = Nothing
-        End Try
-        Return sysproUser
-    End Function
-
-    'Private Function Logoff(sysproUser As String) As Boolean
-    '    'Dim trnSuccess As Boolean = False
-    '    'Try
-    '    '    Using wsUtils As New SysproUtilitiesService.utilitiesclassSoapClient
-    '    '        Dim result As String = wsUtils.Logoff(sysproUser)
-    '    '    End Using
-    '    '    'Using wsUtils As New SysproUtilitiesService.utilitiesclass
-
-    '    '    '    Dim result As String = wsUtils.Logoff(sysproUser)
-    '    '    'End Using
-    '    '    trnSuccess = True
-    '    'Catch ex As Exception
-    '    '    AppendTrnMessage("Syspro Logoff Failure" & vbCrLf & vbCrLf & "Exception: " & msgHelper.Getfullmessage(ex))
-    '    '    sysproUser = Nothing
-    '    'End Try
-    '    'Return trnSuccess
-    'End Function
 
     Public Function ConfirmXmlOut(Optional salesorder As String = "") As SysproPostXmlOutResult
         Dim returnObj As SysproPostXmlOutResult = Nothing
@@ -306,30 +264,31 @@ Public Class Post
     End Function
 
     Private Sub GetOtherErrors(ByRef returnObj As SysproPostXmlOutResult)
-        'read xml data
-        Dim xDoc = XDocument.Parse(_transactionXmlOut.XmlOut)
-        'get any errors if exists
-        Dim errortags = xDoc.Descendants("ErrorDescription")
-        If errortags.Count > 0 Then
-            returnObj.ErrorsFound = True
-            _transactionXmlOut.ErrorsFound = True
-            For Each et As XElement In errortags
-                _transactionXmlOut.ErrorMessages.Add(Trim(et.Value.ToString))
-                AppendTrnMessage(Trim(et.Value.ToString))
-                returnObj.ErrorMessages.Add(Trim(et.Value.ToString))
-            Next
-        End If
-        'get any warnings if exists
-        Dim warningtags = xDoc.Descendants("WarningMessages")
-        If warningtags.Count > 0 Then
-            returnObj.WarningsFound = True
-            _transactionXmlOut.WarningsFound = True
-            For Each wt In warningtags
-                _transactionXmlOut.WarningMessages.Add(wt.Value.ToString)
-                AppendTrnMessage(Trim(wt.Value.ToString))
-                returnObj.WarningMessages.Add(wt.Value.ToString)
-            Next
-        End If
+        ''read xml data
+        'Dim xDoc = XDocument.Parse(_transactionXmlOut.XmlOut)
+        ''get any errors if exists
+        'Dim errortags = xDoc.Descendants("ErrorDescription")
+        'If errortags.Count > 0 Then
+        '    returnObj.ErrorsFound = True
+        '    _transactionXmlOut.ErrorsFound = True
+        '    For Each et As XElement In errortags
+        '        _transactionXmlOut.ErrorMessages.Add(Trim(et.Value.ToString))
+        '        AppendTrnMessage(Trim(et.Value.ToString))
+        '        returnObj.ErrorMessages.Add(Trim(et.Value.ToString))
+        '    Next
+        'End If
+        ''get any warnings if exists
+        'Dim warningtags = xDoc.Descendants("WarningMessages")
+        'If warningtags.Count > 0 Then
+        '    returnObj.WarningsFound = True
+        '    _transactionXmlOut.WarningsFound = True
+        '    For Each wt In warningtags
+        '        _transactionXmlOut.WarningMessages.Add(wt.Value.ToString)
+        '        AppendTrnMessage(Trim(wt.Value.ToString))
+        '        returnObj.WarningMessages.Add(wt.Value.ToString)
+        '    Next
+        'End If
+        AppendTrnMessage("<StockLine><Status>NOK</Status></StockLine>")
     End Sub
 
 End Class
