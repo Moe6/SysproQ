@@ -377,3 +377,4 @@ C:\Development\SysproQ\ServiceConfigurator\ServiceConfigurator\obj\Debug\Service
 C:\Development\SysproQ\ServiceConfigurator\ServiceConfigurator\obj\Debug\ServiceConfigurator.Resources.resources
 C:\Development\SysproQ\ServiceConfigurator\ServiceConfigurator\obj\Debug\ServiceConfigurator.vbproj.GenerateResource.Cache
 C:\Development\SysproQ\ServiceConfigurator\ServiceConfigurator\obj\Debug\ServiceConfigurator.exe.licenses
+C:\Development\SysproQ\ServiceConfigurator\ServiceConfigurator\obj\Debug\ServiceConfigurator.vbprojResolveAssemblyReference.cache
