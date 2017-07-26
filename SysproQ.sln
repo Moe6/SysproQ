@@ -36,10 +36,7 @@ Project("{E24C65DC-7377-472B-9ABA-BC803B73C61A}") = "SysproQIISHost", "SysproQII
 		DefaultWebSiteLanguage = "Visual Basic"
 	EndProjectSection
 EndProject
-Project("{6141683F-8A12-4E36-9623-2EB02B2C2303}") = "ServiceConfiguratorSetup", "ServiceConfigurator\ServiceConfiguratorSetup\ServiceConfiguratorSetup.isproj", "{1E455559-9012-4F04-9B69-82532B621811}"
-	ProjectSection(ProjectDependencies) = postProject
-		{04473383-6F5C-40F3-85A4-960BE62B218F} = {04473383-6F5C-40F3-85A4-960BE62B218F}
-	EndProjectSection
+Project("{54435603-DBB4-11D2-8724-00A0C9A8B90C}") = "ConfiguratorSetup1", "ConfiguratorSetup1\ConfiguratorSetup1.vdproj", "{06C00636-76EA-4ADD-9B6E-B5CA2DB5F1D8}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -110,16 +107,11 @@ Global
 		{B8CE479F-F644-4BBB-B2F2-A51922A1BA1B}.Release|Any CPU.Build.0 = Debug|Any CPU
 		{B8CE479F-F644-4BBB-B2F2-A51922A1BA1B}.SingleImage|Any CPU.ActiveCfg = Debug|Any CPU
 		{B8CE479F-F644-4BBB-B2F2-A51922A1BA1B}.SingleImage|Any CPU.Build.0 = Debug|Any CPU
-		{1E455559-9012-4F04-9B69-82532B621811}.CD_ROM|Any CPU.ActiveCfg = CD_ROM
-		{1E455559-9012-4F04-9B69-82532B621811}.CD_ROM|Any CPU.Build.0 = CD_ROM
-		{1E455559-9012-4F04-9B69-82532B621811}.Debug|Any CPU.ActiveCfg = DVD-5
-		{1E455559-9012-4F04-9B69-82532B621811}.Debug|Any CPU.Build.0 = DVD-5
-		{1E455559-9012-4F04-9B69-82532B621811}.DVD-5|Any CPU.ActiveCfg = DVD-5
-		{1E455559-9012-4F04-9B69-82532B621811}.DVD-5|Any CPU.Build.0 = DVD-5
-		{1E455559-9012-4F04-9B69-82532B621811}.Release|Any CPU.ActiveCfg = SingleImage
-		{1E455559-9012-4F04-9B69-82532B621811}.Release|Any CPU.Build.0 = SingleImage
-		{1E455559-9012-4F04-9B69-82532B621811}.SingleImage|Any CPU.ActiveCfg = SingleImage
-		{1E455559-9012-4F04-9B69-82532B621811}.SingleImage|Any CPU.Build.0 = SingleImage
+		{06C00636-76EA-4ADD-9B6E-B5CA2DB5F1D8}.CD_ROM|Any CPU.ActiveCfg = Release
+		{06C00636-76EA-4ADD-9B6E-B5CA2DB5F1D8}.Debug|Any CPU.ActiveCfg = Debug
+		{06C00636-76EA-4ADD-9B6E-B5CA2DB5F1D8}.DVD-5|Any CPU.ActiveCfg = Debug
+		{06C00636-76EA-4ADD-9B6E-B5CA2DB5F1D8}.Release|Any CPU.ActiveCfg = Release
+		{06C00636-76EA-4ADD-9B6E-B5CA2DB5F1D8}.SingleImage|Any CPU.ActiveCfg = Release
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
