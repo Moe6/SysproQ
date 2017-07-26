@@ -373,7 +373,6 @@ C:\Development\SysproQ\ServiceConfigurator\ServiceConfigurator\bin\Debug\de\DevE
 C:\Development\SysproQ\ServiceConfigurator\ServiceConfigurator\bin\Debug\es\DevExpress.XtraTreeList.v17.1.resources.dll
 C:\Development\SysproQ\ServiceConfigurator\ServiceConfigurator\bin\Debug\ja\DevExpress.XtraTreeList.v17.1.resources.dll
 C:\Development\SysproQ\ServiceConfigurator\ServiceConfigurator\bin\Debug\ru\DevExpress.XtraTreeList.v17.1.resources.dll
-C:\Development\SysproQ\ServiceConfigurator\ServiceConfigurator\obj\Debug\ServiceConfigurator.vbprojResolveAssemblyReference.cache
 C:\Development\SysproQ\ServiceConfigurator\ServiceConfigurator\obj\Debug\ServiceConfigurator.Form1.resources
 C:\Development\SysproQ\ServiceConfigurator\ServiceConfigurator\obj\Debug\ServiceConfigurator.Resources.resources
 C:\Development\SysproQ\ServiceConfigurator\ServiceConfigurator\obj\Debug\ServiceConfigurator.vbproj.GenerateResource.Cache
