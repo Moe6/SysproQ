@@ -263,3 +263,6 @@ ServiceConfigurator/ServiceConfigurator/Form1.resx
 ServiceConfigurator/ServiceConfigurator/ServiceConfigurator.vbproj
 .vs/config/applicationhost.config
 .vs/config/applicationhost.config
+*.cache
+.vs/SysproQ/v14/.suo
+*.cache
