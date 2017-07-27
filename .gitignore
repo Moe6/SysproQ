@@ -266,3 +266,7 @@ ServiceConfigurator/ServiceConfigurator/ServiceConfigurator.vbproj
 *.cache
 .vs/SysproQ/v14/.suo
 *.cache
+*.suo
+*.suo
+.vs/SysproQ/v14/.suo
+*.suo
