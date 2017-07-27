@@ -137,7 +137,17 @@ Public Class Service1
             Dim sl As New SoLines
             sl.StockCode = line.Element("StockCode").Value
             sl.PoLine = line.Element("PoLine")
-            sl.LineAction = line.Element("LineAction").Value
+            Select Case _actionType
+                Case "D"
+                    sl.LineAction = "D"
+                Case "C"
+                    sl.LineAction = line.Element("LineAction").Value
+                Case "A"
+                    sl.LineAction = "A"
+                Case Else
+                    sl.LineAction = line.Element("LineAction").Value
+            End Select
+
             foundLines.Add(sl)
         Next
         Return foundLines

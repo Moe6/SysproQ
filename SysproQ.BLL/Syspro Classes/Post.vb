@@ -22,6 +22,7 @@ Public Class Post
     Private signinInfo As SysproSignInObj
     Private _sorDetails As List(Of SorDetail)
     Private _postedOrder As List(Of SorDetail)
+    Private _omaster As SorMaster
     Private _actionType As String
     Private _trnMessage As String = Nothing
     Private _soLines As List(Of SoLines)
@@ -212,6 +213,7 @@ Public Class Post
         Dim result As Boolean
         Dim msg As String
         'Fill the created sales order
+        _omaster = b.FillSorMaster(salesorder)
         _postedOrder = b.FillSorDetails(salesorder)
         If _postedOrder.Count > 0 Then
             'Need to fomrat headers
@@ -261,7 +263,6 @@ Public Class Post
 
     Private Function FormatOtherResultMsg(msg As String) As XElement
         Return <StockLine>
-                   <StockCode><%= "" %></StockCode>
                    <Post2Result><%= msg %></Post2Result>
                    <Status><%= "NOK" %></Status>
                </StockLine>
@@ -302,22 +303,32 @@ Public Class Post
     Private Sub GetCancellationResult(salesorder As String)
         'Fill the created sales order
         Dim b As New BLL.Query
+        _omaster = b.FillSorMaster(salesorder)
         _postedOrder = b.FillSorDetails(salesorder)
-        If _postedOrder.Count > 0 Then
-            For Each item In _soLines
-                If Not _postedOrder.Where(Function(c) c.MStockCode = item.StockCode).Any Then
-                    'if entry is not found it means it has been canceled
-                    AppendTrnMessage(FormatCancelResult(item, "Cancelled", "OK").ToString)
+
+        If _omaster IsNot Nothing Then
+            'check order status
+            If _omaster.CancelledFlag = "Y" Then
+                'Order was cancelled, no need to check lines
+                AppendTrnMessage("<Order><Msg>Order Cancelled</Msg><Status>OK</Status></Order>")
+            Else
+                If _postedOrder.Count > 0 Then
+                    For Each item In _soLines
+                        If Not _postedOrder.Where(Function(c) c.MStockCode = item.StockCode).Any Then
+                            'if entry is not found it means it has been canceled
+                            AppendTrnMessage(FormatCancelResult(item, "Cancelled", "OK").ToString)
+                        Else
+                            'entry found therefore was not cancelled
+                            AppendTrnMessage(FormatCancelResult(item, "Not Cancelled", "NOK").ToString)
+                        End If
+                    Next
                 Else
-                    'entry found therefore was not cancelled
-                    AppendTrnMessage(FormatCancelResult(item, "Not Cancelled", "NOK").ToString)
+                    'Order header dentified but no lines found
+                    AppendTrnMessage("<Order><Msg>Could not identify order lines.</Msg><Status>NOK</Status></Order>")
                 End If
-            Next
-        Else
-            'This means all lines have been cancelled 
-            'message should be OK
-            AppendTrnMessage("<Order><Msg>Order Cancelled</Msg><Status>OK</Status></Order>")
+            End If
         End If
+
     End Sub
 
     Private Function ParseXmlin(xmlin As String) As XElement

@@ -6,6 +6,8 @@
     <edmx:Diagrams>
       <Diagram DiagramId="0394b3c49c324fae8837bf99f93a778b" Name="Diagram1" ZoomLevel="72">
         <EntityTypeShape EntityType="SysproModel.SorDetail" Width="1.5" PointX="0.75" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="SysproModel.SorMaster" Width="1.5" PointX="3.5" PointY="1.375" />
+        <AssociationConnector Association="SysproModel.Syspro_FK_SorDetail_SorMaster" />
       </Diagram>
     </edmx:Diagrams>
   </edmx:Designer>

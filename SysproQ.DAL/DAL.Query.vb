@@ -8,10 +8,13 @@ Public Class Query
     End Sub
 
     Public Function FillSalesOrderDetails(so As String) As List(Of SorDetail)
-        Return _db.SorDetails.Where(Function(c) c.SalesOrder.EndsWith(so)).ToList
-        'Return _db.SorDetails.Where(Function(c) c.SalesOrder = so).ToList
+        'Return _db.SorDetails.Where(Function(c) c.SalesOrder.EndsWith(so)).ToList
+        Return _db.SorDetails.Where(Function(c) c.SalesOrder = so).ToList
     End Function
-
+    Public Function FillOrderMaster(so As String) As SorMaster
+        ' Return _db.SorMasters.Where(Function(c) c.SalesOrder.EndsWith(so)).FirstOrDefault
+        Return _db.SorMasters.Where(Function(c) c.SalesOrder = so).FirstOrDefault
+    End Function
 #Region "IDisposable Support"
     Private disposedValue As Boolean ' To detect redundant calls
 

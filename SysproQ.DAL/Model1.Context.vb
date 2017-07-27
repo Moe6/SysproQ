@@ -11,6 +11,7 @@ Imports System
 Imports System.Data.Entity
 Imports System.Data.Entity.Infrastructure
 Imports SysproQ.Entity
+
 Namespace SysproQ.Entity
 
     Partial Public Class SysproEntities
@@ -25,6 +26,7 @@ Namespace SysproQ.Entity
         End Sub
     
         Public Overridable Property SorDetails() As DbSet(Of SorDetail)
+        Public Overridable Property SorMasters() As DbSet(Of SorMaster)
     
     End Class
 

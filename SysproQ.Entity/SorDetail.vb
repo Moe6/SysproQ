@@ -146,4 +146,6 @@ Partial Public Class SorDetail
     Public Property QtyReservedShip As Decimal
     Public Property TimeStamp As Byte()
 
+    Public Overridable Property SorMaster As SorMaster
+
 End Class

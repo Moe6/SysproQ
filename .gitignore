@@ -270,3 +270,5 @@ ServiceConfigurator/ServiceConfigurator/ServiceConfigurator.vbproj
 *.suo
 .vs/SysproQ/v14/.suo
 *.suo
+*.cache
+*.dll

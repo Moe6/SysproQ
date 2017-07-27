@@ -7,4 +7,9 @@ Public Class Query
             Return dal.FillSalesOrderDetails(so)
         End Using
     End Function
+    Public Function FillSorMaster(so As String) As SorMaster
+        Using dal As New DAL.Query
+            Return dal.FillOrderMaster(so)
+        End Using
+    End Function
 End Class
