@@ -147,7 +147,6 @@ Public Class Service1
                 Case Else
                     sl.LineAction = line.Element("LineAction").Value
             End Select
-
             foundLines.Add(sl)
         Next
         Return foundLines

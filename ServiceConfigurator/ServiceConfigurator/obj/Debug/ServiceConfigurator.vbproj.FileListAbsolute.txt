@@ -275,7 +275,6 @@ D:\github\GyxiDev\SysproQ\ServiceConfigurator\ServiceConfigurator\bin\Debug\de\D
 D:\github\GyxiDev\SysproQ\ServiceConfigurator\ServiceConfigurator\bin\Debug\es\DevExpress.XtraTreeList.v17.1.resources.dll
 D:\github\GyxiDev\SysproQ\ServiceConfigurator\ServiceConfigurator\bin\Debug\ja\DevExpress.XtraTreeList.v17.1.resources.dll
 D:\github\GyxiDev\SysproQ\ServiceConfigurator\ServiceConfigurator\bin\Debug\ru\DevExpress.XtraTreeList.v17.1.resources.dll
-D:\github\GyxiDev\SysproQ\ServiceConfigurator\ServiceConfigurator\obj\Debug\ServiceConfigurator.vbprojResolveAssemblyReference.cache
 D:\github\GyxiDev\SysproQ\ServiceConfigurator\ServiceConfigurator\obj\Debug\ServiceConfigurator.Form1.resources
 D:\github\GyxiDev\SysproQ\ServiceConfigurator\ServiceConfigurator\obj\Debug\ServiceConfigurator.Resources.resources
 D:\github\GyxiDev\SysproQ\ServiceConfigurator\ServiceConfigurator\obj\Debug\ServiceConfigurator.vbproj.GenerateResource.Cache
@@ -378,3 +377,4 @@ C:\Development\SysproQ\ServiceConfigurator\ServiceConfigurator\obj\Debug\Service
 C:\Development\SysproQ\ServiceConfigurator\ServiceConfigurator\obj\Debug\ServiceConfigurator.vbproj.GenerateResource.Cache
 C:\Development\SysproQ\ServiceConfigurator\ServiceConfigurator\obj\Debug\ServiceConfigurator.exe.licenses
 C:\Development\SysproQ\ServiceConfigurator\ServiceConfigurator\obj\Debug\ServiceConfigurator.vbprojResolveAssemblyReference.cache
+D:\github\GyxiDev\SysproQ\ServiceConfigurator\ServiceConfigurator\obj\Debug\ServiceConfigurator.vbprojResolveAssemblyReference.cache

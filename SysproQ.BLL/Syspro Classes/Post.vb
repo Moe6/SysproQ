@@ -310,11 +310,13 @@ Public Class Post
             'check order status
             If _omaster.CancelledFlag = "Y" Then
                 'Order was cancelled, no need to check lines
-                AppendTrnMessage("<Order><Msg>Order Cancelled</Msg><Status>OK</Status></Order>")
+                AppendTrnMessage("<Order><Msg>Whole Order Cancelled</Msg><Status>OK</Status></Order>")
             Else
                 If _postedOrder.Count > 0 Then
                     For Each item In _soLines
-                        If Not _postedOrder.Where(Function(c) c.MStockCode = item.StockCode).Any Then
+                        'PoLine passed for cancellation should be equivalent to the So Line number
+                        Dim ln As Decimal = CDec(item.PoLine)
+                        If Not _postedOrder.Where(Function(c) c.MStockCode = item.StockCode And c.SalesOrderLine = ln).Any Then
                             'if entry is not found it means it has been canceled
                             AppendTrnMessage(FormatCancelResult(item, "Cancelled", "OK").ToString)
                         Else

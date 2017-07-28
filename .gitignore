@@ -272,3 +272,4 @@ ServiceConfigurator/ServiceConfigurator/ServiceConfigurator.vbproj
 *.suo
 *.cache
 *.dll
+*.pdb
