@@ -74,6 +74,9 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Enum.BoUsed.vb" />
+    <Compile Include="InvWhLookUp.vb">
+      <DependentUpon>SysproQModel.tt</DependentUpon>
+    </Compile>
     <Compile Include="Messaging.vb" />
     <Compile Include="Model1.vb">
       <AutoGen>True</AutoGen>
@@ -102,6 +105,11 @@
       <DependentUpon>Model1.tt</DependentUpon>
     </Compile>
     <Compile Include="SortraObj.vb" />
+    <Compile Include="SysproQModel.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>SysproQModel.tt</DependentUpon>
+    </Compile>
   </ItemGroup>
   <ItemGroup>
     <EmbeddedResource Include="My Project\Resources.resx">
@@ -128,6 +136,10 @@
     <Content Include="Model1.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
       <LastGenOutput>Model1.vb</LastGenOutput>
+    </Content>
+    <Content Include="SysproQModel.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <LastGenOutput>SysproQModel.vb</LastGenOutput>
     </Content>
   </ItemGroup>
   <ItemGroup>
