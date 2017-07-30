@@ -1,7 +1,5 @@
-﻿Imports System.Collections.Generic
-Imports System.Linq
-Imports SysproQ.Entity
-Imports System.Xml.Linq
+﻿Imports SysproQ.Entity
+Imports SysproQ.BLL
 Partial Public Class SORTOI
     Private _Xmlin As String
     Private passedXml As XElement
@@ -50,7 +48,7 @@ Partial Public Class SORTOI
 
         'If headerInfo.Count > 0 Then
         Dim ordHd As New OrderHeaderDataObject
-            With ordHd
+        With ordHd
             'For Each item In headerInfo
             .SalesOrder = doc.Element("SalesOrder").Value
             .CustomerPoNumber = doc.Element("PO").Value
@@ -59,7 +57,7 @@ Partial Public Class SORTOI
             .OrderDate = Now.Date.ToString("yyyy-MM-dd")
             'Next
         End With
-            OrderHdr.Add(ordHd)
+        OrderHdr.Add(ordHd)
         'End If
 
         'Load Detail    
@@ -71,15 +69,18 @@ Partial Public Class SORTOI
                 '.StockDescription = detail.Element("StockDescription").Value
                 .OrderQty = detail.Element("Qty").Value
                 .Price = detail.Element("Price").Value
-                .Warehouse = detail.Element("City").Value
+                .Warehouse = GetWarehouse(detail.Element("City").Value)
                 .LineActionType = detail.Element("LineAction").Value
                 .CustomerPoLine = detail.Element("PoLine").Value
             End With
             orderDetails.Add(ordDet)
         Next
-
     End Sub
-
+    Private Function GetWarehouse(city As String) As String
+        Dim b As New BLL.Query
+        Dim ct = b.FillWarehouseByCity(city)
+        Return ct.Warehouse
+    End Function
     Private Function BillingXmlInTemplate() As XElement
         'THis is the xml format that I expect to be passed by thi billing system as a string
         'Then converted to an xml doc

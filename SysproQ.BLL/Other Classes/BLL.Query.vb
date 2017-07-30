@@ -12,4 +12,9 @@ Public Class Query
             Return dal.FillOrderMaster(so)
         End Using
     End Function
+    Public Function FillWarehouseByCity(city As String) As InvWhLookUp
+        Using d As New DAL.Query
+            Return d.FillWarehouseByCity(city)
+        End Using
+    End Function
 End Class

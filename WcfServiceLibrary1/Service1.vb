@@ -132,11 +132,13 @@ Public Class Service1
         Dim foundLines As New List(Of SoLines)
         Dim xele As XElement = XElement.Parse(xmlin)
         Dim xLines = xele.Descendants("StockLine")
+        Dim i As Integer = 1
         'Loop to get each line in xmlin
         For Each line In xLines
             Dim sl As New SoLines
             sl.StockCode = line.Element("StockCode").Value
             sl.PoLine = line.Element("PoLine")
+            sl.virtualLine = i
             Select Case _actionType
                 Case "D"
                     sl.LineAction = "D"
@@ -148,6 +150,7 @@ Public Class Service1
                     sl.LineAction = line.Element("LineAction").Value
             End Select
             foundLines.Add(sl)
+            i += 1
         Next
         Return foundLines
     End Function
@@ -181,7 +184,6 @@ Public Class Service1
                 </Order>
         Return a.ToString
     End Function
-
 
 End Class
 

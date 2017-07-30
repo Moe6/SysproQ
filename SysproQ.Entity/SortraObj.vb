@@ -13,5 +13,5 @@ Public Class SoLines
     Public Property PoLine As String
     Public Property StockCode As String
     Public Property LineAction As String
-
+    Public Property virtualLine As Integer
 End Class

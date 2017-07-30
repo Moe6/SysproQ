@@ -15,6 +15,12 @@ Public Class Query
         ' Return _db.SorMasters.Where(Function(c) c.SalesOrder.EndsWith(so)).FirstOrDefault
         Return _db.SorMasters.Where(Function(c) c.SalesOrder = so).FirstOrDefault
     End Function
+
+    Public Function FillWarehouseByCity(city As String) As InvWhLookUp
+        Using _db2 As New SysproQEntities
+            Return _db2.InvWhLookUps.Where(Function(c) c.Town = city).FirstOrDefault
+        End Using
+    End Function
 #Region "IDisposable Support"
     Private disposedValue As Boolean ' To detect redundant calls
 
