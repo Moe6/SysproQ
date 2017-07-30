@@ -18,7 +18,7 @@ Public Class Query
 
     Public Function FillWarehouseByCity(city As String) As InvWhLookUp
         Using _db2 As New SysproQEntities
-            Return _db2.InvWhLookUps.Where(Function(c) c.Town = city).FirstOrDefault
+            Return _db2.InvWhLookUps.Where(Function(c) c.City = city).FirstOrDefault
         End Using
     End Function
 #Region "IDisposable Support"

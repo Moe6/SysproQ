@@ -12,7 +12,7 @@ Imports System.Collections.Generic
 
 Partial Public Class InvWhLookUp
     Public Property ID As Integer
-    Public Property Town As String
     Public Property Warehouse As String
+    Public Property City As String
 
 End Class
