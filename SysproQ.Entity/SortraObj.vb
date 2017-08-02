@@ -10,6 +10,7 @@ End Class
 
 Public Class SoLines
     Public Property SalesOrder As String
+    Public Property Warehouse As String
     Public Property PoLine As String
     Public Property StockCode As String
     Public Property LineAction As String

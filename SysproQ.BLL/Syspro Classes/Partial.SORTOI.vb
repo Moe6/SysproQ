@@ -7,6 +7,7 @@ Partial Public Class SORTOI
     Private orderDetails As New List(Of OrderDetailDataObject)
     Private _PostOut As New SysproPostXmlOutResult
     Private _signInInfo As SysproSignInObj
+    Private _errmsg As String
     Private _msg As String
     Private _actionType As String
     Public ReadOnly Property PostResult As Enums.PostResults
@@ -16,6 +17,13 @@ Partial Public Class SORTOI
             Return _msg
         End Get
     End Property
+    Private Sub AppendTrnMessage(msg As String)
+        If _msg IsNot Nothing Then
+            _msg &= Environment.NewLine
+        End If
+        _msg &= msg
+    End Sub
+
     Public Sub New(Xmlin As String, signIn As SysproSignInObj, actionType As String, slns As List(Of SoLines))
         _Xmlin = Xmlin
         _actionType = actionType
@@ -29,36 +37,103 @@ Partial Public Class SORTOI
         passedXml = ParseXmlin()
         'Create the Objects to post to Syspro
         LoadDataIntoSalesObject()
-        'Post To Syspro
-        Dim p As New SORTOI.ProcessPost(OrderHdr.FirstOrDefault, orderDetails, _solines)
-        _PostOut = p.Execute(_signInInfo, salesorder, _actionType)
-        AppendTrnMessage(_msg, p.TrnMessage)
+        'Check validity of lines that need to be cancelled if order header action type is C
+        If CheckItemsToCancelValid() Then
+            If CheckForOrder() Then
+                'Post To Syspro
+                Dim p As New SORTOI.ProcessPost(OrderHdr.FirstOrDefault, orderDetails, _solines)
+                _PostOut = p.Execute(_signInInfo, salesorder, _actionType)
+                AppendTrnMessage(p.TrnMessage)
+            Else
+                AppendTrnMessage(FailMsg(_errmsg).ToString)
+            End If
+        Else
+            AppendTrnMessage(_errmsg)
+        End If
         Return Enums.PostResults.Success
     End Function
-
+    Private Function FailMsg(msg) As XElement
+        Return <StockLine>
+                   <Post2Result><%= msg %></Post2Result>
+                   <Status><%= "NOK" %></Status>
+               </StockLine>
+    End Function
     Private Function ParseXmlin() As XElement
         Dim foreignXml As XElement
         foreignXml = XElement.Parse(_Xmlin)
         Return foreignXml
     End Function
 
+    Private Function CheckItemsToCancelValid() As Boolean
+        Dim proceed As Boolean = True
+        If _actionType = "C" Then
+            Dim b As New BLL.Query
+            Dim found = b.FillSorDetails(OrderHdr.FirstOrDefault.SalesOrder)
+            If found IsNot Nothing Then
+                For Each item In _solines
+                    If item.LineAction = "D" Then
+                        If Not found.Where(Function(c) c.MStockCode = item.StockCode And c.SalesOrderLine = item.PoLine).Any Then
+                            _errmsg = FormatLineMsg(item, "Line and Stock Code match is Not valid ").ToString
+                            proceed = False
+                        End If
+                    Else
+                        _errmsg = FormatLineMsg(item, "Line Action " & item.LineAction & " Not Valid for Cancellation").ToString
+                        proceed = False
+                    End If
+                Next
+            Else
+                proceed = False
+            End If
+        End If
+        Return proceed
+    End Function
+
+    Private Function FormatLineMsg(obj As SoLines, msg As String) As XElement
+        Return <StockLine>
+                   <StockCode><%= obj.StockCode %></StockCode>
+                   <Line><%= obj.PoLine %></Line>
+                   <Post2Result><%= msg %></Post2Result>
+                   <Status><%= "NOK" %></Status>
+               </StockLine>
+    End Function
+
+    Private Function CheckForOrder() As Boolean
+        Dim proceed As Boolean = True
+        Select Case _actionType
+            Case "A"
+                Dim b As New BLL.Query
+                Dim found = b.FillSorMaster(OrderHdr.FirstOrDefault.SalesOrder)
+                If found IsNot Nothing Then
+                    _errmsg = "This Order already exists, therefore Order cannot be processed"
+                    proceed = False
+                End If
+            Case "D"
+                Dim b As New BLL.Query
+                Dim found = b.FillSorMaster(OrderHdr.FirstOrDefault.SalesOrder)
+                If found Is Nothing Then
+                    _errmsg = "Order not found, transaction cannot be completed."
+                    proceed = False
+                ElseIf found IsNot Nothing Then
+                    If found.CancelledFlag = "Y" Then
+                        _errmsg = "This order was already cancelled, transaction cannot be completed."
+                        proceed = False
+                    End If
+                End If
+        End Select
+        Return proceed
+    End Function
     Private Sub LoadDataIntoSalesObject()
         Dim doc As XElement = passedXml
-        'Dim headerInfo = doc.Descendants("OrderHeader")
 
-        'If headerInfo.Count > 0 Then
         Dim ordHd As New OrderHeaderDataObject
         With ordHd
-            'For Each item In headerInfo
             .SalesOrder = doc.Element("SalesOrder").Value
             .CustomerPoNumber = doc.Element("PO").Value
             .Customer = doc.Element("Customer").Value
             .OrderActionType = doc.Element("ActionType").Value
             .OrderDate = Now.Date.ToString("yyyy-MM-dd")
-            'Next
         End With
         OrderHdr.Add(ordHd)
-        'End If
 
         'Load Detail    
         Dim detailInfo = doc.Descendants("StockLine")
@@ -66,7 +141,6 @@ Partial Public Class SORTOI
             Dim ordDet As New OrderDetailDataObject
             With ordDet
                 .StockCode = detail.Element("StockCode").Value
-                '.StockDescription = detail.Element("StockDescription").Value
                 .OrderQty = detail.Element("Qty").Value
                 .Price = detail.Element("Price").Value
                 .Warehouse = GetWarehouse(detail.Element("City").Value)

@@ -28,15 +28,10 @@ Public Class Face
         Return PostSORTOI(Xmlin, salesorder, actiontype, sl)
     End Function
 
-    'Public Function ReserveStock(salesorder As String) As Enums.PostResults
-    '    Return PostSORTRA(salesorder)
-    'End Function
     Public Function ReserveStock(xmlin As String) As Enums.PostResults
         Return PostSORTRA(xmlin)
     End Function
     Private Function PostSORTOI(xmlin As String, salesorder As String, actionType As String, slines As List(Of SoLines)) As Enums.PostResults
-        ' xmlin = ReadFile("c:\temp\SysproQ_Test.xml")
-        'xmlin = ReadFile(xmlin)
         'Parse xml in to object as xml
         Dim sortoi As New SORTOI(xmlin, GetLogininfo, actionType, slines)
         _result = sortoi.processXmlIn(salesorder)
@@ -61,8 +56,8 @@ Public Class Face
         company = "T"
         coPass = ""
         'username = "ADMIN"
-        'uPass = "admin"
-        'company = "C"
+        'uPass = ""
+        'company = "A"
         'coPass = ""
         Return New SysproSignInObj(username, uPass, company, coPass)
     End Function

@@ -52,4 +52,3 @@ C:\Development\SysproQ\SysproQ.Entity\obj\Debug\SysproQ.Entity.vbproj.GenerateRe
 C:\Development\SysproQ\SysproQ.Entity\obj\Debug\SysproQ.Entity.dll
 C:\Development\SysproQ\SysproQ.Entity\obj\Debug\SysproQ.Entity.xml
 C:\Development\SysproQ\SysproQ.Entity\obj\Debug\SysproQ.Entity.pdb
-D:\github\GyxiDev\SysproQ\SysproQ.Entity\obj\Debug\SysproQ.Entity.vbprojResolveAssemblyReference.cache

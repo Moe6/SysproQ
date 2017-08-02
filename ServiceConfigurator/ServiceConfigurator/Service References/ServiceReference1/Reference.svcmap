@@ -22,10 +22,10 @@
     <MetadataSource Address="http://localhost/QService/SysproQService.svc" Protocol="http" SourceId="1" />
   </MetadataSources>
   <Metadata>
-    <MetadataFile FileName="SysproQService.disco" MetadataType="Disco" ID="5f9b4b70-c75a-43c7-90c8-4d9e74ff0285" SourceId="1" SourceUrl="http://xtreme.eurosteel.co.za/QService/SysproQService.svc?disco" />
-    <MetadataFile FileName="SysproQService.xsd" MetadataType="Schema" ID="643c07bb-db40-4c97-a805-a4ea9c44b1f6" SourceId="1" SourceUrl="http://xtreme.eurosteel.co.za/QService/SysproQService.svc?xsd=xsd1" />
-    <MetadataFile FileName="Service1.wsdl" MetadataType="Wsdl" ID="8f9c1df5-caa2-4414-aa0b-dc87511b3f46" SourceId="1" SourceUrl="http://xtreme.eurosteel.co.za/QService/SysproQService.svc?wsdl" />
-    <MetadataFile FileName="SysproQService1.xsd" MetadataType="Schema" ID="574aab74-5d58-4f06-b35d-451e4a17816b" SourceId="1" SourceUrl="http://xtreme.eurosteel.co.za/QService/SysproQService.svc?xsd=xsd0" />
+    <MetadataFile FileName="Service11.wsdl" MetadataType="Wsdl" ID="07ef25cd-1108-439e-bf92-66eb5fdaf3d4" SourceId="1" SourceUrl="http://desktop-ccmi41s/QService/SysproQService.svc?wsdl" />
+    <MetadataFile FileName="SysproQService2.xsd" MetadataType="Schema" ID="ca8ffdb8-e080-461a-8446-8eb4b9cb5b44" SourceId="1" SourceUrl="http://desktop-ccmi41s/QService/SysproQService.svc?xsd=xsd0" />
+    <MetadataFile FileName="SysproQService1.disco" MetadataType="Disco" ID="ad0573c4-85a1-4f91-82e9-97ae4e5c55ef" SourceId="1" SourceUrl="http://desktop-ccmi41s/QService/SysproQService.svc?disco" />
+    <MetadataFile FileName="SysproQService21.xsd" MetadataType="Schema" ID="01e4e384-292a-4dca-b1eb-27a8ab3a2bd5" SourceId="1" SourceUrl="http://desktop-ccmi41s/QService/SysproQService.svc?xsd=xsd1" />
   </Metadata>
   <Extensions>
     <ExtensionFile FileName="configuration91.svcinfo" Name="configuration91.svcinfo" />

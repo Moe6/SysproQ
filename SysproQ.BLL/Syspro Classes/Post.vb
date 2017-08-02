@@ -90,7 +90,6 @@ Public Class Post
         If _transactionXmlOut.XmlOut IsNot Nothing Then
             returnObj = New SysproPostXmlOutResult
             returnObj.XmlOut = _transactionXmlOut.XmlOut
-
             If _businessObject = "SORTOI" Then
                 If _actionType = "A" Then
                     'Query db to check if sales order items were succefully reserved
@@ -106,39 +105,12 @@ Public Class Post
                     End If
                 Else
                     'Action was Cancel Order or lines
-                    GetCancellationResult(salesorder)
+                    CheckBoForErrors(returnObj)
+                    If Not returnObj.ErrorsFound Then
+                        GetCancellationResult(salesorder)
+                        GetOtherErrors(returnObj)
+                    End If
                 End If
-            Else
-                ''read xml data
-                'Dim xDoc = XDocument.Parse(_transactionXmlOut.XmlOut)
-                ''get any errors if exists
-                'Dim errortags = xDoc.Descendants("ErrorDescription")
-                'If errortags.Count > 0 Then
-                '    returnObj.ErrorsFound = True
-                '    _transactionXmlOut.ErrorsFound = True
-                '    For Each et As XElement In errortags
-                '        _transactionXmlOut.ErrorMessages.Add(Trim(et.Value.ToString))
-                '        AppendTrnMessage(Trim(et.Value.ToString))
-                '        returnObj.ErrorMessages.Add(Trim(et.Value.ToString))
-                '    Next
-                'End If
-                ''get any warnings if exists
-                'Dim warningtags = xDoc.Descendants("WarningMessages")
-                'If warningtags.Count > 0 Then
-                '    returnObj.WarningsFound = True
-                '    _transactionXmlOut.WarningsFound = True
-                '    For Each wt In warningtags
-                '        _transactionXmlOut.WarningMessages.Add(wt.Value.ToString)
-                '        AppendTrnMessage(Trim(wt.Value.ToString))
-                '        returnObj.WarningMessages.Add(wt.Value.ToString)
-                '    Next
-                'End If
-
-                ''SORTRA Success and Failure check for lines reserved
-                'If _businessObject = "SORTRA" Then
-                '    processSuccessMessages(xDoc, returnObj)
-                '    processErrorMessages(xDoc, returnObj)
-                'End If
             End If
         End If
         Return returnObj
@@ -215,30 +187,40 @@ Public Class Post
         'Fill the created sales order
         _omaster = b.FillSorMaster(salesorder)
         _postedOrder = b.FillSorDetails(salesorder)
-        If _postedOrder.Count > 0 Then
-            'Need to fomrat headers
-            For Each item In _postedOrder
-                result = True
-                If item.QtyReserved > 0 Then
-                    If item.MOrderQty = item.QtyReserved Then 'OK
+        If _omaster IsNot Nothing Then
+            If _omaster.CancelledFlag <> "Y" Then
+                If _postedOrder.Count > 0 Then
+                    'Need to fomrat headers
+                    For Each item In _postedOrder
                         result = True
-                        msg = ("Stock code " & item.MStockCode & " Quantity " & CInt(item.QtyReserved) & " Reserve Successful")
-                        Dim x = FormatResult(item, msg, "OK")
-                        AppendTrnMessage(x.ToString)
-                    Else 'POK
-                        msg = ("Stock code " & item.MStockCode & " Quantity " & CInt(item.QtyReserved) & " Reserve Partial")
-                        Dim x = FormatResult(item, msg, "POK")
-                        AppendTrnMessage(x.ToString)
-                    End If
-                ElseIf item.MBackOrderQty > 0 Then
-                    msg = ("Stock code " & item.MStockCode & " Quantity " & CInt(item.MBackOrderQty) & " Reserve Fail")
-                    Dim x = FormatResult(item, msg, "NOK")
-                    AppendTrnMessage(x.ToString)
+                        If item.QtyReserved > 0 Then
+                            If item.MOrderQty = item.QtyReserved Then 'OK
+                                result = True
+                                msg = ("Stock code " & item.MStockCode & " Quantity " & CInt(item.QtyReserved) & " Reserve Successful")
+                                Dim x = FormatResult(item, msg, "OK")
+                                AppendTrnMessage(x.ToString)
+                            Else 'POK
+                                msg = ("Stock code " & item.MStockCode & " Quantity " & CInt(item.QtyReserved) & " Reserve Partial")
+                                Dim x = FormatResult(item, msg, "POK")
+                                AppendTrnMessage(x.ToString)
+                            End If
+                        ElseIf item.MBackOrderQty > 0 Then
+                            msg = ("Stock code " & item.MStockCode & " Quantity " & CInt(item.MBackOrderQty) & " Reserve Fail")
+                            Dim x = FormatResult(item, msg, "NOK")
+                            AppendTrnMessage(x.ToString)
+                        End If
+                    Next
+                Else
+                    AppendTrnMessage("Could not identify items for created  order.")
                 End If
-            Next
+            Else
+                AppendTrnMessage("This is a cancelled order.")
+            End If
         Else
-            AppendTrnMessage("Could not identify items for created  order.")
+            AppendTrnMessage("An Error occured.")
         End If
+
+
         Return result
     End Function
 
@@ -262,10 +244,10 @@ Public Class Post
     End Function
 
     Private Function FormatOtherResultMsg(msg As String) As XElement
-        Return <StockLine>
-                   <Post2Result><%= msg %></Post2Result>
+        Return <SysproErrorMessage>
+                   <Error><%= msg %></Error>
                    <Status><%= "NOK" %></Status>
-               </StockLine>
+               </SysproErrorMessage>
     End Function
 
     Private Sub GetOtherErrors(ByRef returnObj As SysproPostXmlOutResult)
@@ -299,6 +281,37 @@ Public Class Post
         End If
         'AppendTrnMessage("<StockLine><Status>NOK</Status></StockLine>")
     End Sub
+    Private Function CheckBoForErrors(ByRef returnObj As SysproPostXmlOutResult) As Boolean
+        'read xml data
+        Dim xDoc = XDocument.Parse(_transactionXmlOut.XmlOut)
+        'get any errors if exists
+        Dim errortags = xDoc.Descendants("ErrorDescription")
+        If errortags.Count > 0 Then
+            returnObj.ErrorsFound = True
+            _transactionXmlOut.ErrorsFound = True
+            For Each et As XElement In errortags
+                _transactionXmlOut.ErrorMessages.Add(Trim(et.Value.ToString))
+                'Format error result for out
+                Dim r = FormatOtherResultMsg(et.Value.ToString)
+                AppendTrnMessage(r.ToString)
+                returnObj.ErrorMessages.Add(Trim(et.Value.ToString))
+            Next
+        End If
+        'get any warnings if exists
+        Dim warningtags = xDoc.Descendants("WarningMessages")
+        If warningtags.Count > 0 Then
+            returnObj.WarningsFound = True
+            _transactionXmlOut.WarningsFound = True
+            For Each wt In warningtags
+                _transactionXmlOut.WarningMessages.Add(wt.Value.ToString)
+                'Format warning msg for out
+                Dim r = FormatOtherResultMsg(wt.Value.ToString)
+                AppendTrnMessage(r.ToString)
+                returnObj.WarningMessages.Add(wt.Value.ToString)
+            Next
+        End If
+    End Function
+
 
     Private Sub GetCancellationResult(salesorder As String)
         'Fill the created sales order
@@ -310,12 +323,13 @@ Public Class Post
             'check order status
             If _omaster.CancelledFlag = "Y" Then
                 'Order was cancelled, no need to check lines
-                AppendTrnMessage("<Order><Msg>Whole Order Cancelled</Msg><Status>OK</Status></Order>")
+                AppendTrnMessage(FormatOrderCancelMsg("Whole Order Cancelled").ToString)
             Else
-                If _postedOrder.Count > 0 Then
-                    For Each item In _soLines
-                        'PoLine passed for cancellation should be equivalent to the So Line number
-                        Dim ln As Decimal = CDec(item.PoLine)
+                'If _postedOrder.Count > 0 Then
+                For Each item In _soLines
+                    'PoLine passed for cancellation should be equivalent to the So Line number
+                    Dim ln As Decimal = CDec(item.PoLine)
+                    If _postedOrder IsNot Nothing Then
                         If Not _postedOrder.Where(Function(c) c.MStockCode = item.StockCode And c.SalesOrderLine = ln).Any Then
                             'if entry is not found it means it has been canceled
                             AppendTrnMessage(FormatCancelResult(item, "Cancelled", "OK").ToString)
@@ -323,16 +337,20 @@ Public Class Post
                             'entry found therefore was not cancelled
                             AppendTrnMessage(FormatCancelResult(item, "Not Cancelled", "NOK").ToString)
                         End If
-                    Next
-                Else
-                    'Order header dentified but no lines found
-                    AppendTrnMessage("<Order><Msg>Could not identify order lines.</Msg><Status>NOK</Status></Order>")
-                End If
+                    Else
+                        'if no entries found  it means it has been canceled
+                        AppendTrnMessage(FormatCancelResult(item, "Cancelled", "OK").ToString)
+                    End If
+                Next
             End If
         End If
-
     End Sub
-
+    Private Function FormatOrderCancelMsg(msg As String) As XElement
+        Return <Order>
+                   <Post2Result><%= msg %></Post2Result>
+                   <Status><%= "OK" %></Status>
+               </Order>
+    End Function
     Private Function ParseXmlin(xmlin As String) As XElement
         Dim parsedXml As XElement
         parsedXml = XElement.Parse(xmlin)

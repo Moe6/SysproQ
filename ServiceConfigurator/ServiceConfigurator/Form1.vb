@@ -32,9 +32,9 @@ Partial Public Class Form1
         _OrderHeader = New SalesOrderHeader.OrderHeader
         With _OrderHeader
             .ActionType = "A"
-            .Customer = "610001"
-            .PO = "TEST"
-            .SalesOrder = "107024"
+            .Customer = "ADS001"
+            .PO = ""
+            .SalesOrder = "107025"
         End With
         BindingSource1.DataSource = _OrderHeader
         BindingSource2.DataSource = _orderDetails
@@ -87,24 +87,32 @@ Partial Public Class Form1
     End Sub
 
     Private Sub AddNewRecords(ByRef obj As List(Of StockLine))
-        Dim line As Integer = 5
-        Dim price As Decimal = 3000
-        Dim qty As Decimal = 10
-        Dim stockcode As String = "0101"
-        Dim wh As String = "CITY"
+        Dim line As Integer = 1
+        Dim price As Decimal = 3040
+        Dim qty As Decimal = 2
+        Dim stockcode As String = "KL-0001-E"
+        Dim wh As String = "MAUMAU"
         If obj IsNot Nothing Then
-            If obj.Count > 0 Then
+            If obj.Count = 1 Then
                 Dim sl = obj.LastOrDefault
                 line = sl.PoLine + 1
                 price = sl.Price + 1
                 qty = sl.Qty + 1
-                stockcode = "NewCode"
+                stockcode = "KL-0009-E"
+                wh = "GABORONETOWN"
+            ElseIf obj.Count > 1 Then
+                Dim sl = obj.LastOrDefault
+                line = sl.PoLine + 1
+                price = sl.Price + 1
+                qty = sl.Qty + 1
+                stockcode = "NEWCODE"
+                wh = "MAUMAU"
             End If
         Else
             obj = New List(Of StockLine)
         End If
 
-        Dim ar As New StockLine With {.PoLine = line, .Qty = qty, .Price = price, .StockCode = stockcode, .City = wh, .LineAction = "A"}
+        Dim ar As New StockLine With {.PoLine = line, .Qty = qty, .Price = price, .StockCode = stockcode, .City = wh, .LineAction = ""}
         obj.Add(ar)
     End Sub
     Private Sub btnAddLine_ItemClick(sender As Object, e As DevExpress.XtraBars.ItemClickEventArgs) Handles btnAddLine.ItemClick
@@ -319,5 +327,18 @@ Partial Public Class Form1
 
         Return strBuild.ToString
     End Function
+
+    Private Sub BarButtonItem1_ItemClick(sender As Object, e As DevExpress.XtraBars.ItemClickEventArgs) Handles BarButtonItem1.ItemClick
+        Dim obj As New List(Of StockLine)
+        If BindingSource2.DataSource IsNot Nothing Then
+            obj = TryCast(BindingSource2.DataSource, List(Of StockLine))
+            If GridView1.FocusedRowHandle > -1 Then
+                obj.RemoveAt(GridView1.FocusedRowHandle)
+                BindingSource2.DataSource = obj
+                GridView1.RefreshData()
+            End If
+
+        End If
+    End Sub
 
 End Class

@@ -55,9 +55,7 @@ Partial Public Class SORTOI
             Dim _header As XElement = Nothing
             Try
                 Dim header = <OrderHeader>
-                                 <CustomerPoNumber><%= _masterData.CustomerPoNumber %></CustomerPoNumber>
                                  <OrderActionType><%= _masterData.OrderActionType %></OrderActionType>
-                                 <NewCustomerPoNumber><%= _masterData.NewCustomerPoNumber %></NewCustomerPoNumber>
                                  <Supplier/>
                                  <Customer><%= _masterData.Customer %></Customer>
                                  <OrderDate><%= _masterData.OrderDate %></OrderDate>
@@ -116,7 +114,14 @@ Partial Public Class SORTOI
         Private Function CreateOrderDetails() As XElement()
             Dim elements(_detailData.Count - 1) As XElement
             For i As Integer = 0 To _detailData.Count - 1
-                elements(i) = CreateStockLineElement(_detailData(i))
+                Select Case _detailData(i).LineActionType
+                    Case "D"
+                        'Cancel stock Line
+                        elements(i) = CreateStockCancelLineElement(_detailData(i))
+                    Case Else
+                        elements(i) = CreateStockLineElement(_detailData(i))
+                End Select
+
             Next
             Return elements
         End Function
@@ -170,23 +175,54 @@ Partial Public Class SORTOI
                    </StockLine>
         End Function
 
-        'Private Function CreateFreightLineElement() As XElement
-        '    'If _masterData.DeliveryCharge > 0 Then
-        '    '    Return <FreightLine>
-        '    '               <CustomerPoLine>1</CustomerPoLine>
-        '    '               <LineActionType><%= _masterData.OrderActionType %></LineActionType>
-        '    '               <LineCancelCode/>
-        '    '               <FreightValue><%= _masterData.DeliveryCharge %></FreightValue>
-        '    '               <FreightCost>0</FreightCost>
-        '    '               <FreightTaxCode>A</FreightTaxCode>
-        '    '               <FreightNotTaxable/>
-        '    '               <FreightFstCode>B</FreightFstCode>
-        '    '               <FreightNotFstTaxable/>
-        '    '           </FreightLine>
-        '    'Else
-        '    '    Return Nothing
-        '    'End If
-        'End Function
+        Private Function CreateStockCancelLineElement(item As OrderDetailDataObject) As XElement
+            Return <StockLine>
+                       <CustomerPoLine><%= item.CustomerPoLine %></CustomerPoLine>
+                       <LineActionType><%= item.LineActionType %></LineActionType>
+                       <LineCancelCode>01</LineCancelCode>
+                       <StockCode><%= item.StockCode %></StockCode>
+                       <StockDescription/>
+                       <Warehouse><%= item.Warehouse %></Warehouse>
+                       <CustomersPartNumber/>
+                       <OrderQty><%= item.OrderQty %></OrderQty>
+                       <OrderUom>EA</OrderUom>
+                       <Price><%= item.Price %></Price>
+                       <PriceUom>EA</PriceUom>
+                       <PriceCode/>
+                       <AlwaysUsePriceEntered/>
+                       <Units/>
+                       <Pieces/>
+                       <ProductClass/>
+                       <LineDiscPercent1>0</LineDiscPercent1>
+                       <LineDiscPercent2>0</LineDiscPercent2>
+                       <LineDiscPercent3>0</LineDiscPercent3>
+                       <AlwaysUseDiscountEntered>N</AlwaysUseDiscountEntered>
+                       <CommissionCode/>
+                       <LineShipDate/>
+                       <LineDiscValue>0</LineDiscValue>
+                       <LineDiscValFlag/>
+                       <OverrideCalculatedDiscount/>
+                       <UserDefined/>
+                       <NonStockedLine/>
+                       <NsProductClass/>
+                       <NsUnitCost/>
+                       <UnitMass/>
+                       <UnitVolume/>
+                       <StockTaxCode/>
+                       <StockNotTaxable/>
+                       <StockFstCode/>
+                       <StockNotFstTaxable/>
+                       <AllocationAction>A</AllocationAction>
+                       <ConfigPrintInv/>
+                       <ConfigPrintDel/>
+                       <ConfigPrintAck/>
+                       <TariffCode/>
+                       <LineMultiShipCode/>
+                       <SupplementaryUnitsFactor/>
+                       <ReserveStock>Y</ReserveStock>
+                       <ReserveStockRequestAllocs>Y</ReserveStockRequestAllocs>
+                   </StockLine>
+        End Function
 
         Public Function CreateXmlParams(validateOnly As Boolean) As String Implements IBusinessObjects.CreateXmlParams
             Dim xmlparams = <?xml version="1.0" encoding="Windows-1252"?>
@@ -207,7 +243,7 @@ Partial Public Class SORTOI
                                     <ValidProductClassList/>
                                     <ShipFromDefaultBin>N</ShipFromDefaultBin>
                                     <AllowDuplicateOrderNumbers>Y</AllowDuplicateOrderNumbers>
-                                    <CheckForCustomerPoNumbers>Y</CheckForCustomerPoNumbers>
+                                    <CheckForCustomerPoNumbers>N</CheckForCustomerPoNumbers>
                                     <AllowInvoiceInformationEntry/>
                                     <AlwaysUsePriceEntered/>
                                     <AllowZeroPrice>Y</AllowZeroPrice>
@@ -220,7 +256,7 @@ Partial Public Class SORTOI
                                     <IgnoreWarnings>N</IgnoreWarnings>
                                     <AddAttachedServiceCharges></AddAttachedServiceCharges>
                                     <StatusInProcess></StatusInProcess>
-                                    <WarnIfCustomerOnHold>Y</WarnIfCustomerOnHold>
+                                    <WarnIfCustomerOnHold>N</WarnIfCustomerOnHold>
                                     <AcceptKitOptional>N</AcceptKitOptional>
                                     <AllowBackOrderForPartialHold></AllowBackOrderForPartialHold>
                                     <AllowBackOrderForSuperseded></AllowBackOrderForSuperseded>
@@ -238,14 +274,7 @@ Partial Public Class SORTOI
         End Function
 
         Public Function CreateXmlIn() As String Implements IBusinessObjects.CreateXmlIn
-            'Select Case _transactionType
-            '    Case TransactionType.OrderMasterOnlyMaintain
-            '        Return CreateOrderMasterChangeOnlyXmlIn()
-            '    Case TransactionType.SalesOrderCreateMaintain
             Return CreateOrderMasterAndDetailXmlIn()
-            '    Case Else
-            '        Return Nothing
-            'End Select
         End Function
 
         ''' <summary>

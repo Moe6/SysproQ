@@ -128,7 +128,7 @@ Public Class Service1
         Return False
     End Function
 
-    Private Function GetSalesOrderLines(xmlin As String) As List(Of SoLines)
+    Private Function GetSalesOrderLines(ByRef xmlin As String) As List(Of SoLines)
         Dim foundLines As New List(Of SoLines)
         Dim xele As XElement = XElement.Parse(xmlin)
         Dim xLines = xele.Descendants("StockLine")
@@ -136,22 +136,27 @@ Public Class Service1
         'Loop to get each line in xmlin
         For Each line In xLines
             Dim sl As New SoLines
+            sl.SalesOrder = _salesorder
             sl.StockCode = line.Element("StockCode").Value
             sl.PoLine = line.Element("PoLine")
             sl.virtualLine = i
             Select Case _actionType
                 Case "D"
                     sl.LineAction = "D"
+                    line.Element("LineAction").Value = "D"
                 Case "C"
                     sl.LineAction = line.Element("LineAction").Value
                 Case "A"
                     sl.LineAction = "A"
+                    line.Element("LineAction").Value = "A"
                 Case Else
                     sl.LineAction = line.Element("LineAction").Value
             End Select
             foundLines.Add(sl)
             i += 1
         Next
+        'Get the line actions assigned above
+        xmlin = xele.ToString
         Return foundLines
     End Function
 

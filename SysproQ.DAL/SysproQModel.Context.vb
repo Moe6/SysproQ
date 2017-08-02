@@ -11,6 +11,7 @@ Imports System
 Imports System.Data.Entity
 Imports System.Data.Entity.Infrastructure
 Imports SysproQ.Entity
+
 Partial Public Class SysproQEntities
     Inherits DbContext
 

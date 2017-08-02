@@ -12,7 +12,7 @@ Public Class Query
         Return _db.SorDetails.Where(Function(c) c.SalesOrder = so).ToList
     End Function
     Public Function FillOrderMaster(so As String) As SorMaster
-        ' Return _db.SorMasters.Where(Function(c) c.SalesOrder.EndsWith(so)).FirstOrDefault
+        'Return _db.SorMasters.Where(Function(c) c.SalesOrder.EndsWith(so)).FirstOrDefault
         Return _db.SorMasters.Where(Function(c) c.SalesOrder = so).FirstOrDefault
     End Function
 
