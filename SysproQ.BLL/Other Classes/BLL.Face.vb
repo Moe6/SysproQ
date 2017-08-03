@@ -28,9 +28,9 @@ Public Class Face
         Return PostSORTOI(Xmlin, salesorder, actiontype, sl)
     End Function
 
-    Public Function ReserveStock(xmlin As String) As Enums.PostResults
-        Return PostSORTRA(xmlin)
-    End Function
+    'Public Function ReserveStock(xmlin As String) As Enums.PostResults
+    '    Return PostSORTRA(xmlin)
+    'End Function
     Private Function PostSORTOI(xmlin As String, salesorder As String, actionType As String, slines As List(Of SoLines)) As Enums.PostResults
         'Parse xml in to object as xml
         Dim sortoi As New SORTOI(xmlin, GetLogininfo, actionType, slines)
@@ -39,16 +39,16 @@ Public Class Face
         Return _result
     End Function
 
-    Private Function PostSORTRA(xmlin As String) As Enums.PostResults
-        Dim sr As New SORTRA(GetLogininfo, xmlin)
-        If sr.Post() Then
-            AppendTrnMessage(sr.TrnMessage)
-            Return Enums.PostResults.Success
-        Else
-            AppendTrnMessage(sr.TrnMessage)
-        End If
-        Return Enums.PostResults.Fail
-    End Function
+    'Private Function PostSORTRA(xmlin As String) As Enums.PostResults
+    '    Dim sr As New SORTRA(GetLogininfo, xmlin)
+    '    If sr.Post() Then
+    '        AppendTrnMessage(sr.TrnMessage)
+    '        Return Enums.PostResults.Success
+    '    Else
+    '        AppendTrnMessage(sr.TrnMessage)
+    '    End If
+    '    Return Enums.PostResults.Fail
+    'End Function
 
     Private Function GetLogininfo() As SysproSignInObj
         username = "ARPOS"

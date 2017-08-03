@@ -310,6 +310,7 @@ Public Class Post
                 returnObj.WarningMessages.Add(wt.Value.ToString)
             Next
         End If
+        Return True
     End Function
 
 
