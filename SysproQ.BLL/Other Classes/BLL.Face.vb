@@ -53,7 +53,7 @@ Public Class Face
     Private Function GetLogininfo() As SysproSignInObj
         username = "ARPOS"
         uPass = ""
-        company = "T"
+        company = "N"
         coPass = ""
         'username = "ADMIN"
         'uPass = ""
