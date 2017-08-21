@@ -76,6 +76,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="DAL.Query.vb" />
+    <Compile Include="DAL.Update.vb" />
     <Compile Include="Model1.Context.vb">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>

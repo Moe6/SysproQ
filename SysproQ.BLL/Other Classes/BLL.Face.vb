@@ -51,14 +51,14 @@ Public Class Face
     'End Function
 
     Private Function GetLogininfo() As SysproSignInObj
-        username = "ARPOS"
-        uPass = ""
-        company = "N"
-        coPass = ""
-        'username = "ADMIN"
+        'username = "ARPOS"
         'uPass = ""
-        'company = "A"
+        'company = "N"
         'coPass = ""
+        username = "ADMIN"
+        uPass = ""
+        company = "A"
+        coPass = ""
         Return New SysproSignInObj(username, uPass, company, coPass)
     End Function
 
@@ -79,4 +79,39 @@ Public Class Face
         Return b.FillSorDetails(salesorder).Count > 0
     End Function
 
+    Public Function ValidateCustomer(cust As String) As Boolean
+        Dim xele As XElement
+        If cust IsNot Nothing Then
+            cust = Trim(cust)
+            If cust <> "" Then
+                'Verify customer already exists
+                Using dal As New DAL.Query
+                    Dim found = dal.FillCustomer(cust)
+                    If found IsNot Nothing Then Return True
+                End Using
+                'If customer does not exist, create new customer
+                Using dal As New DAL.Update
+                    Dim newcustomer As New ArCustomer(cust)
+                    dal.Update(newcustomer)
+                    Return dal.Save() = True
+                    xele = FormatCustomerFailMessage(dal.TrnMessage)
+                    AppendTrnMessage(xele.ToString)
+                End Using
+            Else
+                xele = FormatCustomerFailMessage("Customer was not specified")
+                AppendTrnMessage(xele.ToString)
+            End If
+        Else
+            xele = FormatCustomerFailMessage("Customer was not specified")
+            AppendTrnMessage(xele.ToString)
+        End If
+        Return False
+    End Function
+
+    Private Function FormatCustomerFailMessage(msg As String) As XElement
+        Return <Customer>
+                   <Post2Result><%= msg %></Post2Result>
+                   <Status><%= "NOK" %></Status>
+               </Customer>
+    End Function
 End Class

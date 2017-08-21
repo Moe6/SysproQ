@@ -8,6 +8,7 @@ Public Class Service1
     Private _salesorder As String
     Private _trnMessage As String
     Private _actionType As String
+    Private _customer As String
 
     Private Sub AppendTrnMessage(msg As String)
         If _trnMessage IsNot Nothing Then
@@ -19,6 +20,7 @@ Public Class Service1
     Private Function TrnMessage() As String Implements IService1.TrnMessage
         Return _trnMessage
     End Function
+
     Public Function GetData(ByVal value As String) As String Implements IService1.GetData
         Return String.Format("You entered: {0}", value)
     End Function
@@ -32,63 +34,7 @@ Public Class Service1
         End If
         Return composite
     End Function
-    'Public Function Post2(Xmlin As String) As String Implements IService1.Post2
-    '    Dim f As New SysproQ.BLL.Face
-    '    Dim result As PostResults = Nothing
-    '    _trnMessage = Nothing
-    '    _salesorder = Nothing
-    '    Try
-    '        ''get sales order into var
-    '        If GetSalesOrder(Xmlin) Then
-    '            'check if sales order exists - No need to create order again
-    '            If f.CheckSalesOrderExists(_salesorder) Then
-    '                ''If order exists then jump to reserve stock
-    '                AppendTrnMessage("Order already exists.")
-    '                'GoTo doReserverStock
-    '            Else
-    '                result = f.CreateSalesOrder(Xmlin, _salesorder)
-    '                'If sales order has been created then run sortra to reserve Stock
-    '                If result = PostResults.Success Then
-    '                    _trnMessage = f.TrnMessage
-    '                    ' AppendTrnMessage(f.TrnMessage)
-    '                    'Reserve stock
-    '                    '                        If _salesorder IsNot Nothing Then
-    '                    'doReserverStock:
-    '                    '                            ''Must pass xmlin from client as per requirement,as this has the qties
-    '                    '                            ''query Sales order lines from the DB
-    '                    '                            ''Match Stockcode on Line numbers
-    '                    '                            ''Use Qties from xmlin to reserve quantities
-    '                    '                            'result = f.ReserveStock(Xmlin)
-    '                    '                            '_trnMessage = f.TrnMessage
-    '                    '                            'Select Case result
-    '                    '                            '    Case PostResults.Success
-    '                    '                            '        AppendTrnMessage("Stock Reserve Success " & _salesorder)
-    '                    '                            '    Case PostResults.Fail
-    '                    '                            '        AppendTrnMessage("Stock Reserve Failed for " & _salesorder)
-    '                    '                            '    Case PostResults.Partly
-    '                    '                            '        AppendTrnMessage("Stock reserve partial " & _salesorder)
-    '                    '                            'End Select
 
-    '                    '                        Else
-    '                    '                            _trnMessage = f.TrnMessage
-    '                    '                            AppendTrnMessage("Could not identify sales order")
-    '                    '                        End If
-    '                Else
-    '                    _trnMessage = f.TrnMessage
-    '                    AppendTrnMessage("Reserve Stock Failed")
-    '                End If
-    '            End If
-    '        Else
-    '            _trnMessage = f.TrnMessage
-    '            AppendTrnMessage("Could not Identify the Sales order number.")
-    '        End If
-    '    Catch ex As Exception
-    '        Dim m As String = msgHelper.GetFullMessage(ex)
-    '        AppendTrnMessage(m)
-    '    End Try
-    '    ' AppendTrnMessage("Post failed.")
-    '    Return _trnMessage
-    'End Function
     Public Function Post2(Xmlin As String) As String Implements IService1.Post2
         Dim f As New SysproQ.BLL.Face
         Dim result As PostResults = Nothing
@@ -96,15 +42,19 @@ Public Class Service1
         _salesorder = Nothing
         Try
             ''get sales order into var
-            If GetSalesOrderAndActionType(Xmlin) Then
+            If GetSalesOrderAndActionTypeCustomer(Xmlin) Then
                 Dim sls = GetSalesOrderLines(Xmlin)
-                result = f.CreateSalesOrder(Xmlin, _salesorder, _actionType, sls)
-                'If sales order has been created then run sortra to reserve Stock
-                If result = PostResults.Success Then
-                    _trnMessage = f.TrnMessage
+                'Check and Create customer
+                If ValidateCustomer() Then
+                    result = f.CreateSalesOrder(Xmlin, _salesorder, _actionType, sls)
+                    If result = PostResults.Success Then
+                        _trnMessage = f.TrnMessage
+                    Else
+                        _trnMessage = f.TrnMessage
+                        AppendTrnMessage("Reserve Stock Failed")
+                    End If
                 Else
-                    _trnMessage = f.TrnMessage
-                    AppendTrnMessage("Reserve Stock Failed")
+
                 End If
             Else
                 _trnMessage = f.TrnMessage
@@ -114,14 +64,15 @@ Public Class Service1
             Dim m As String = msgHelper.GetFullMessage(ex)
             AppendTrnMessage(m)
         End Try
-        ' AppendTrnMessage("Post failed.")
         Return _trnMessage
     End Function
-    Private Function GetSalesOrderAndActionType(xmlin As String) As Boolean
+
+    Private Function GetSalesOrderAndActionTypeCustomer(xmlin As String) As Boolean
         Dim xl As XElement
         xl = XElement.Parse(xmlin)
         _salesorder = xl.Element("SalesOrder").Value
         _actionType = xl.Element("ActionType").Value
+        _customer = xl.Element("Customer").Value
         If _salesorder IsNot Nothing Then
             Return True
         End If
@@ -158,6 +109,16 @@ Public Class Service1
         'Get the line actions assigned above
         xmlin = xele.ToString
         Return foundLines
+    End Function
+
+    Private Function ValidateCustomer() As Boolean
+        Dim bllFace As New SysproQ.BLL.Face
+        If bllFace.ValidateCustomer(_customer) Then
+            Return True
+        Else
+            AppendTrnMessage(bllFace.TrnMessage)
+            Return False
+        End If
     End Function
 
     Private Function CreateMyOwnXmlTemplate() As String

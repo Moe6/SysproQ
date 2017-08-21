@@ -8,18 +8,21 @@ Public Class Query
     End Sub
 
     Public Function FillSalesOrderDetails(so As String) As List(Of SorDetail)
-        'Return _db.SorDetails.Where(Function(c) c.SalesOrder.EndsWith(so)).ToList
-        Return _db.SorDetails.Where(Function(c) c.SalesOrder = so).ToList
+        Return _db.SorDetails.Where(Function(c) c.SalesOrder.EndsWith(so)).ToList
+        'Return _db.SorDetails.Where(Function(c) c.SalesOrder = so).ToList
     End Function
     Public Function FillOrderMaster(so As String) As SorMaster
-        'Return _db.SorMasters.Where(Function(c) c.SalesOrder.EndsWith(so)).FirstOrDefault
-        Return _db.SorMasters.Where(Function(c) c.SalesOrder = so).FirstOrDefault
+        Return _db.SorMasters.Where(Function(c) c.SalesOrder.EndsWith(so)).FirstOrDefault
+        'Return _db.SorMasters.Where(Function(c) c.SalesOrder = so).FirstOrDefault
     End Function
 
     Public Function FillWarehouseByCity(city As String) As InvWhLookUp
         Using _db2 As New SysproQEntities
             Return _db2.InvWhLookUps.Where(Function(c) c.City = city).FirstOrDefault
         End Using
+    End Function
+    Public Function FillCustomer(cust As String) As ArCustomer
+        Return _db.ArCustomers.Where(Function(c) c.Customer = cust).FirstOrDefault
     End Function
 #Region "IDisposable Support"
     Private disposedValue As Boolean ' To detect redundant calls

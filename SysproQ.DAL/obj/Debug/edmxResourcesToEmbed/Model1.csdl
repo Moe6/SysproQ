@@ -148,6 +148,11 @@
       <End Role="SorMaster" EntitySet="SorMasters" />
       <End Role="SorDetail" EntitySet="SorDetails" />
     </AssociationSet>
+    <EntitySet Name="ArCustomers" EntityType="SysproModel.ArCustomer" />
+    <AssociationSet Name="Syspro_FK_SorMaster_ArCustomer" Association="SysproModel.Syspro_FK_SorMaster_ArCustomer">
+      <End Role="ArCustomer" EntitySet="ArCustomers" />
+      <End Role="SorMaster" EntitySet="SorMasters" />
+    </AssociationSet>
   </EntityContainer>
   <EntityType Name="SorMaster">
     <Key>
@@ -277,6 +282,7 @@
     <Property Name="IncludeInMrp" Type="String" Nullable="false" MaxLength="1" FixedLength="true" Unicode="false" />
     <Property Name="TimeStamp" Type="Binary" MaxLength="8" FixedLength="true" annotation:StoreGeneratedPattern="Computed" />
     <NavigationProperty Name="SorDetails" Relationship="SysproModel.Syspro_FK_SorDetail_SorMaster" FromRole="SorMaster" ToRole="SorDetail" />
+    <NavigationProperty Name="ArCustomer" Relationship="SysproModel.Syspro_FK_SorMaster_ArCustomer" FromRole="SorMaster" ToRole="ArCustomer" />
   </EntityType>
   <Association Name="Syspro_FK_SorDetail_SorMaster">
     <End Type="SysproModel.SorMaster" Role="SorMaster" Multiplicity="1" />
@@ -287,6 +293,161 @@
       </Principal>
       <Dependent Role="SorDetail">
         <PropertyRef Name="SalesOrder" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityType Name="ArCustomer">
+    <Key>
+      <PropertyRef Name="Customer" />
+    </Key>
+    <Property Name="Customer" Type="String" Nullable="false" MaxLength="15" FixedLength="false" Unicode="false" />
+    <Property Name="Name" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="ShortName" Type="String" Nullable="false" MaxLength="20" FixedLength="false" Unicode="false" />
+    <Property Name="ExemptFinChg" Type="String" Nullable="false" MaxLength="1" FixedLength="true" Unicode="false" />
+    <Property Name="MaintHistory" Type="String" Nullable="false" MaxLength="1" FixedLength="true" Unicode="false" />
+    <Property Name="CustomerType" Type="String" Nullable="false" MaxLength="1" FixedLength="true" Unicode="false" />
+    <Property Name="MasterAccount" Type="String" Nullable="false" MaxLength="15" FixedLength="false" Unicode="false" />
+    <Property Name="StoreNumber" Type="String" Nullable="false" MaxLength="20" FixedLength="false" Unicode="false" />
+    <Property Name="PrtMasterAdd" Type="String" Nullable="false" MaxLength="1" FixedLength="true" Unicode="false" />
+    <Property Name="CreditStatus" Type="String" Nullable="false" MaxLength="1" FixedLength="true" Unicode="false" />
+    <Property Name="CreditLimit" Type="Decimal" Nullable="false" Precision="12" Scale="0" />
+    <Property Name="InvoiceCount" Type="Decimal" Nullable="false" Precision="10" Scale="0" />
+    <Property Name="Salesperson" Type="String" Nullable="false" MaxLength="20" FixedLength="false" Unicode="false" />
+    <Property Name="Salesperson1" Type="String" Nullable="false" MaxLength="20" FixedLength="false" Unicode="false" />
+    <Property Name="Salesperson2" Type="String" Nullable="false" MaxLength="20" FixedLength="false" Unicode="false" />
+    <Property Name="Salesperson3" Type="String" Nullable="false" MaxLength="20" FixedLength="false" Unicode="false" />
+    <Property Name="PriceCode" Type="String" Nullable="false" MaxLength="10" FixedLength="false" Unicode="false" />
+    <Property Name="CustomerClass" Type="String" Nullable="false" MaxLength="10" FixedLength="false" Unicode="false" />
+    <Property Name="Branch" Type="String" Nullable="false" MaxLength="10" FixedLength="false" Unicode="false" />
+    <Property Name="TermsCode" Type="String" Nullable="false" MaxLength="2" FixedLength="true" Unicode="false" />
+    <Property Name="InvDiscCode" Type="String" Nullable="false" MaxLength="10" FixedLength="false" Unicode="false" />
+    <Property Name="BalanceType" Type="String" Nullable="false" MaxLength="1" FixedLength="true" Unicode="false" />
+    <Property Name="Area" Type="String" Nullable="false" MaxLength="10" FixedLength="false" Unicode="false" />
+    <Property Name="LineDiscCode" Type="String" Nullable="false" MaxLength="10" FixedLength="false" Unicode="false" />
+    <Property Name="TaxStatus" Type="String" Nullable="false" MaxLength="1" FixedLength="true" Unicode="false" />
+    <Property Name="TaxExemptNumber" Type="String" Nullable="false" MaxLength="30" FixedLength="false" Unicode="false" />
+    <Property Name="SpecialInstrs" Type="String" Nullable="false" MaxLength="30" FixedLength="false" Unicode="false" />
+    <Property Name="PriceCategoryTable" Type="String" Nullable="false" MaxLength="260" FixedLength="false" Unicode="false" />
+    <Property Name="DateLastSale" Type="DateTime" Precision="3" />
+    <Property Name="DateLastPay" Type="DateTime" Precision="3" />
+    <Property Name="OutstOrdVal" Type="Decimal" Nullable="false" Precision="14" Scale="2" />
+    <Property Name="NumOutstOrd" Type="Decimal" Nullable="false" Precision="10" Scale="0" />
+    <Property Name="Telephone" Type="String" Nullable="false" MaxLength="20" FixedLength="false" Unicode="false" />
+    <Property Name="Contact" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="AddTelephone" Type="String" Nullable="false" MaxLength="20" FixedLength="false" Unicode="false" />
+    <Property Name="Fax" Type="String" Nullable="false" MaxLength="20" FixedLength="false" Unicode="false" />
+    <Property Name="Telex" Type="String" Nullable="false" MaxLength="10" FixedLength="false" Unicode="false" />
+    <Property Name="TelephoneExtn" Type="String" Nullable="false" MaxLength="5" FixedLength="true" Unicode="false" />
+    <Property Name="Currency" Type="String" Nullable="false" MaxLength="3" FixedLength="true" Unicode="false" />
+    <Property Name="UserField1" Type="String" Nullable="false" MaxLength="10" FixedLength="false" Unicode="false" />
+    <Property Name="UserField2" Type="Decimal" Nullable="false" Precision="14" Scale="2" />
+    <Property Name="GstExemptFlag" Type="String" Nullable="false" MaxLength="1" FixedLength="true" Unicode="false" />
+    <Property Name="GstExemptNum" Type="String" Nullable="false" MaxLength="15" FixedLength="false" Unicode="false" />
+    <Property Name="GstLevel" Type="String" Nullable="false" MaxLength="1" FixedLength="true" Unicode="false" />
+    <Property Name="DetailMoveReqd" Type="String" Nullable="false" MaxLength="1" FixedLength="true" Unicode="false" />
+    <Property Name="InterfaceFlag" Type="String" Nullable="false" MaxLength="1" FixedLength="true" Unicode="false" />
+    <Property Name="ContractPrcReqd" Type="String" Nullable="false" MaxLength="1" FixedLength="true" Unicode="false" />
+    <Property Name="BuyingGroup1" Type="String" Nullable="false" MaxLength="10" FixedLength="false" Unicode="false" />
+    <Property Name="BuyingGroup2" Type="String" Nullable="false" MaxLength="10" FixedLength="false" Unicode="false" />
+    <Property Name="BuyingGroup3" Type="String" Nullable="false" MaxLength="10" FixedLength="false" Unicode="false" />
+    <Property Name="BuyingGroup4" Type="String" Nullable="false" MaxLength="10" FixedLength="false" Unicode="false" />
+    <Property Name="BuyingGroup5" Type="String" Nullable="false" MaxLength="10" FixedLength="false" Unicode="false" />
+    <Property Name="StatementReqd" Type="String" Nullable="false" MaxLength="1" FixedLength="true" Unicode="false" />
+    <Property Name="BackOrdReqd" Type="String" Nullable="false" MaxLength="1" FixedLength="true" Unicode="false" />
+    <Property Name="ShippingInstrs" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="ShippingInstrsCod" Type="String" Nullable="false" MaxLength="6" FixedLength="false" Unicode="false" />
+    <Property Name="StateCode" Type="String" Nullable="false" MaxLength="3" FixedLength="true" Unicode="false" />
+    <Property Name="DateCustAdded" Type="DateTime" Precision="3" />
+    <Property Name="StockInterchange" Type="String" Nullable="false" MaxLength="1" FixedLength="true" Unicode="false" />
+    <Property Name="MaintLastPrcPaid" Type="String" Nullable="false" MaxLength="1" FixedLength="true" Unicode="false" />
+    <Property Name="IbtCustomer" Type="String" Nullable="false" MaxLength="1" FixedLength="true" Unicode="false" />
+    <Property Name="SoDefaultDoc" Type="String" Nullable="false" MaxLength="2" FixedLength="true" Unicode="false" />
+    <Property Name="CounterSlsOnly" Type="String" Nullable="false" MaxLength="1" FixedLength="true" Unicode="false" />
+    <Property Name="PaymentStatus" Type="String" Nullable="false" MaxLength="1" FixedLength="true" Unicode="false" />
+    <Property Name="Nationality" Type="String" Nullable="false" MaxLength="3" FixedLength="true" Unicode="false" />
+    <Property Name="HighestBalance" Type="Decimal" Nullable="false" Precision="14" Scale="2" />
+    <Property Name="CustomerOnHold" Type="String" Nullable="false" MaxLength="1" FixedLength="true" Unicode="false" />
+    <Property Name="InvCommentCode" Type="String" Nullable="false" MaxLength="10" FixedLength="false" Unicode="false" />
+    <Property Name="EdiSenderCode" Type="String" Nullable="false" MaxLength="40" FixedLength="false" Unicode="false" />
+    <Property Name="RelOrdOsValue" Type="Decimal" Nullable="false" Precision="14" Scale="2" />
+    <Property Name="EdiFlag" Type="String" Nullable="false" MaxLength="1" FixedLength="true" Unicode="false" />
+    <Property Name="SoDefaultType" Type="String" Nullable="false" MaxLength="2" FixedLength="true" Unicode="false" />
+    <Property Name="Email" Type="String" Nullable="false" MaxLength="255" FixedLength="false" Unicode="false" />
+    <Property Name="ApplyOrdDisc" Type="String" Nullable="false" MaxLength="1" FixedLength="true" Unicode="false" />
+    <Property Name="ApplyLineDisc" Type="String" Nullable="false" MaxLength="1" FixedLength="true" Unicode="false" />
+    <Property Name="FaxInvoices" Type="String" Nullable="false" MaxLength="1" FixedLength="true" Unicode="false" />
+    <Property Name="FaxStatements" Type="String" Nullable="false" MaxLength="1" FixedLength="true" Unicode="false" />
+    <Property Name="HighInvDays" Type="Decimal" Nullable="false" Precision="4" Scale="0" />
+    <Property Name="HighInv" Type="String" Nullable="false" MaxLength="20" FixedLength="false" Unicode="false" />
+    <Property Name="DocFax" Type="String" Nullable="false" MaxLength="20" FixedLength="false" Unicode="false" />
+    <Property Name="DocFaxContact" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="SoldToAddr1" Type="String" Nullable="false" MaxLength="40" FixedLength="false" Unicode="false" />
+    <Property Name="SoldToAddr2" Type="String" Nullable="false" MaxLength="40" FixedLength="false" Unicode="false" />
+    <Property Name="SoldToAddr3" Type="String" Nullable="false" MaxLength="40" FixedLength="false" Unicode="false" />
+    <Property Name="SoldToAddr3Loc" Type="String" Nullable="false" MaxLength="40" FixedLength="false" Unicode="false" />
+    <Property Name="SoldToAddr4" Type="String" Nullable="false" MaxLength="40" FixedLength="false" Unicode="false" />
+    <Property Name="SoldToAddr5" Type="String" Nullable="false" MaxLength="40" FixedLength="false" Unicode="false" />
+    <Property Name="SoldPostalCode" Type="String" Nullable="false" MaxLength="10" FixedLength="false" Unicode="false" />
+    <Property Name="SoldToGpsLat" Type="Decimal" Nullable="false" Precision="8" Scale="6" />
+    <Property Name="SoldToGpsLong" Type="Decimal" Nullable="false" Precision="9" Scale="6" />
+    <Property Name="ShipToAddr1" Type="String" Nullable="false" MaxLength="40" FixedLength="false" Unicode="false" />
+    <Property Name="ShipToAddr2" Type="String" Nullable="false" MaxLength="40" FixedLength="false" Unicode="false" />
+    <Property Name="ShipToAddr3" Type="String" Nullable="false" MaxLength="40" FixedLength="false" Unicode="false" />
+    <Property Name="ShipToAddr3Loc" Type="String" Nullable="false" MaxLength="40" FixedLength="false" Unicode="false" />
+    <Property Name="ShipToAddr4" Type="String" Nullable="false" MaxLength="40" FixedLength="false" Unicode="false" />
+    <Property Name="ShipToAddr5" Type="String" Nullable="false" MaxLength="40" FixedLength="false" Unicode="false" />
+    <Property Name="ShipPostalCode" Type="String" Nullable="false" MaxLength="10" FixedLength="false" Unicode="false" />
+    <Property Name="ShipToGpsLat" Type="Decimal" Nullable="false" Precision="8" Scale="6" />
+    <Property Name="ShipToGpsLong" Type="Decimal" Nullable="false" Precision="9" Scale="6" />
+    <Property Name="State" Type="String" Nullable="false" MaxLength="2" FixedLength="true" Unicode="false" />
+    <Property Name="CountyZip" Type="String" Nullable="false" MaxLength="5" FixedLength="true" Unicode="false" />
+    <Property Name="City" Type="String" Nullable="false" MaxLength="3" FixedLength="true" Unicode="false" />
+    <Property Name="State1" Type="String" Nullable="false" MaxLength="2" FixedLength="true" Unicode="false" />
+    <Property Name="CountyZip1" Type="String" Nullable="false" MaxLength="5" FixedLength="true" Unicode="false" />
+    <Property Name="City1" Type="String" Nullable="false" MaxLength="3" FixedLength="true" Unicode="false" />
+    <Property Name="DefaultOrdType" Type="String" Nullable="false" MaxLength="2" FixedLength="true" Unicode="false" />
+    <Property Name="PoNumberMandatory" Type="String" Nullable="false" MaxLength="1" FixedLength="true" Unicode="false" />
+    <Property Name="CreditCheckFlag" Type="String" Nullable="false" MaxLength="1" FixedLength="true" Unicode="false" />
+    <Property Name="CompanyTaxNumber" Type="String" Nullable="false" MaxLength="15" FixedLength="false" Unicode="false" />
+    <Property Name="DeliveryTerms" Type="String" Nullable="false" MaxLength="3" FixedLength="true" Unicode="false" />
+    <Property Name="TransactionNature" Type="Decimal" Nullable="false" Precision="3" Scale="0" />
+    <Property Name="DeliveryTermsC" Type="String" Nullable="false" MaxLength="3" FixedLength="true" Unicode="false" />
+    <Property Name="TransactionNatureC" Type="Decimal" Nullable="false" Precision="3" Scale="0" />
+    <Property Name="RouteCode" Type="String" Nullable="false" MaxLength="10" FixedLength="false" Unicode="false" />
+    <Property Name="FaxQuotes" Type="String" Nullable="false" MaxLength="1" FixedLength="true" Unicode="false" />
+    <Property Name="RouteDistance" Type="Decimal" Nullable="false" Precision="4" Scale="0" />
+    <Property Name="TpmCustomerFlag" Type="String" Nullable="false" MaxLength="1" FixedLength="true" Unicode="false" />
+    <Property Name="SalesWarehouse" Type="String" Nullable="false" MaxLength="10" FixedLength="false" Unicode="false" />
+    <Property Name="TpmPricingFlag" Type="String" Nullable="false" MaxLength="1" FixedLength="true" Unicode="false" />
+    <Property Name="ArStatementNo" Type="String" Nullable="false" MaxLength="2" FixedLength="true" Unicode="false" />
+    <Property Name="TpmCreditCheck" Type="String" Nullable="false" MaxLength="1" FixedLength="true" Unicode="false" />
+    <Property Name="WholeOrderShipFlag" Type="String" Nullable="false" MaxLength="1" FixedLength="true" Unicode="false" />
+    <Property Name="MinimumOrderValue" Type="Decimal" Nullable="false" Precision="10" Scale="0" />
+    <Property Name="MinimumOrderChgCod" Type="String" Nullable="false" MaxLength="6" FixedLength="false" Unicode="false" />
+    <Property Name="UkVatFlag" Type="String" Nullable="false" MaxLength="1" FixedLength="true" Unicode="false" />
+    <Property Name="UkCurrency" Type="String" Nullable="false" MaxLength="3" FixedLength="true" Unicode="false" />
+    <Property Name="LanguageCode" Type="String" Nullable="false" MaxLength="2" FixedLength="true" Unicode="false" />
+    <Property Name="ShippingLocation" Type="String" Nullable="false" MaxLength="10" FixedLength="false" Unicode="false" />
+    <Property Name="AltMethodFlag" Type="String" Nullable="false" MaxLength="1" FixedLength="true" Unicode="false" />
+    <Property Name="TimeStamp" Type="Binary" MaxLength="8" FixedLength="true" annotation:StoreGeneratedPattern="Computed" />
+    <Property Name="SalesAllowed" Type="String" Nullable="false" MaxLength="1" FixedLength="true" Unicode="false" />
+    <Property Name="UnappPayAllowed" Type="String" Nullable="false" MaxLength="1" FixedLength="true" Unicode="false" />
+    <Property Name="PaymentsAllowed" Type="String" Nullable="false" MaxLength="1" FixedLength="true" Unicode="false" />
+    <Property Name="QuotesAllowed" Type="String" Nullable="false" MaxLength="1" FixedLength="true" Unicode="false" />
+    <Property Name="CrNotesAllowed" Type="String" Nullable="false" MaxLength="1" FixedLength="true" Unicode="false" />
+    <Property Name="DrNotesAllowed" Type="String" Nullable="false" MaxLength="1" FixedLength="true" Unicode="false" />
+    <Property Name="QueryAllowed" Type="String" Nullable="false" MaxLength="1" FixedLength="true" Unicode="false" />
+    <NavigationProperty Name="SorMasters" Relationship="SysproModel.Syspro_FK_SorMaster_ArCustomer" FromRole="ArCustomer" ToRole="SorMaster" />
+  </EntityType>
+  <Association Name="Syspro_FK_SorMaster_ArCustomer">
+    <End Type="SysproModel.ArCustomer" Role="ArCustomer" Multiplicity="1" />
+    <End Type="SysproModel.SorMaster" Role="SorMaster" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="ArCustomer">
+        <PropertyRef Name="Customer" />
+      </Principal>
+      <Dependent Role="SorMaster">
+        <PropertyRef Name="Customer" />
       </Dependent>
     </ReferentialConstraint>
   </Association>

@@ -136,5 +136,6 @@ Partial Public Class SorMaster
     Public Property TimeStamp As Byte()
 
     Public Overridable Property SorDetails As ICollection(Of SorDetail) = New HashSet(Of SorDetail)
+    Public Overridable Property ArCustomer As ArCustomer
 
 End Class
