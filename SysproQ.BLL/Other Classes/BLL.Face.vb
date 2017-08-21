@@ -28,9 +28,6 @@ Public Class Face
         Return PostSORTOI(Xmlin, salesorder, actiontype, sl)
     End Function
 
-    'Public Function ReserveStock(xmlin As String) As Enums.PostResults
-    '    Return PostSORTRA(xmlin)
-    'End Function
     Private Function PostSORTOI(xmlin As String, salesorder As String, actionType As String, slines As List(Of SoLines)) As Enums.PostResults
         'Parse xml in to object as xml
         Dim sortoi As New SORTOI(xmlin, GetLogininfo, actionType, slines)
@@ -39,26 +36,15 @@ Public Class Face
         Return _result
     End Function
 
-    'Private Function PostSORTRA(xmlin As String) As Enums.PostResults
-    '    Dim sr As New SORTRA(GetLogininfo, xmlin)
-    '    If sr.Post() Then
-    '        AppendTrnMessage(sr.TrnMessage)
-    '        Return Enums.PostResults.Success
-    '    Else
-    '        AppendTrnMessage(sr.TrnMessage)
-    '    End If
-    '    Return Enums.PostResults.Fail
-    'End Function
-
     Private Function GetLogininfo() As SysproSignInObj
-        'username = "ARPOS"
-        'uPass = ""
-        'company = "N"
-        'coPass = ""
-        username = "ADMIN"
+        username = "ARPOS"
         uPass = ""
-        company = "A"
+        company = "N"
         coPass = ""
+        'username = "ADMIN"
+        'uPass = ""
+        'company = "A"
+        'coPass = ""
         Return New SysproSignInObj(username, uPass, company, coPass)
     End Function
 
@@ -91,9 +77,10 @@ Public Class Face
                 End Using
                 'If customer does not exist, create new customer
                 Using dal As New DAL.Update
-                    Dim newcustomer As New ArCustomer(cust)
-                    dal.Update(newcustomer)
-                    Return dal.Save() = True
+                    Dim sql As String = String.Format("INSERT INTO [dbo].[ArCustomer] ([Customer],[Name],[ShortName],[Salesperson],
+                    [Branch],Currency,TermsCode,DateCustAdded) VALUES ('{0}','{1}','{2}','{3}','{4}','{5}','{6}','{7}')" _
+                    , cust, cust, cust, "C1", "C1", "BWP", "0", Now)
+                    If dal.UpdateSQL(sql) Then Return True
                     xele = FormatCustomerFailMessage(dal.TrnMessage)
                     AppendTrnMessage(xele.ToString)
                 End Using

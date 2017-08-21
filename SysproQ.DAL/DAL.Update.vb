@@ -1,5 +1,7 @@
 ﻿Imports System.Data.Entity
 Imports SysproQ.Entity
+Imports System.Data.SqlClient
+Imports SysproQ.Entity.Enums
 Public Class Update
     Implements IDisposable
 
@@ -45,7 +47,9 @@ Public Class Update
                 End If
             End If
         Catch ex As Exception
-            AppendMessage(ex.Message)
+            Dim H As New MessagingHelper
+            Dim M = H.GetFullMessage(ex)
+            AppendMessage(M)
         End Try
         Return trnSuccess > 0
     End Function
@@ -59,6 +63,27 @@ Public Class Update
         _db.[Set](Of T)().Add(newItem)
         _recordCount += 1
     End Sub
+
+    Public Function UpdateSQL(strSQL As String) As Boolean
+        Dim con = New SqlConnection("data source=10.6.1.153;initial catalog=SysproCompanyT;persist security info=False;user id=sa;password=sysadmin123$")
+        Dim cmd As New SqlCommand
+        Dim adp As New SqlDataAdapter
+        Dim rowsupdated As Integer
+        Try
+            cmd.Connection = con
+            con.Open()
+            cmd.CommandText = strSQL
+            rowsupdated = cmd.ExecuteNonQuery()
+        Catch ex As Exception
+            Dim H As New MessagingHelper
+            Dim M = H.GetFullMessage(ex)
+            AppendMessage(M)
+        Finally
+            con.Close()
+        End Try
+        Return rowsupdated = 1
+    End Function
+
 
 #Region "IDisposable Support"
     Private disposedValue As Boolean ' To detect redundant calls

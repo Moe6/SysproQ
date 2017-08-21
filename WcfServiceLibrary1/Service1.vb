@@ -53,8 +53,6 @@ Public Class Service1
                         _trnMessage = f.TrnMessage
                         AppendTrnMessage("Reserve Stock Failed")
                     End If
-                Else
-
                 End If
             Else
                 _trnMessage = f.TrnMessage

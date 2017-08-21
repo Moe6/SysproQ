@@ -15,5 +15,8 @@
         Partly
     End Enum
 
-
+    Public Enum DbServer
+        SysproQ
+        Syspro
+    End Enum
 End Namespace
