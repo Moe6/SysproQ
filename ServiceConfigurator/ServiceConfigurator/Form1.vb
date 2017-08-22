@@ -32,9 +32,9 @@ Partial Public Class Form1
         _OrderHeader = New SalesOrderHeader.OrderHeader
         With _OrderHeader
             .ActionType = "A"
-            .Customer = "ADS001"
+            .Customer = "ADDO"
             .PO = ""
-            .SalesOrder = "107025"
+            .SalesOrder = "107043"
         End With
         BindingSource1.DataSource = _OrderHeader
         BindingSource2.DataSource = _orderDetails
@@ -90,23 +90,23 @@ Partial Public Class Form1
         Dim line As Integer = 1
         Dim price As Decimal = 3040
         Dim qty As Decimal = 2
-        Dim stockcode As String = "KL-0001-E"
-        Dim wh As String = "MAUMAU"
+        Dim stockcode As String = "0101"
+        Dim wh As String = "CAPE"
         If obj IsNot Nothing Then
             If obj.Count = 1 Then
                 Dim sl = obj.LastOrDefault
                 line = sl.PoLine + 1
                 price = sl.Price + 1
                 qty = sl.Qty + 1
-                stockcode = "KL-0009-E"
-                wh = "GABORONETOWN"
+                stockcode = "0103"
+                wh = "CAPE"
             ElseIf obj.Count > 1 Then
                 Dim sl = obj.LastOrDefault
                 line = sl.PoLine + 1
                 price = sl.Price + 1
                 qty = sl.Qty + 1
                 stockcode = "NEWCODE"
-                wh = "MAUMAU"
+                wh = "CAPE"
             End If
         Else
             obj = New List(Of StockLine)

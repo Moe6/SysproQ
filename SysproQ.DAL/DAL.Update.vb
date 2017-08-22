@@ -82,7 +82,7 @@ Public Class Update
         Finally
             con.Close()
         End Try
-        Return rowsupdated = 1
+        Return rowsupdated = 2
     End Function
 
 
