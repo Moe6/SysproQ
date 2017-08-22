@@ -1,5 +1,147 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Schema Namespace="SysproModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+  <EntityType Name="ArCustomer">
+    <Key>
+      <PropertyRef Name="Customer" />
+    </Key>
+    <Property Name="Customer" Type="varchar" MaxLength="15" Nullable="false" />
+    <Property Name="Name" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="ShortName" Type="varchar" MaxLength="20" Nullable="false" />
+    <Property Name="ExemptFinChg" Type="char" MaxLength="1" Nullable="false" />
+    <Property Name="MaintHistory" Type="char" MaxLength="1" Nullable="false" />
+    <Property Name="CustomerType" Type="char" MaxLength="1" Nullable="false" />
+    <Property Name="MasterAccount" Type="varchar" MaxLength="15" Nullable="false" />
+    <Property Name="StoreNumber" Type="varchar" MaxLength="20" Nullable="false" />
+    <Property Name="PrtMasterAdd" Type="char" MaxLength="1" Nullable="false" />
+    <Property Name="CreditStatus" Type="char" MaxLength="1" Nullable="false" />
+    <Property Name="CreditLimit" Type="decimal" Precision="12" Scale="0" Nullable="false" />
+    <Property Name="InvoiceCount" Type="decimal" Precision="10" Scale="0" Nullable="false" />
+    <Property Name="Salesperson" Type="varchar" MaxLength="20" Nullable="false" />
+    <Property Name="Salesperson1" Type="varchar" MaxLength="20" Nullable="false" />
+    <Property Name="Salesperson2" Type="varchar" MaxLength="20" Nullable="false" />
+    <Property Name="Salesperson3" Type="varchar" MaxLength="20" Nullable="false" />
+    <Property Name="PriceCode" Type="varchar" MaxLength="10" Nullable="false" />
+    <Property Name="CustomerClass" Type="varchar" MaxLength="10" Nullable="false" />
+    <Property Name="Branch" Type="varchar" MaxLength="10" Nullable="false" />
+    <Property Name="TermsCode" Type="char" MaxLength="2" Nullable="false" />
+    <Property Name="InvDiscCode" Type="varchar" MaxLength="10" Nullable="false" />
+    <Property Name="BalanceType" Type="char" MaxLength="1" Nullable="false" />
+    <Property Name="Area" Type="varchar" MaxLength="10" Nullable="false" />
+    <Property Name="LineDiscCode" Type="varchar" MaxLength="10" Nullable="false" />
+    <Property Name="TaxStatus" Type="char" MaxLength="1" Nullable="false" />
+    <Property Name="TaxExemptNumber" Type="varchar" MaxLength="30" Nullable="false" />
+    <Property Name="SpecialInstrs" Type="varchar" MaxLength="30" Nullable="false" />
+    <Property Name="PriceCategoryTable" Type="varchar" MaxLength="260" Nullable="false" />
+    <Property Name="DateLastSale" Type="datetime" />
+    <Property Name="DateLastPay" Type="datetime" />
+    <Property Name="OutstOrdVal" Type="decimal" Precision="14" Scale="2" Nullable="false" />
+    <Property Name="NumOutstOrd" Type="decimal" Precision="10" Scale="0" Nullable="false" />
+    <Property Name="Telephone" Type="varchar" MaxLength="20" Nullable="false" />
+    <Property Name="Contact" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="AddTelephone" Type="varchar" MaxLength="20" Nullable="false" />
+    <Property Name="Fax" Type="varchar" MaxLength="20" Nullable="false" />
+    <Property Name="Telex" Type="varchar" MaxLength="10" Nullable="false" />
+    <Property Name="TelephoneExtn" Type="char" MaxLength="5" Nullable="false" />
+    <Property Name="Currency" Type="char" MaxLength="3" Nullable="false" />
+    <Property Name="UserField1" Type="varchar" MaxLength="10" Nullable="false" />
+    <Property Name="UserField2" Type="decimal" Precision="14" Scale="2" Nullable="false" />
+    <Property Name="GstExemptFlag" Type="char" MaxLength="1" Nullable="false" />
+    <Property Name="GstExemptNum" Type="varchar" MaxLength="15" Nullable="false" />
+    <Property Name="GstLevel" Type="char" MaxLength="1" Nullable="false" />
+    <Property Name="DetailMoveReqd" Type="char" MaxLength="1" Nullable="false" />
+    <Property Name="InterfaceFlag" Type="char" MaxLength="1" Nullable="false" />
+    <Property Name="ContractPrcReqd" Type="char" MaxLength="1" Nullable="false" />
+    <Property Name="BuyingGroup1" Type="varchar" MaxLength="10" Nullable="false" />
+    <Property Name="BuyingGroup2" Type="varchar" MaxLength="10" Nullable="false" />
+    <Property Name="BuyingGroup3" Type="varchar" MaxLength="10" Nullable="false" />
+    <Property Name="BuyingGroup4" Type="varchar" MaxLength="10" Nullable="false" />
+    <Property Name="BuyingGroup5" Type="varchar" MaxLength="10" Nullable="false" />
+    <Property Name="StatementReqd" Type="char" MaxLength="1" Nullable="false" />
+    <Property Name="BackOrdReqd" Type="char" MaxLength="1" Nullable="false" />
+    <Property Name="ShippingInstrs" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="ShippingInstrsCod" Type="varchar" MaxLength="6" Nullable="false" />
+    <Property Name="StateCode" Type="char" MaxLength="3" Nullable="false" />
+    <Property Name="DateCustAdded" Type="datetime" />
+    <Property Name="StockInterchange" Type="char" MaxLength="1" Nullable="false" />
+    <Property Name="MaintLastPrcPaid" Type="char" MaxLength="1" Nullable="false" />
+    <Property Name="IbtCustomer" Type="char" MaxLength="1" Nullable="false" />
+    <Property Name="SoDefaultDoc" Type="char" MaxLength="2" Nullable="false" />
+    <Property Name="CounterSlsOnly" Type="char" MaxLength="1" Nullable="false" />
+    <Property Name="PaymentStatus" Type="char" MaxLength="1" Nullable="false" />
+    <Property Name="Nationality" Type="char" MaxLength="3" Nullable="false" />
+    <Property Name="HighestBalance" Type="decimal" Precision="14" Scale="2" Nullable="false" />
+    <Property Name="CustomerOnHold" Type="char" MaxLength="1" Nullable="false" />
+    <Property Name="InvCommentCode" Type="varchar" MaxLength="10" Nullable="false" />
+    <Property Name="EdiSenderCode" Type="varchar" MaxLength="40" Nullable="false" />
+    <Property Name="RelOrdOsValue" Type="decimal" Precision="14" Scale="2" Nullable="false" />
+    <Property Name="EdiFlag" Type="char" MaxLength="1" Nullable="false" />
+    <Property Name="SoDefaultType" Type="char" MaxLength="2" Nullable="false" />
+    <Property Name="Email" Type="varchar" MaxLength="255" Nullable="false" />
+    <Property Name="ApplyOrdDisc" Type="char" MaxLength="1" Nullable="false" />
+    <Property Name="ApplyLineDisc" Type="char" MaxLength="1" Nullable="false" />
+    <Property Name="FaxInvoices" Type="char" MaxLength="1" Nullable="false" />
+    <Property Name="FaxStatements" Type="char" MaxLength="1" Nullable="false" />
+    <Property Name="HighInvDays" Type="decimal" Precision="4" Scale="0" Nullable="false" />
+    <Property Name="HighInv" Type="varchar" MaxLength="20" Nullable="false" />
+    <Property Name="DocFax" Type="varchar" MaxLength="20" Nullable="false" />
+    <Property Name="DocFaxContact" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="SoldToAddr1" Type="varchar" MaxLength="40" Nullable="false" />
+    <Property Name="SoldToAddr2" Type="varchar" MaxLength="40" Nullable="false" />
+    <Property Name="SoldToAddr3" Type="varchar" MaxLength="40" Nullable="false" />
+    <Property Name="SoldToAddr3Loc" Type="varchar" MaxLength="40" Nullable="false" />
+    <Property Name="SoldToAddr4" Type="varchar" MaxLength="40" Nullable="false" />
+    <Property Name="SoldToAddr5" Type="varchar" MaxLength="40" Nullable="false" />
+    <Property Name="SoldPostalCode" Type="varchar" MaxLength="10" Nullable="false" />
+    <Property Name="SoldToGpsLat" Type="decimal" Precision="8" Scale="6" Nullable="false" />
+    <Property Name="SoldToGpsLong" Type="decimal" Precision="9" Scale="6" Nullable="false" />
+    <Property Name="ShipToAddr1" Type="varchar" MaxLength="40" Nullable="false" />
+    <Property Name="ShipToAddr2" Type="varchar" MaxLength="40" Nullable="false" />
+    <Property Name="ShipToAddr3" Type="varchar" MaxLength="40" Nullable="false" />
+    <Property Name="ShipToAddr3Loc" Type="varchar" MaxLength="40" Nullable="false" />
+    <Property Name="ShipToAddr4" Type="varchar" MaxLength="40" Nullable="false" />
+    <Property Name="ShipToAddr5" Type="varchar" MaxLength="40" Nullable="false" />
+    <Property Name="ShipPostalCode" Type="varchar" MaxLength="10" Nullable="false" />
+    <Property Name="ShipToGpsLat" Type="decimal" Precision="8" Scale="6" Nullable="false" />
+    <Property Name="ShipToGpsLong" Type="decimal" Precision="9" Scale="6" Nullable="false" />
+    <Property Name="State" Type="char" MaxLength="2" Nullable="false" />
+    <Property Name="CountyZip" Type="char" MaxLength="5" Nullable="false" />
+    <Property Name="City" Type="char" MaxLength="3" Nullable="false" />
+    <Property Name="State1" Type="char" MaxLength="2" Nullable="false" />
+    <Property Name="CountyZip1" Type="char" MaxLength="5" Nullable="false" />
+    <Property Name="City1" Type="char" MaxLength="3" Nullable="false" />
+    <Property Name="DefaultOrdType" Type="char" MaxLength="2" Nullable="false" />
+    <Property Name="PoNumberMandatory" Type="char" MaxLength="1" Nullable="false" />
+    <Property Name="CreditCheckFlag" Type="char" MaxLength="1" Nullable="false" />
+    <Property Name="CompanyTaxNumber" Type="varchar" MaxLength="15" Nullable="false" />
+    <Property Name="DeliveryTerms" Type="char" MaxLength="3" Nullable="false" />
+    <Property Name="TransactionNature" Type="decimal" Precision="3" Scale="0" Nullable="false" />
+    <Property Name="DeliveryTermsC" Type="char" MaxLength="3" Nullable="false" />
+    <Property Name="TransactionNatureC" Type="decimal" Precision="3" Scale="0" Nullable="false" />
+    <Property Name="RouteCode" Type="varchar" MaxLength="10" Nullable="false" />
+    <Property Name="FaxQuotes" Type="char" MaxLength="1" Nullable="false" />
+    <Property Name="RouteDistance" Type="decimal" Precision="4" Scale="0" Nullable="false" />
+    <Property Name="TpmCustomerFlag" Type="char" MaxLength="1" Nullable="false" />
+    <Property Name="SalesWarehouse" Type="varchar" MaxLength="10" Nullable="false" />
+    <Property Name="TpmPricingFlag" Type="char" MaxLength="1" Nullable="false" />
+    <Property Name="ArStatementNo" Type="char" MaxLength="2" Nullable="false" />
+    <Property Name="TpmCreditCheck" Type="char" MaxLength="1" Nullable="false" />
+    <Property Name="WholeOrderShipFlag" Type="char" MaxLength="1" Nullable="false" />
+    <Property Name="MinimumOrderValue" Type="decimal" Precision="10" Scale="0" Nullable="false" />
+    <Property Name="MinimumOrderChgCod" Type="varchar" MaxLength="6" Nullable="false" />
+    <Property Name="UkVatFlag" Type="char" MaxLength="1" Nullable="false" />
+    <Property Name="UkCurrency" Type="char" MaxLength="3" Nullable="false" />
+    <Property Name="LanguageCode" Type="char" MaxLength="2" Nullable="false" />
+    <Property Name="ShippingLocation" Type="varchar" MaxLength="10" Nullable="false" />
+    <Property Name="AltMethodFlag" Type="char" MaxLength="1" Nullable="false" />
+    <Property Name="TimeStamp" Type="timestamp" StoreGeneratedPattern="Computed" />
+    <Property Name="SalesAllowed" Type="char" MaxLength="1" Nullable="false" />
+    <Property Name="UnappPayAllowed" Type="char" MaxLength="1" Nullable="false" />
+    <Property Name="PaymentsAllowed" Type="char" MaxLength="1" Nullable="false" />
+    <Property Name="QuotesAllowed" Type="char" MaxLength="1" Nullable="false" />
+    <Property Name="CrNotesAllowed" Type="char" MaxLength="1" Nullable="false" />
+    <Property Name="DrNotesAllowed" Type="char" MaxLength="1" Nullable="false" />
+    <Property Name="QueryAllowed" Type="char" MaxLength="1" Nullable="false" />
+  </EntityType>
   <EntityType Name="SorDetail">
     <Key>
       <PropertyRef Name="SalesOrder" />
@@ -280,12 +422,29 @@
       </Dependent>
     </ReferentialConstraint>
   </Association>
+  <Association Name="Syspro_FK_SorMaster_ArCustomer">
+    <End Role="ArCustomer" Type="Self.ArCustomer" Multiplicity="1" />
+    <End Role="SorMaster" Type="Self.SorMaster" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="ArCustomer">
+        <PropertyRef Name="Customer" />
+      </Principal>
+      <Dependent Role="SorMaster">
+        <PropertyRef Name="Customer" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
   <EntityContainer Name="SysproModelStoreContainer">
+    <EntitySet Name="ArCustomer" EntityType="Self.ArCustomer" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="SorDetail" EntityType="Self.SorDetail" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="SorMaster" EntityType="Self.SorMaster" Schema="dbo" store:Type="Tables" />
     <AssociationSet Name="Syspro_FK_SorDetail_SorMaster" Association="Self.Syspro_FK_SorDetail_SorMaster">
       <End Role="SorMaster" EntitySet="SorMaster" />
       <End Role="SorDetail" EntitySet="SorDetail" />
+    </AssociationSet>
+    <AssociationSet Name="Syspro_FK_SorMaster_ArCustomer" Association="Self.Syspro_FK_SorMaster_ArCustomer">
+      <End Role="ArCustomer" EntitySet="ArCustomer" />
+      <End Role="SorMaster" EntitySet="SorMaster" />
     </AssociationSet>
   </EntityContainer>
 </Schema>

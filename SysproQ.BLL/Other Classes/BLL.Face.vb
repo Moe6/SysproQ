@@ -77,9 +77,11 @@ Public Class Face
                 End Using
                 'If customer does not exist, create new customer
                 Using dal As New DAL.Update
-                    Dim sql As String = String.Format("INSERT INTO [dbo].[ArCustomer] ([Customer],[Name],[ShortName],[Salesperson],
-                    [Branch],Currency,TermsCode,DateCustAdded) VALUES ('{0}','{1}','{2}','{3}','{4}','{5}','{6}','{7}')" _
-                    , cust, cust, cust, "C1", "C1", "BWP", "0", Now)
+                    Dim sql As String = String.Format("INSERT INTO [dbo].[ArCustomer] (Customer,[Name],ShortName,Salesperson,
+                    [Branch],Currency,TermsCode,DateCustAdded,ExemptFinChg,MaintHistory,CreditStatus,BalanceType,TaxStatus,[GstExemptFlag],DetailMoveReqd," &
+                    "InterfaceFlag,ContractPrcReqd,StatementReqd,BackOrdReqd,[SalesAllowed],UnappPayAllowed,PaymentsAllowed,QuotesAllowed,CrNotesAllowed,DrNotesAllowed,QueryAllowed) " &
+                    "VALUES ('{0}','{1}','{2}','{3}','{4}','{5}','{6}','{7}','{8}','{9}','{10}','{11}','{12}','{13}','{14}','{15}','{16}','{17}','{18}','{19}','{20}','{21}'" &
+                    ",'{22}','{23}','{24}','{25}')", cust, cust, cust, "C1", "C1", "BWP", "0", Now, "Y", "Y", "0", "I", "N", "E", "Y", "Y", "N", "N", "R", "Y", "Y", "Y", "Y", "Y", "Y", "Y")
                     If dal.UpdateSQL(sql) Then Return True
                     xele = FormatCustomerFailMessage(dal.TrnMessage)
                     AppendTrnMessage(xele.ToString)

@@ -313,7 +313,6 @@ Public Class Post
         Return True
     End Function
 
-
     Private Sub GetCancellationResult(salesorder As String)
         'Fill the created sales order
         Dim b As New BLL.Query
