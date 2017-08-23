@@ -28,9 +28,11 @@
         Me.btnNew = New DevExpress.XtraBars.BarButtonItem()
         Me.btnAddLine = New DevExpress.XtraBars.BarButtonItem()
         Me.btnPost = New DevExpress.XtraBars.BarButtonItem()
+        Me.BarButtonItem1 = New DevExpress.XtraBars.BarButtonItem()
         Me.ribbonPage1 = New DevExpress.XtraBars.Ribbon.RibbonPage()
         Me.ribbonPageGroup1 = New DevExpress.XtraBars.Ribbon.RibbonPageGroup()
         Me.RibbonPageGroup2 = New DevExpress.XtraBars.Ribbon.RibbonPageGroup()
+        Me.RibbonPageGroup3 = New DevExpress.XtraBars.Ribbon.RibbonPageGroup()
         Me.LayoutControl1 = New DevExpress.XtraLayout.LayoutControl()
         Me.VGridControl1 = New DevExpress.XtraVerticalGrid.VGridControl()
         Me.BindingSource1 = New System.Windows.Forms.BindingSource(Me.components)
@@ -44,6 +46,7 @@
         Me.colPoLine = New DevExpress.XtraGrid.Columns.GridColumn()
         Me.colWarehouse = New DevExpress.XtraGrid.Columns.GridColumn()
         Me.colStockCode = New DevExpress.XtraGrid.Columns.GridColumn()
+        Me.colLineAction = New DevExpress.XtraGrid.Columns.GridColumn()
         Me.colQty = New DevExpress.XtraGrid.Columns.GridColumn()
         Me.colPrice = New DevExpress.XtraGrid.Columns.GridColumn()
         Me.LayoutControlGroup1 = New DevExpress.XtraLayout.LayoutControlGroup()
@@ -52,7 +55,6 @@
         Me.PanelControl1 = New DevExpress.XtraEditors.PanelControl()
         Me.rowPO = New DevExpress.XtraVerticalGrid.Rows.EditorRow()
         Me.rowCustomer = New DevExpress.XtraVerticalGrid.Rows.EditorRow()
-        Me.colLineAction = New DevExpress.XtraGrid.Columns.GridColumn()
         CType(Me.ribbonControl1, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.LayoutControl1, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.LayoutControl1.SuspendLayout()
@@ -71,9 +73,9 @@
         'ribbonControl1
         '
         Me.ribbonControl1.ExpandCollapseItem.Id = 0
-        Me.ribbonControl1.Items.AddRange(New DevExpress.XtraBars.BarItem() {Me.ribbonControl1.ExpandCollapseItem, Me.btnNew, Me.btnAddLine, Me.btnPost})
+        Me.ribbonControl1.Items.AddRange(New DevExpress.XtraBars.BarItem() {Me.ribbonControl1.ExpandCollapseItem, Me.btnNew, Me.btnAddLine, Me.btnPost, Me.BarButtonItem1})
         Me.ribbonControl1.Location = New System.Drawing.Point(0, 0)
-        Me.ribbonControl1.MaxItemId = 4
+        Me.ribbonControl1.MaxItemId = 5
         Me.ribbonControl1.Name = "ribbonControl1"
         Me.ribbonControl1.Pages.AddRange(New DevExpress.XtraBars.Ribbon.RibbonPage() {Me.ribbonPage1})
         Me.ribbonControl1.RibbonStyle = DevExpress.XtraBars.Ribbon.RibbonControlStyle.Office2010
@@ -103,9 +105,17 @@
         Me.btnPost.ImageOptions.LargeImage = CType(resources.GetObject("btnPost.ImageOptions.LargeImage"), System.Drawing.Image)
         Me.btnPost.Name = "btnPost"
         '
+        'BarButtonItem1
+        '
+        Me.BarButtonItem1.Caption = "Delete Line"
+        Me.BarButtonItem1.Id = 4
+        Me.BarButtonItem1.ImageOptions.Image = CType(resources.GetObject("BarButtonItem1.ImageOptions.Image"), System.Drawing.Image)
+        Me.BarButtonItem1.ImageOptions.LargeImage = CType(resources.GetObject("BarButtonItem1.ImageOptions.LargeImage"), System.Drawing.Image)
+        Me.BarButtonItem1.Name = "BarButtonItem1"
+        '
         'ribbonPage1
         '
-        Me.ribbonPage1.Groups.AddRange(New DevExpress.XtraBars.Ribbon.RibbonPageGroup() {Me.ribbonPageGroup1, Me.RibbonPageGroup2})
+        Me.ribbonPage1.Groups.AddRange(New DevExpress.XtraBars.Ribbon.RibbonPageGroup() {Me.ribbonPageGroup1, Me.RibbonPageGroup2, Me.RibbonPageGroup3})
         Me.ribbonPage1.Name = "ribbonPage1"
         '
         'ribbonPageGroup1
@@ -118,6 +128,11 @@
         '
         Me.RibbonPageGroup2.ItemLinks.Add(Me.btnPost)
         Me.RibbonPageGroup2.Name = "RibbonPageGroup2"
+        '
+        'RibbonPageGroup3
+        '
+        Me.RibbonPageGroup3.ItemLinks.Add(Me.BarButtonItem1)
+        Me.RibbonPageGroup3.Name = "RibbonPageGroup3"
         '
         'LayoutControl1
         '
@@ -133,7 +148,6 @@
         '
         'VGridControl1
         '
-        Me.VGridControl1.Cursor = System.Windows.Forms.Cursors.SizeWE
         Me.VGridControl1.DataSource = Me.BindingSource1
         Me.VGridControl1.Location = New System.Drawing.Point(12, 12)
         Me.VGridControl1.Name = "VGridControl1"
@@ -185,6 +199,7 @@
         Me.GridView1.Columns.AddRange(New DevExpress.XtraGrid.Columns.GridColumn() {Me.colPoLine, Me.colWarehouse, Me.colStockCode, Me.colLineAction, Me.colQty, Me.colPrice})
         Me.GridView1.GridControl = Me.GridControl1
         Me.GridView1.Name = "GridView1"
+        Me.GridView1.OptionsBehavior.AllowDeleteRows = DevExpress.Utils.DefaultBoolean.[True]
         '
         'colPoLine
         '
@@ -207,6 +222,14 @@
         Me.colStockCode.Name = "colStockCode"
         Me.colStockCode.Visible = True
         Me.colStockCode.VisibleIndex = 3
+        '
+        'colLineAction
+        '
+        Me.colLineAction.Caption = "Line Action"
+        Me.colLineAction.FieldName = "LineAction"
+        Me.colLineAction.Name = "colLineAction"
+        Me.colLineAction.Visible = True
+        Me.colLineAction.VisibleIndex = 2
         '
         'colQty
         '
@@ -274,14 +297,6 @@
         Me.rowCustomer.Properties.Caption = "Customer"
         Me.rowCustomer.Properties.FieldName = "Customer"
         '
-        'colLineAction
-        '
-        Me.colLineAction.Caption = "Line Action"
-        Me.colLineAction.FieldName = "LineAction"
-        Me.colLineAction.Name = "colLineAction"
-        Me.colLineAction.Visible = True
-        Me.colLineAction.VisibleIndex = 2
-        '
         'Form1
         '
         Me.AllowFormGlass = DevExpress.Utils.DefaultBoolean.[False]
@@ -342,4 +357,6 @@
     Friend WithEvents rowActionType As DevExpress.XtraVerticalGrid.Rows.EditorRow
     Friend WithEvents colWarehouse As DevExpress.XtraGrid.Columns.GridColumn
     Friend WithEvents colLineAction As DevExpress.XtraGrid.Columns.GridColumn
+    Friend WithEvents BarButtonItem1 As DevExpress.XtraBars.BarButtonItem
+    Friend WithEvents RibbonPageGroup3 As DevExpress.XtraBars.Ribbon.RibbonPageGroup
 End Class

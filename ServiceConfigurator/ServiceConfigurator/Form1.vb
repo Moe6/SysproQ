@@ -5,17 +5,19 @@ Imports System.Xml
 
 Partial Public Class Form1
     Inherits DevExpress.XtraBars.Ribbon.RibbonForm
-
     Private _OrderHeader As SalesOrderHeader.OrderHeader
     Private _orderDetails As List(Of StockLine)
     Private _trnMsg As String
+
     Shared Sub New()
         DevExpress.UserSkins.BonusSkins.Register()
         DevExpress.Skins.SkinManager.EnableFormSkins()
     End Sub
+
     Public Sub New()
         InitializeComponent()
     End Sub
+
     Private Sub AppendTrnMessage(msg As String)
         If _trnmsg IsNot Nothing Then
             _trnMsg &= Environment.NewLine
@@ -24,14 +26,15 @@ Partial Public Class Form1
         End If
 
     End Sub
+
     Private Sub btnNew_ItemClick(sender As Object, e As DevExpress.XtraBars.ItemClickEventArgs) Handles btnNew.ItemClick
         _orderDetails = New List(Of StockLine)
         _OrderHeader = New SalesOrderHeader.OrderHeader
         With _OrderHeader
             .ActionType = "A"
-            .Customer = "610001"
-            .PO = "TEST"
-            .SalesOrder = "107024"
+            .Customer = "ADDO"
+            .PO = ""
+            .SalesOrder = "107043"
         End With
         BindingSource1.DataSource = _OrderHeader
         BindingSource2.DataSource = _orderDetails
@@ -45,6 +48,7 @@ Partial Public Class Form1
         GridView1.OptionsBehavior.ReadOnly = False
         GridView1.OptionsBehavior.Editable = True
     End Sub
+
     Private Sub addNewRowInGroupMode(ByVal View As DevExpress.XtraGrid.Views.Grid.GridView)
         'Get the handle of the source data row 
         'The row will provide group column values for a new row 
@@ -83,24 +87,32 @@ Partial Public Class Form1
     End Sub
 
     Private Sub AddNewRecords(ByRef obj As List(Of StockLine))
-        Dim line As Integer = 5
-        Dim price As Decimal = 3000
-        Dim qty As Decimal = 10
+        Dim line As Integer = 1
+        Dim price As Decimal = 3040
+        Dim qty As Decimal = 2
         Dim stockcode As String = "0101"
-        Dim wh As String = "CITY"
+        Dim wh As String = "CAPE"
         If obj IsNot Nothing Then
-            If obj.Count > 0 Then
+            If obj.Count = 1 Then
                 Dim sl = obj.LastOrDefault
                 line = sl.PoLine + 1
                 price = sl.Price + 1
                 qty = sl.Qty + 1
-                stockcode = "NewCode"
+                stockcode = "0103"
+                wh = "CAPE"
+            ElseIf obj.Count > 1 Then
+                Dim sl = obj.LastOrDefault
+                line = sl.PoLine + 1
+                price = sl.Price + 1
+                qty = sl.Qty + 1
+                stockcode = "NEWCODE"
+                wh = "CAPE"
             End If
         Else
             obj = New List(Of StockLine)
         End If
 
-        Dim ar As New StockLine With {.PoLine = line, .Qty = qty, .Price = price, .StockCode = stockcode, .City = wh, .LineAction = "A"}
+        Dim ar As New StockLine With {.PoLine = line, .Qty = qty, .Price = price, .StockCode = stockcode, .City = wh, .LineAction = ""}
         obj.Add(ar)
     End Sub
     Private Sub btnAddLine_ItemClick(sender As Object, e As DevExpress.XtraBars.ItemClickEventArgs) Handles btnAddLine.ItemClick
@@ -148,6 +160,7 @@ Partial Public Class Form1
         End Try
 
     End Sub
+
 #Region "Xmlin build"
     Private Function CreateXmlin(hdr As SalesOrderHeader.OrderHeader, detail As List(Of StockLine)) As String
         'create hdr element
@@ -196,7 +209,6 @@ Partial Public Class Form1
                </StockLine>
     End Function
 #End Region
-
 
 #Region "Xml Serialization Deserialization"
     Private Sub SerializeToFile(obj As SalesOrderHeader.OrderHeader)
@@ -289,6 +301,7 @@ Partial Public Class Form1
         attr.Value & "'"))
     End Sub 'serializer_UnknownAttribute
 #End Region
+
     Private Function GetFullMessage(ex As Exception) As String
         Dim strBuild As New System.Text.StringBuilder
         If ex IsNot Nothing Then
@@ -314,4 +327,18 @@ Partial Public Class Form1
 
         Return strBuild.ToString
     End Function
+
+    Private Sub BarButtonItem1_ItemClick(sender As Object, e As DevExpress.XtraBars.ItemClickEventArgs) Handles BarButtonItem1.ItemClick
+        Dim obj As New List(Of StockLine)
+        If BindingSource2.DataSource IsNot Nothing Then
+            obj = TryCast(BindingSource2.DataSource, List(Of StockLine))
+            If GridView1.FocusedRowHandle > -1 Then
+                obj.RemoveAt(GridView1.FocusedRowHandle)
+                BindingSource2.DataSource = obj
+                GridView1.RefreshData()
+            End If
+
+        End If
+    End Sub
+
 End Class

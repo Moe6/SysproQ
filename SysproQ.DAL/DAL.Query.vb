@@ -1,17 +1,68 @@
 ﻿Imports SysproQ.Entity
+Imports System.Data.SqlClient
+
 Public Class Query
     Implements IDisposable
+    Private _trnmsg As String
+
+    Public ReadOnly Property TrnMessage As String
+        Get
+            Return _trnmsg
+        End Get
+    End Property
+
+    Private Sub AppendTrnMessage(msg As String)
+        If _trnmsg IsNot Nothing Then
+            _trnmsg &= Environment.NewLine
+        End If
+        _trnmsg &= msg
+    End Sub
 
     Private _db As SysproQ.Entity.SysproEntities
+
     Public Sub New()
         _db = New SysproQ.Entity.SysproEntities
     End Sub
 
     Public Function FillSalesOrderDetails(so As String) As List(Of SorDetail)
-        Return _db.SorDetails.Where(Function(c) c.SalesOrder.Contains(so)).ToList
-        'Return _db.SorDetails.Where(Function(c) c.SalesOrder = so).ToList
+        'Return _db.SorDetails.Where(Function(c) c.SalesOrder.EndsWith(so)).ToList
+        Return _db.SorDetails.Where(Function(c) c.SalesOrder = so).ToList
+    End Function
+    Public Function FillOrderMaster(so As String) As SorMaster
+        'Return _db.SorMasters.Where(Function(c) c.SalesOrder.EndsWith(so)).FirstOrDefault
+        Return _db.SorMasters.Where(Function(c) c.SalesOrder = so).FirstOrDefault
     End Function
 
+    Public Function FillWarehouseByCity(city As String) As InvWhLookUp
+        Using _db2 As New SysproQEntities
+            Return _db2.InvWhLookUps.Where(Function(c) c.City = city).FirstOrDefault
+        End Using
+    End Function
+    Public Function FillCustomer(cust As String) As ArCustomer
+        Return _db.ArCustomers.Where(Function(c) c.Customer = cust).FirstOrDefault
+    End Function
+
+    Public Function GetCustomerSQl(cust As String) As Boolean
+        Dim con = New SqlConnection("data source=10.6.1.153;initial catalog=SysproCompanyT;persist security info=False;user id=sa;password=sysadmin123$")
+        'Dim con = New SqlConnection("data source=.\SQLEXPRESS;initial catalog=SysproCompanyC_7;persist security info=False;user id=sa;password=P@$$w0rd")
+        Dim cmd As New SqlCommand
+        Dim reader As SqlDataReader
+        Try
+            cmd.Connection = con
+            con.Open()
+            cmd.CommandText = "Select * from ArCustomer Where Customer = '" & cust & "'"
+            reader = cmd.ExecuteReader
+            If reader.HasRows Then Return True
+
+        Catch ex As Exception
+            Dim H As New MessagingHelper
+            Dim M = H.GetFullMessage(ex)
+            AppendTrnMessage(M)
+        Finally
+            con.Close()
+        End Try
+        Return False
+    End Function
 #Region "IDisposable Support"
     Private disposedValue As Boolean ' To detect redundant calls
 

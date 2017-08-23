@@ -7,4 +7,14 @@ Public Class Query
             Return dal.FillSalesOrderDetails(so)
         End Using
     End Function
+    Public Function FillSorMaster(so As String) As SorMaster
+        Using dal As New DAL.Query
+            Return dal.FillOrderMaster(so)
+        End Using
+    End Function
+    Public Function FillWarehouseByCity(city As String) As InvWhLookUp
+        Using d As New DAL.Query
+            Return d.FillWarehouseByCity(city)
+        End Using
+    End Function
 End Class

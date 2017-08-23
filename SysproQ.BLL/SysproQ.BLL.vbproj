@@ -82,6 +82,7 @@
     <Import Include="System.Threading.Tasks" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Other Classes\BLL.Update.vb" />
     <Compile Include="Other Classes\BLL.Face.vb" />
     <Compile Include="Other Classes\BusinessObjectsHelper.vb" />
     <Compile Include="Other Classes\IBusinessObjects.vb" />

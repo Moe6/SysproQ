@@ -26,3 +26,17 @@ D:\SOFTWARE2\SysproQ\SysproQ.Entity\obj\Release\SysproQ.Entity.vbproj.GenerateRe
 D:\SOFTWARE2\SysproQ\SysproQ.Entity\obj\Release\SysproQ.Entity.dll
 D:\SOFTWARE2\SysproQ\SysproQ.Entity\obj\Release\SysproQ.Entity.xml
 D:\SOFTWARE2\SysproQ\SysproQ.Entity\obj\Release\SysproQ.Entity.pdb
+D:\github\GyxiDev\SysproQ\SysproQ.Entity\bin\Release\SysproQ.Entity.dll.config
+D:\github\GyxiDev\SysproQ\SysproQ.Entity\bin\Release\SysproQ.Entity.dll
+D:\github\GyxiDev\SysproQ\SysproQ.Entity\bin\Release\SysproQ.Entity.pdb
+D:\github\GyxiDev\SysproQ\SysproQ.Entity\bin\Release\SysproQ.Entity.xml
+D:\github\GyxiDev\SysproQ\SysproQ.Entity\bin\Release\EntityFramework.dll
+D:\github\GyxiDev\SysproQ\SysproQ.Entity\bin\Release\EntityFramework.SqlServer.dll
+D:\github\GyxiDev\SysproQ\SysproQ.Entity\bin\Release\EntityFramework.xml
+D:\github\GyxiDev\SysproQ\SysproQ.Entity\bin\Release\EntityFramework.SqlServer.xml
+D:\github\GyxiDev\SysproQ\SysproQ.Entity\obj\Release\SysproQ.Entity.vbprojResolveAssemblyReference.cache
+D:\github\GyxiDev\SysproQ\SysproQ.Entity\obj\Release\SysproQ.Entity.Resources.resources
+D:\github\GyxiDev\SysproQ\SysproQ.Entity\obj\Release\SysproQ.Entity.vbproj.GenerateResource.Cache
+D:\github\GyxiDev\SysproQ\SysproQ.Entity\obj\Release\SysproQ.Entity.dll
+D:\github\GyxiDev\SysproQ\SysproQ.Entity\obj\Release\SysproQ.Entity.xml
+D:\github\GyxiDev\SysproQ\SysproQ.Entity\obj\Release\SysproQ.Entity.pdb

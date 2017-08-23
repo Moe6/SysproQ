@@ -25,6 +25,8 @@ Namespace SysproQ.Entity
         End Sub
     
         Public Overridable Property SorDetails() As DbSet(Of SorDetail)
+        Public Overridable Property SorMasters() As DbSet(Of SorMaster)
+        Public Overridable Property ArCustomers() As DbSet(Of ArCustomer)
     
     End Class
 
