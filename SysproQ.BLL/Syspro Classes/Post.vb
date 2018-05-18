@@ -73,7 +73,8 @@ Public Class Post
     Public Function Excecute() As Boolean
         Try
             With signinInfo
-                _wcf = New SYSPROWCFServicesClient("net.tcp://localhost:20000/SYSPROWCFService/Rest", SYSPROWCFBinding.NetTcp, .Username, .UserPassWord, .Company, .CompanyPassword)
+                _wcf = New SYSPROWCFServicesClient("net.tcp://localhost:20000/SYSPROWCFService/Rest",
+                                                   SYSPROWCFBinding.NetTcp, .Username, .UserPassWord, .Company, .CompanyPassword)
             End With
 
             _transactionXmlOut.XmlOut = _wcf.TransactionPost(_businessObject, _xmlParams, _xmlIn)

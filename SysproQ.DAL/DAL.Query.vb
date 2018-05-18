@@ -43,7 +43,7 @@ Public Class Query
     End Function
 
     Public Function GetCustomerSQl(cust As String) As Boolean
-        Dim con = New SqlConnection("data source=10.6.1.153;initial catalog=SysproCompanyN;persist security info=False;user id=sa;password=sysadmin123$")
+        Dim con = New SqlConnection("data source=10.6.1.170;initial catalog=SysproCompanyN;persist security info=False;user id=sa;password=SQLp0c1234")
         'Dim con = New SqlConnection("data source=.\SQLEXPRESS;initial catalog=SysproCompanyC_7;persist security info=False;user id=sa;password=P@$$w0rd")
         Dim cmd As New SqlCommand
         Dim reader As SqlDataReader
