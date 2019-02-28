@@ -22,10 +22,10 @@
     <MetadataSource Address="http://localhost/QService/SysproQService.svc" Protocol="http" SourceId="1" />
   </MetadataSources>
   <Metadata>
-    <MetadataFile FileName="Service11.wsdl" MetadataType="Wsdl" ID="07ef25cd-1108-439e-bf92-66eb5fdaf3d4" SourceId="1" SourceUrl="http://desktop-ccmi41s/QService/SysproQService.svc?wsdl" />
-    <MetadataFile FileName="SysproQService2.xsd" MetadataType="Schema" ID="ca8ffdb8-e080-461a-8446-8eb4b9cb5b44" SourceId="1" SourceUrl="http://desktop-ccmi41s/QService/SysproQService.svc?xsd=xsd0" />
-    <MetadataFile FileName="SysproQService1.disco" MetadataType="Disco" ID="ad0573c4-85a1-4f91-82e9-97ae4e5c55ef" SourceId="1" SourceUrl="http://desktop-ccmi41s/QService/SysproQService.svc?disco" />
-    <MetadataFile FileName="SysproQService21.xsd" MetadataType="Schema" ID="01e4e384-292a-4dca-b1eb-27a8ab3a2bd5" SourceId="1" SourceUrl="http://desktop-ccmi41s/QService/SysproQService.svc?xsd=xsd1" />
+    <MetadataFile FileName="Service11.wsdl" MetadataType="Wsdl" ID="07ef25cd-1108-439e-bf92-66eb5fdaf3d4" SourceId="1" SourceUrl="http://localhost/QService/SysproQService.svc?wsdl" />
+    <MetadataFile FileName="SysproQService2.xsd" MetadataType="Schema" ID="ca8ffdb8-e080-461a-8446-8eb4b9cb5b44" SourceId="1" SourceUrl="http://localhost/QService/SysproQService.svc?xsd=xsd0" />
+    <MetadataFile FileName="SysproQService1.disco" MetadataType="Disco" ID="ad0573c4-85a1-4f91-82e9-97ae4e5c55ef" SourceId="1" SourceUrl="http://localhost/QService/SysproQService.svc?disco" />
+    <MetadataFile FileName="SysproQService21.xsd" MetadataType="Schema" ID="01e4e384-292a-4dca-b1eb-27a8ab3a2bd5" SourceId="1" SourceUrl="http://localhost/QService/SysproQService.svc?xsd=xsd1" />
   </Metadata>
   <Extensions>
     <ExtensionFile FileName="configuration91.svcinfo" Name="configuration91.svcinfo" />
