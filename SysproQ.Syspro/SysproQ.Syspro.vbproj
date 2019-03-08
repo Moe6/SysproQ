@@ -1,0 +1,14 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <RootNamespace>SysproQ.Syspro</RootNamespace>
+    <TargetFramework>netstandard2.0</TargetFramework>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <Reference Include="SYSPROWCFServicesClientLibrary40">
+      <HintPath>..\..\..\Program Files (x86)\SYSPRO\SYSPRO WCF Service\20000\SYSPROWCFServicesClientLibrary40.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+
+</Project>
