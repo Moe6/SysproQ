@@ -9,6 +9,7 @@
 
 Imports System
 Imports System.Collections.Generic
+Imports SysproQ.Entity
 
 Partial Public Class ArCustomer
     Public Property Customer As String

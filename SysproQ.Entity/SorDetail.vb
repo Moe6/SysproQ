@@ -9,6 +9,7 @@
 
 Imports System
 Imports System.Collections.Generic
+Imports SysproQ.Entity
 
 Partial Public Class SorDetail
     Public Property SalesOrder As String
@@ -147,5 +148,6 @@ Partial Public Class SorDetail
     Public Property TimeStamp As Byte()
 
     Public Overridable Property SorMaster As SorMaster
+    Public Overridable Property InvMaster As InvMaster
 
 End Class

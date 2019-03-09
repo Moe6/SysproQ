@@ -17,4 +17,17 @@ Public Class Query
             Return d.FillWarehouseByCity(city)
         End Using
     End Function
+
+    Public Function FillBomStructure(stockcode As String) As List(Of BomStructure)
+        Using d As New DAL.Query
+            Return d.FillComponents(stockcode)
+        End Using
+    End Function
+
+    Public Function FillInvMaster(stockCode As String) As InvMaster
+        Using d As New DAL.Query
+            Return d.FillInvMaster(stockCode)
+        End Using
+    End Function
 End Class
+

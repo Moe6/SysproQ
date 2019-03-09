@@ -76,7 +76,15 @@
     <Compile Include="ArCustomer.vb">
       <DependentUpon>Model1.tt</DependentUpon>
     </Compile>
+    <Compile Include="BomStructure.vb">
+      <DependentUpon>Model1.tt</DependentUpon>
+    </Compile>
     <Compile Include="Classes\Enum.BoUsed.vb" />
+    <Compile Include="Classes\Enum.ComponentType.vb" />
+    <Compile Include="Classes\Kit.vb" />
+    <Compile Include="InvMaster.vb">
+      <DependentUpon>Model1.tt</DependentUpon>
+    </Compile>
     <Compile Include="InvWhLookUp.vb">
       <DependentUpon>SysproQModel.tt</DependentUpon>
     </Compile>

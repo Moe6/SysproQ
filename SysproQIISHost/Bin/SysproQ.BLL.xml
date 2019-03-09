@@ -22,17 +22,6 @@ SysproQ.BLL
   resource lookups using this strongly typed resource class.
 </summary>
 </member>
-<member name="M:SysproQ.BLL.SORTOI.ProcessPost.CreateOrderMasterChangeOnlyXmlIn">
- <summary>
- Create or maintain sales order master data only
- Customer
- Delivery Address
- Purchase Order No
- </summary>
- 
- <returns></returns>
- <remarks></remarks>
-</member>
 <member name="M:SysproQ.BLL.SORTOI.ProcessPost.CreateOrderMasterAndDetailXmlIn">
  <summary>
  Create or maintain all item lines supplied

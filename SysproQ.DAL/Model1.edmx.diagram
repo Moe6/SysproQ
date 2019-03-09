@@ -10,6 +10,9 @@
         <AssociationConnector Association="SysproModel.Syspro_FK_SorDetail_SorMaster" />
         <EntityTypeShape EntityType="SysproModel.ArCustomer" Width="1.5" PointX="7.375" PointY="1.375" />
         <AssociationConnector Association="SysproModel.Syspro_FK_SorMaster_ArCustomer" />
+        <EntityTypeShape EntityType="SysproModel.BomStructure" Width="1.5" PointX="11.375" PointY="0.75" />
+        <EntityTypeShape EntityType="SysproModel.InvMaster" Width="1.5" PointX="9.375" PointY="2.125" />
+        <AssociationConnector Association="SysproModel.Syspro_FK_SorDetail_InvMaster" />
       </Diagram>
     </edmx:Diagrams>
   </edmx:Designer>

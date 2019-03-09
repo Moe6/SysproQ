@@ -63,6 +63,15 @@ Public Class Query
         End Try
         Return False
     End Function
+
+    Public Function FillInvMaster(StockCode As String) As InvMaster
+        Return _db.InvMasters.Where(Function(c) c.StockCode = StockCode).FirstOrDefault
+    End Function
+
+    Public Function FillComponents(StockCode As String) As List(Of BomStructure)
+        Return _db.BomStructures.Where(Function(c) c.ParentPart = StockCode).ToList
+    End Function
+
 #Region "IDisposable Support"
     Private disposedValue As Boolean ' To detect redundant calls
 

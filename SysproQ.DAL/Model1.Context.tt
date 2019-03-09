@@ -29,6 +29,7 @@ End If
 Imports System
 Imports System.Data.Entity
 Imports System.Data.Entity.Infrastructure
+Imports SysproQ.Entity
 <#
 If container.FunctionImports.Any()
 #>

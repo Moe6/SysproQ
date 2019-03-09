@@ -26,6 +26,8 @@ Public Class Post
     Private _actionType As String
     Private _trnMessage As String = Nothing
     Private _soLines As List(Of SoLines)
+    Private _kitItems As List(Of Kit)
+    Private _ChildNodesToCancel As List(Of SorDetail)
 
     Public ReadOnly Property PostResult As SysproPostXmlOutResult
         Get
@@ -47,7 +49,7 @@ Public Class Post
     End Sub
 
     Public Sub New(loginInfo As SysproSignInObj, ByVal businessObj As String, ByVal xmlIn As String,
-                   ByVal xmlParam As String, ActionType As String, slns As List(Of SoLines))
+                   ByVal xmlParam As String, ActionType As String, slns As List(Of SoLines), kititems As List(Of Kit))
         _businessObject = businessObj
         _xmlIn = xmlIn
         _xmlParams = xmlParam
@@ -56,6 +58,7 @@ Public Class Post
         signinInfo = loginInfo
         _actionType = ActionType
         _soLines = slns
+        _kitItems = kititems
     End Sub
 
     Public Sub New(loginInfo As SysproSignInObj, ByVal businessObj As String, ByVal xmlIn As String,
@@ -184,7 +187,6 @@ Public Class Post
     Private Function CheckSalesOrderPost(salesorder As String) As Boolean
         Dim b As New BLL.Query
         Dim result As Boolean
-        Dim msg As String
         'Fill the created sales order
         _omaster = b.FillSorMaster(salesorder)
         _postedOrder = b.FillSorDetails(salesorder)
@@ -193,22 +195,25 @@ Public Class Post
                 If _postedOrder.Count > 0 Then
                     'Need to fomrat headers
                     For Each item In _postedOrder
+                        'Check if item is a Kit item
+                        'If Kit then get all components. If any commponents are not reserved then reverse this kit item and all its components and mark all as not ok.
                         result = True
-                        If item.QtyReserved > 0 Then
-                            If item.MOrderQty = item.QtyReserved Then 'OK
-                                result = True
-                                msg = ("Stock code " & item.MStockCode & " Quantity " & CInt(item.QtyReserved) & " Reserve Successful")
-                                Dim x = FormatResult(item, msg, "OK")
-                                AppendTrnMessage(x.ToString)
-                            Else 'POK
-                                msg = ("Stock code " & item.MStockCode & " Quantity " & CInt(item.QtyReserved) & " Reserve Partial")
-                                Dim x = FormatResult(item, msg, "POK")
-                                AppendTrnMessage(x.ToString)
+                        If Trim(item.MBomFlag) = "" Then
+                            'this means item is not BomStructure ite and is a single item
+                            ValidateItemQtyPosted(item)
+                        Else
+                            ' item Is BomStructure item
+                            If Trim(item.MBomFlag) = "P" Then
+                                'this is Parent Item in Bom Structure
+                                'Validate all its Children and process Accordingly
+                                If item.MOrderQty <> item.QtyReserved Then
+                                    'parent item could not be reserved
+                                    'therefore no need to check component items
+                                    ParentItemFailMessges(item)
+                                Else
+                                    ValidateParentBomItemPostQty(item)
+                                End If
                             End If
-                        ElseIf item.MBackOrderQty > 0 Then
-                            msg = ("Stock code " & item.MStockCode & " Quantity " & CInt(item.MBackOrderQty) & " Reserve Fail")
-                            Dim x = FormatResult(item, msg, "NOK")
-                            AppendTrnMessage(x.ToString)
                         End If
                     Next
                 Else
@@ -221,9 +226,93 @@ Public Class Post
             AppendTrnMessage("An Error occured.")
         End If
 
-
         Return result
     End Function
+
+    Private Sub ValidateItemQtyPosted(item As SorDetail)
+        Dim msg As String
+        'this means item is not BomStructure ite and is a single item
+        If item.QtyReserved > 0 Then
+            If item.MOrderQty = item.QtyReserved Then 'OK
+                msg = ("Stock code " & item.MStockCode & " Quantity " & CInt(item.QtyReserved) & " Reserve Successful")
+                Dim x = FormatResult(item, msg, "OK")
+                AppendTrnMessage(x.ToString)
+            Else 'POK
+                msg = ("Stock code " & item.MStockCode & " Quantity " & CInt(item.QtyReserved) & " Reserve Partial")
+                Dim x = FormatResult(item, msg, "POK")
+                AppendTrnMessage(x.ToString)
+            End If
+        ElseIf item.MBackOrderQty > 0 Then
+            msg = ("Stock code " & item.MStockCode & " Quantity " & CInt(item.MBackOrderQty) & " Reserve Fail")
+            Dim x = FormatResult(item, msg, "NOK")
+            AppendTrnMessage(x.ToString)
+        End If
+    End Sub
+
+
+#Region "BOM Structure Validation"
+
+    Private Function IsKitItem(stockcode As String) As Boolean
+        If _kitItems IsNot Nothing Then
+            Dim found = _kitItems.Where(Function(c) c.StockCode = stockcode)
+            Return found IsNot Nothing
+        End If
+        Return False
+    End Function
+
+    Private Sub ValidateParentBomItemPostQty(parentItem As SorDetail)
+        'Get All Child Nodes for Parent Bom Item
+        Dim childNodes As New List(Of SorDetail)
+        Dim fComps = _kitItems.Where(Function(c) c.ComponentOf = parentItem.MStockCode).ToList
+        For Each comp In fComps
+
+            Dim found = _postedOrder.Where(Function(c) c.MStockCode = comp.StockCode And c.SalesOrderLine > parentItem.SalesOrderInitLine And Trim(c.MBomFlag) = "C").FirstOrDefault
+            If found IsNot Nothing Then
+                childNodes.Add(found)
+            End If
+            If childNodes.Count > 0 Then
+                If Not VerifyPostOfChildNodes(childNodes) Then
+                    'Reserving of Components of parent was not successful
+                    'Therefore Cancel the Parent Item and the Child componets will be cancelled
+                    ParentItemFailMessges(parentItem)
+                    'Do Next ----------->
+
+                Else
+                    'Reserving of Components was successful
+                    'Get the Parent item and send as Success Message
+                    ParentItemSuccessMessges(parentItem)
+                    'Do Next ----------------->
+
+
+                End If
+            End If
+        Next
+    End Sub
+
+    Private Function VerifyPostOfChildNodes(ls As List(Of SorDetail)) As Boolean
+        Dim verified As Boolean = True
+        If ls.Any(Function(c) c.QtyReserved <> c.MOrderQty) Then
+            verified = False
+        End If
+        Return verified
+    End Function
+
+    Private Sub ParentItemFailMessges(item As SorDetail)
+        Dim msg As String
+        msg = ("Stock code " & item.MStockCode & " Quantity " & CInt(item.MOrderQty) & " Reserve Fail for All or some components of this kit item.")
+        Dim x = FormatResult(item, msg, "NOK")
+        AppendTrnMessage(x.ToString)
+    End Sub
+
+    Private Sub ParentItemSuccessMessges(item As SorDetail)
+        Dim msg As String
+        msg = ("Stock code " & item.MStockCode & " Quantity " & CInt(item.QtyReserved) & " Reserve Successful")
+        Dim x = FormatResult(item, msg, "OK")
+        AppendTrnMessage(x.ToString)
+    End Sub
+
+#End Region
+
 
     Private Function FormatResult(item As SorDetail, msg As String, result As String) As XElement
         Return <StockLine>

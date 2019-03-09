@@ -97,10 +97,11 @@ C:\GyxiDEV\SysproQ\SysproQ.BLL\bin\Debug\SysproQ.Entity.xml
 C:\GyxiDEV\SysproQ\SysproQ.BLL\bin\Debug\SysproQ.Entity.dll.config
 C:\GyxiDEV\SysproQ\SysproQ.BLL\bin\Debug\EntityFramework.xml
 C:\GyxiDEV\SysproQ\SysproQ.BLL\bin\Debug\EntityFramework.SqlServer.xml
-C:\GyxiDEV\SysproQ\SysproQ.BLL\obj\Debug\SysproQ.BLL.vbprojResolveAssemblyReference.cache
 C:\GyxiDEV\SysproQ\SysproQ.BLL\obj\Debug\SysproQ.BLL.Resources.resources
 C:\GyxiDEV\SysproQ\SysproQ.BLL\obj\Debug\SysproQ.BLL.vbproj.GenerateResource.Cache
 C:\GyxiDEV\SysproQ\SysproQ.BLL\obj\Debug\SysproQ.BLL.vbproj.CoreCompileInputs.cache
 C:\GyxiDEV\SysproQ\SysproQ.BLL\obj\Debug\SysproQ.BLL.dll
 C:\GyxiDEV\SysproQ\SysproQ.BLL\obj\Debug\SysproQ.BLL.xml
 C:\GyxiDEV\SysproQ\SysproQ.BLL\obj\Debug\SysproQ.BLL.pdb
+C:\GyxiDEV\SysproQ\SysproQ.BLL\obj\Debug\SysproQ.BLL.vbprojAssemblyReference.cache
+C:\GyxiDEV\SysproQ\SysproQ.BLL\obj\Debug\SysproQ.BLL.vbproj.CopyComplete

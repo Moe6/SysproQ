@@ -2,7 +2,7 @@
 <#@ include file="EF6.Utility.VB.ttinclude"#><#@
  output extension=".vb"#><#
 
-Const inputFile As String = "D:\github\GyxiDev\SysproQ\SysproQ.DAL\Model1.edmx"
+Const inputFile As String = "C:\GyxiDev\SysproQ\SysproQ.DAL\Model1.edmx"
 Dim textTransform As DynamicTextTransformation = DynamicTextTransformation.Create(Me)
 Dim code As CodeGenerationTools = New CodeGenerationTools(Me)
 Dim ef As MetadataTools = New MetadataTools(Me)
@@ -148,6 +148,7 @@ Public Sub WriteHeader(ByVal fileManager As EntityFrameworkTemplateFileManager)
 
 Imports System
 Imports System.Collections.Generic
+Imports SysproQ.Entity
 
 <#+
     FileManager.EndBlock()

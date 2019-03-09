@@ -114,10 +114,11 @@ C:\GyxiDEV\SysproQ\WcfServiceLibrary1\bin\Debug\EntityFramework.SqlServer.xml
 C:\GyxiDEV\SysproQ\WcfServiceLibrary1\bin\Debug\SysproQ.DAL.pdb
 C:\GyxiDEV\SysproQ\WcfServiceLibrary1\bin\Debug\SysproQ.DAL.xml
 C:\GyxiDEV\SysproQ\WcfServiceLibrary1\bin\Debug\SysproQ.DAL.dll.config
-C:\GyxiDEV\SysproQ\WcfServiceLibrary1\obj\Debug\WcfServiceLibrary1.vbprojResolveAssemblyReference.cache
 C:\GyxiDEV\SysproQ\WcfServiceLibrary1\obj\Debug\WcfServiceLibrary1.Resources.resources
 C:\GyxiDEV\SysproQ\WcfServiceLibrary1\obj\Debug\WcfServiceLibrary1.vbproj.GenerateResource.Cache
 C:\GyxiDEV\SysproQ\WcfServiceLibrary1\obj\Debug\WcfServiceLibrary1.vbproj.CoreCompileInputs.cache
 C:\GyxiDEV\SysproQ\WcfServiceLibrary1\obj\Debug\WcfServiceLibrary1.dll
 C:\GyxiDEV\SysproQ\WcfServiceLibrary1\obj\Debug\WcfServiceLibrary1.xml
 C:\GyxiDEV\SysproQ\WcfServiceLibrary1\obj\Debug\WcfServiceLibrary1.pdb
+C:\GyxiDEV\SysproQ\WcfServiceLibrary1\obj\Debug\WcfServiceLibrary1.vbprojAssemblyReference.cache
+C:\GyxiDEV\SysproQ\WcfServiceLibrary1\obj\Debug\WcfServiceLibrary1.vbproj.CopyComplete

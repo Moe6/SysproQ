@@ -12,6 +12,7 @@ Partial Public Class SORTOI
         Public msgHelper As New Entity.MessagingHelper
         Private _transactionType As TransactionType
         Private _soLines As List(Of SoLines)
+        Private _KitItems As List(Of Kit)
 
         Private Sub AppendTrnMessage(msg As String)
             If _trnMessage IsNot Nothing Then
@@ -35,6 +36,7 @@ Partial Public Class SORTOI
             _masterData = orderHdr
             _detailData = orderDetail
             _soLines = solns
+            FillKitItems()
         End Sub
 
         Private Function CreateXmlIn2(obj As SortraObj) As String Implements IBusinessObjects.CreateXmlIn2
@@ -277,15 +279,6 @@ Partial Public Class SORTOI
             Return CreateOrderMasterAndDetailXmlIn()
         End Function
 
-        ''' <summary>
-        ''' Create or maintain sales order master data only
-        ''' Customer
-        ''' Delivery Address
-        ''' Purchase Order No
-        ''' </summary>
-        ''' 
-        ''' <returns></returns>
-        ''' <remarks></remarks>
         Public Function CreateOrderMasterChangeOnlyXmlIn() As String
             Dim xmlin = <?xml version="1.0" encoding="Windows-1252"?>
                         <SalesOrders xmlns:xsd="http://www.w3.org/2001/XMLSchema-instance" xsd:noNamespaceSchemaLocation="SORTOIDOC.XSD">
@@ -332,7 +325,7 @@ Partial Public Class SORTOI
             Dim postResult As SysproPostXmlOutResult = Nothing
             Dim xmlin As String = CreateXmlIn()
             Dim xmlParam As String = CreateXmlParams(False)
-            Dim P As New Post(sigInfo, "SORTOI", xmlin, xmlParam, actiontype, _soLines)
+            Dim P As New Post(sigInfo, "SORTOI", xmlin, xmlParam, actiontype, _soLines, _KitItems)
             'Process Post
             If P.Excecute() Then
                 'Read returned result
@@ -345,6 +338,29 @@ Partial Public Class SORTOI
             Return postResult
         End Function
 
+        Private Function FillKitItems() As Boolean
+            _KitItems = New List(Of Kit)
+            For Each item In _detailData
+                FillItemData(item.StockCode)
+            Next
+            Return True
+        End Function
+
+        Private Sub FillItemData(stockcode As String)
+            Dim bll As New BLL.Query
+            Dim bomstruct = bll.FillBomStructure(stockcode)
+            If bomstruct IsNot Nothing Then
+                For Each item In bomstruct
+                    Dim comp = New Kit
+                    With comp
+                        .ComponentOf = stockcode
+                        .ItemType = ComponetType.SubItem
+                        .StockCode = item.Component
+                    End With
+                    _KitItems.Add(comp)
+                Next
+            End If
+        End Sub
     End Class
 
 End Class

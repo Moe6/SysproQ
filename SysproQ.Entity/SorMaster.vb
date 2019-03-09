@@ -9,6 +9,7 @@
 
 Imports System
 Imports System.Collections.Generic
+Imports SysproQ.Entity
 
 Partial Public Class SorMaster
     Public Property SalesOrder As String
