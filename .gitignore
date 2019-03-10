@@ -209,3 +209,4 @@ FakesAssemblies/
 .vs/config/applicationhost.config
 *.ide
 .vs/
+*.pdb

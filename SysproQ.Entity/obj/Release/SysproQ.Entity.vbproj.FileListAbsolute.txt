@@ -48,10 +48,11 @@ C:\GyxiDEV\SysproQ\SysproQ.Entity\bin\Release\EntityFramework.dll
 C:\GyxiDEV\SysproQ\SysproQ.Entity\bin\Release\EntityFramework.SqlServer.dll
 C:\GyxiDEV\SysproQ\SysproQ.Entity\bin\Release\EntityFramework.xml
 C:\GyxiDEV\SysproQ\SysproQ.Entity\bin\Release\EntityFramework.SqlServer.xml
-C:\GyxiDEV\SysproQ\SysproQ.Entity\obj\Release\SysproQ.Entity.vbprojResolveAssemblyReference.cache
 C:\GyxiDEV\SysproQ\SysproQ.Entity\obj\Release\SysproQ.Entity.Resources.resources
 C:\GyxiDEV\SysproQ\SysproQ.Entity\obj\Release\SysproQ.Entity.vbproj.GenerateResource.Cache
 C:\GyxiDEV\SysproQ\SysproQ.Entity\obj\Release\SysproQ.Entity.vbproj.CoreCompileInputs.cache
 C:\GyxiDEV\SysproQ\SysproQ.Entity\obj\Release\SysproQ.Entity.dll
 C:\GyxiDEV\SysproQ\SysproQ.Entity\obj\Release\SysproQ.Entity.xml
 C:\GyxiDEV\SysproQ\SysproQ.Entity\obj\Release\SysproQ.Entity.pdb
+C:\GyxiDEV\SysproQ\SysproQ.Entity\obj\Release\SysproQ.Entity.vbprojAssemblyReference.cache
+C:\GyxiDEV\SysproQ\SysproQ.Entity\obj\Release\SysproQ.Entity.vbproj.CopyComplete

@@ -78,10 +78,11 @@ C:\GyxiDEV\SysproQ\SysproQ.DAL\bin\Release\SysproQ.Entity.xml
 C:\GyxiDEV\SysproQ\SysproQ.DAL\bin\Release\SysproQ.Entity.dll.config
 C:\GyxiDEV\SysproQ\SysproQ.DAL\bin\Release\EntityFramework.xml
 C:\GyxiDEV\SysproQ\SysproQ.DAL\bin\Release\EntityFramework.SqlServer.xml
-C:\GyxiDEV\SysproQ\SysproQ.DAL\obj\Release\SysproQ.DAL.vbprojResolveAssemblyReference.cache
 C:\GyxiDEV\SysproQ\SysproQ.DAL\obj\Release\SysproQ.DAL.Resources.resources
 C:\GyxiDEV\SysproQ\SysproQ.DAL\obj\Release\SysproQ.DAL.vbproj.GenerateResource.Cache
 C:\GyxiDEV\SysproQ\SysproQ.DAL\obj\Release\SysproQ.DAL.vbproj.CoreCompileInputs.cache
 C:\GyxiDEV\SysproQ\SysproQ.DAL\obj\Release\SysproQ.DAL.dll
 C:\GyxiDEV\SysproQ\SysproQ.DAL\obj\Release\SysproQ.DAL.xml
 C:\GyxiDEV\SysproQ\SysproQ.DAL\obj\Release\SysproQ.DAL.pdb
+C:\GyxiDEV\SysproQ\SysproQ.DAL\obj\Release\SysproQ.DAL.vbprojAssemblyReference.cache
+C:\GyxiDEV\SysproQ\SysproQ.DAL\obj\Release\SysproQ.DAL.vbproj.CopyComplete
