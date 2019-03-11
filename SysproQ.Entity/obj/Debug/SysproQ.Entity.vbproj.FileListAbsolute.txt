@@ -68,3 +68,4 @@ C:\GyxiDEV\SysproQ\SysproQ.Entity\obj\Debug\SysproQ.Entity.vbproj.CopyComplete
 C:\GyxiDEV\SysproQ\SysproQ.Entity\obj\Debug\SysproQ.Entity.dll
 C:\GyxiDEV\SysproQ\SysproQ.Entity\obj\Debug\SysproQ.Entity.xml
 C:\GyxiDEV\SysproQ\SysproQ.Entity\obj\Debug\SysproQ.Entity.pdb
+C:\GyxiDEV\SysproQ\SysproQ.Entity\obj\Debug\SysproQ.Entity.vbprojAssemblyReference.cache

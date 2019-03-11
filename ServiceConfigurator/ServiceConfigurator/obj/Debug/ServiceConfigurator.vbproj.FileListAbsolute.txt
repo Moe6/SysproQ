@@ -468,7 +468,6 @@ C:\GyxiDEV\SysproQ\ServiceConfigurator\ServiceConfigurator\bin\Debug\de\DevExpre
 C:\GyxiDEV\SysproQ\ServiceConfigurator\ServiceConfigurator\bin\Debug\es\DevExpress.XtraTreeList.v18.2.resources.dll
 C:\GyxiDEV\SysproQ\ServiceConfigurator\ServiceConfigurator\bin\Debug\ja\DevExpress.XtraTreeList.v18.2.resources.dll
 C:\GyxiDEV\SysproQ\ServiceConfigurator\ServiceConfigurator\bin\Debug\ru\DevExpress.XtraTreeList.v18.2.resources.dll
-C:\GyxiDEV\SysproQ\ServiceConfigurator\ServiceConfigurator\obj\Debug\ServiceConfigurator.vbprojAssemblyReference.cache
 C:\GyxiDEV\SysproQ\ServiceConfigurator\ServiceConfigurator\obj\Debug\ServiceConfigurator.Form1.resources
 C:\GyxiDEV\SysproQ\ServiceConfigurator\ServiceConfigurator\obj\Debug\ServiceConfigurator.Resources.resources
 C:\GyxiDEV\SysproQ\ServiceConfigurator\ServiceConfigurator\obj\Debug\ServiceConfigurator.vbproj.GenerateResource.cache
@@ -477,3 +476,4 @@ C:\GyxiDEV\SysproQ\ServiceConfigurator\ServiceConfigurator\obj\Debug\ServiceConf
 C:\GyxiDEV\SysproQ\ServiceConfigurator\ServiceConfigurator\obj\Debug\ServiceConfigurator.vbproj.CopyComplete
 C:\GyxiDEV\SysproQ\ServiceConfigurator\ServiceConfigurator\obj\Debug\ServiceConfigurator.exe
 C:\GyxiDEV\SysproQ\ServiceConfigurator\ServiceConfigurator\obj\Debug\ServiceConfigurator.pdb
+C:\GyxiDEV\SysproQ\ServiceConfigurator\ServiceConfigurator\obj\Debug\ServiceConfigurator.vbprojAssemblyReference.cache
