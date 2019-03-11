@@ -476,4 +476,3 @@ C:\GyxiDEV\SysproQ\ServiceConfigurator\ServiceConfigurator\obj\Debug\ServiceConf
 C:\GyxiDEV\SysproQ\ServiceConfigurator\ServiceConfigurator\obj\Debug\ServiceConfigurator.vbproj.CopyComplete
 C:\GyxiDEV\SysproQ\ServiceConfigurator\ServiceConfigurator\obj\Debug\ServiceConfigurator.exe
 C:\GyxiDEV\SysproQ\ServiceConfigurator\ServiceConfigurator\obj\Debug\ServiceConfigurator.pdb
-C:\GyxiDEV\SysproQ\ServiceConfigurator\ServiceConfigurator\obj\Debug\ServiceConfigurator.vbprojAssemblyReference.cache
