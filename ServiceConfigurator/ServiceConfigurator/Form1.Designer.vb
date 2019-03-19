@@ -31,7 +31,6 @@
         Me.BarButtonItem1 = New DevExpress.XtraBars.BarButtonItem()
         Me.ribbonPage1 = New DevExpress.XtraBars.Ribbon.RibbonPage()
         Me.ribbonPageGroup1 = New DevExpress.XtraBars.Ribbon.RibbonPageGroup()
-        Me.RibbonPageGroup2 = New DevExpress.XtraBars.Ribbon.RibbonPageGroup()
         Me.RibbonPageGroup3 = New DevExpress.XtraBars.Ribbon.RibbonPageGroup()
         Me.LayoutControl1 = New DevExpress.XtraLayout.LayoutControl()
         Me.VGridControl1 = New DevExpress.XtraVerticalGrid.VGridControl()
@@ -55,6 +54,7 @@
         Me.PanelControl1 = New DevExpress.XtraEditors.PanelControl()
         Me.rowPO = New DevExpress.XtraVerticalGrid.Rows.EditorRow()
         Me.rowCustomer = New DevExpress.XtraVerticalGrid.Rows.EditorRow()
+        Me.BarHeaderItem1 = New DevExpress.XtraBars.BarHeaderItem()
         CType(Me.ribbonControl1, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.LayoutControl1, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.LayoutControl1.SuspendLayout()
@@ -73,9 +73,9 @@
         'ribbonControl1
         '
         Me.ribbonControl1.ExpandCollapseItem.Id = 0
-        Me.ribbonControl1.Items.AddRange(New DevExpress.XtraBars.BarItem() {Me.ribbonControl1.ExpandCollapseItem, Me.btnNew, Me.btnAddLine, Me.btnPost, Me.BarButtonItem1})
+        Me.ribbonControl1.Items.AddRange(New DevExpress.XtraBars.BarItem() {Me.ribbonControl1.ExpandCollapseItem, Me.btnNew, Me.btnAddLine, Me.btnPost, Me.BarButtonItem1, Me.BarHeaderItem1})
         Me.ribbonControl1.Location = New System.Drawing.Point(0, 0)
-        Me.ribbonControl1.MaxItemId = 5
+        Me.ribbonControl1.MaxItemId = 6
         Me.ribbonControl1.Name = "ribbonControl1"
         Me.ribbonControl1.Pages.AddRange(New DevExpress.XtraBars.Ribbon.RibbonPage() {Me.ribbonPage1})
         Me.ribbonControl1.RibbonStyle = DevExpress.XtraBars.Ribbon.RibbonControlStyle.Office2010
@@ -115,23 +115,25 @@
         '
         'ribbonPage1
         '
-        Me.ribbonPage1.Groups.AddRange(New DevExpress.XtraBars.Ribbon.RibbonPageGroup() {Me.ribbonPageGroup1, Me.RibbonPageGroup2, Me.RibbonPageGroup3})
+        Me.ribbonPage1.Groups.AddRange(New DevExpress.XtraBars.Ribbon.RibbonPageGroup() {Me.ribbonPageGroup1, Me.RibbonPageGroup3})
         Me.ribbonPage1.Name = "ribbonPage1"
         '
         'ribbonPageGroup1
         '
+        Me.ribbonPageGroup1.ItemLinks.Add(Me.BarHeaderItem1)
         Me.ribbonPageGroup1.ItemLinks.Add(Me.btnNew)
-        Me.ribbonPageGroup1.ItemLinks.Add(Me.btnAddLine)
+        Me.ribbonPageGroup1.ItemLinks.Add(Me.BarHeaderItem1)
+        Me.ribbonPageGroup1.ItemLinks.Add(Me.btnPost)
+        Me.ribbonPageGroup1.ItemLinks.Add(Me.BarHeaderItem1)
         Me.ribbonPageGroup1.Name = "ribbonPageGroup1"
-        '
-        'RibbonPageGroup2
-        '
-        Me.RibbonPageGroup2.ItemLinks.Add(Me.btnPost)
-        Me.RibbonPageGroup2.Name = "RibbonPageGroup2"
         '
         'RibbonPageGroup3
         '
+        Me.RibbonPageGroup3.ItemLinks.Add(Me.BarHeaderItem1)
         Me.RibbonPageGroup3.ItemLinks.Add(Me.BarButtonItem1)
+        Me.RibbonPageGroup3.ItemLinks.Add(Me.BarHeaderItem1)
+        Me.RibbonPageGroup3.ItemLinks.Add(Me.btnAddLine)
+        Me.RibbonPageGroup3.ItemLinks.Add(Me.BarHeaderItem1)
         Me.RibbonPageGroup3.Name = "RibbonPageGroup3"
         '
         'LayoutControl1
@@ -251,7 +253,6 @@
         Me.LayoutControlGroup1.EnableIndentsWithoutBorders = DevExpress.Utils.DefaultBoolean.[True]
         Me.LayoutControlGroup1.GroupBordersVisible = False
         Me.LayoutControlGroup1.Items.AddRange(New DevExpress.XtraLayout.BaseLayoutItem() {Me.LayoutControlItem1, Me.LayoutControlItem2})
-        Me.LayoutControlGroup1.Location = New System.Drawing.Point(0, 0)
         Me.LayoutControlGroup1.Name = "LayoutControlGroup1"
         Me.LayoutControlGroup1.Size = New System.Drawing.Size(970, 427)
         Me.LayoutControlGroup1.TextVisible = False
@@ -296,6 +297,12 @@
         Me.rowCustomer.Name = "rowCustomer"
         Me.rowCustomer.Properties.Caption = "Customer"
         Me.rowCustomer.Properties.FieldName = "Customer"
+        '
+        'BarHeaderItem1
+        '
+        Me.BarHeaderItem1.Caption = "        "
+        Me.BarHeaderItem1.Id = 5
+        Me.BarHeaderItem1.Name = "BarHeaderItem1"
         '
         'Form1
         '
@@ -349,7 +356,6 @@
     Friend WithEvents colQty As DevExpress.XtraGrid.Columns.GridColumn
     Friend WithEvents colPrice As DevExpress.XtraGrid.Columns.GridColumn
     Friend WithEvents btnPost As DevExpress.XtraBars.BarButtonItem
-    Friend WithEvents RibbonPageGroup2 As DevExpress.XtraBars.Ribbon.RibbonPageGroup
     Friend WithEvents BindingSource1 As BindingSource
     Friend WithEvents rowSalesOrder As DevExpress.XtraVerticalGrid.Rows.EditorRow
     Friend WithEvents rowPO1 As DevExpress.XtraVerticalGrid.Rows.EditorRow
@@ -359,4 +365,5 @@
     Friend WithEvents colLineAction As DevExpress.XtraGrid.Columns.GridColumn
     Friend WithEvents BarButtonItem1 As DevExpress.XtraBars.BarButtonItem
     Friend WithEvents RibbonPageGroup3 As DevExpress.XtraBars.Ribbon.RibbonPageGroup
+    Friend WithEvents BarHeaderItem1 As DevExpress.XtraBars.BarHeaderItem
 End Class

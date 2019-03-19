@@ -341,4 +341,7 @@ Partial Public Class Form1
         End If
     End Sub
 
+    Private Sub BarHeaderItem1_ItemClick(sender As Object, e As DevExpress.XtraBars.ItemClickEventArgs) Handles BarHeaderItem1.ItemClick
+
+    End Sub
 End Class
