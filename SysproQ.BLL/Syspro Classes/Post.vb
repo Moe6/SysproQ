@@ -371,6 +371,7 @@ Public Class Post
         End If
         'AppendTrnMessage("<StockLine><Status>NOK</Status></StockLine>")
     End Sub
+
     Private Function CheckBoForErrors(ByRef returnObj As SysproPostXmlOutResult) As Boolean
         'read xml data
         Dim xDoc = XDocument.Parse(_transactionXmlOut.XmlOut)
@@ -435,17 +436,20 @@ Public Class Post
             End If
         End If
     End Sub
+
     Private Function FormatOrderCancelMsg(msg As String) As XElement
         Return <Order>
                    <Post2Result><%= msg %></Post2Result>
                    <Status><%= "OK" %></Status>
                </Order>
     End Function
+
     Private Function ParseXmlin(xmlin As String) As XElement
         Dim parsedXml As XElement
         parsedXml = XElement.Parse(xmlin)
         Return parsedXml
     End Function
+
 
     'Private Function GetTransationReferenceValue(xDoc As XDocument, bo As Enums.BusinessObjectUsed) As String
     '    Dim reference As String = Nothing
