@@ -212,3 +212,4 @@ FakesAssemblies/
 *.pdb
 
 /SysproQ/WcfServiceLibrary1/obj
+/SysproQ/WcfServiceLibrary1/bin
