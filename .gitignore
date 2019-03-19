@@ -215,3 +215,5 @@ FakesAssemblies/
 /SysproQ/WcfServiceLibrary1/bin
 *.dll
 *.pdb
+/Bin
+/obj
