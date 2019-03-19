@@ -65,7 +65,7 @@ Public Class Update
     End Sub
 
     Public Function UpdateSQL(strSQL As String) As Boolean
-        Dim con = New SqlConnection("data source=10.6.1.125;initial catalog=SysproCompanyN;persist security info=False;user id=sa;password=sysadmin123$")
+        Dim con = New SqlConnection("data source=.;initial catalog=SysproCompanyC;persist security info=False;user id=sa;password=P@$$w0rd")
         Dim cmd As New SqlCommand
         Dim adp As New SqlDataAdapter
         Dim rowsupdated As Integer
