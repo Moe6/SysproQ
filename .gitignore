@@ -219,4 +219,7 @@ FakesAssemblies/
 /obj
 *.cache
 
-/SysproQ.BLL/bin
+/SysproQ.BLL/bin/Debug/*.dll
+/SysproQ.BLL/bin/Debug/*.pdb
+/SysproQ.Entity/bin/Debug/*.pdb
+/SysproQ.Entity/bin/Debug/*.dll
