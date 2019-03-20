@@ -41,6 +41,8 @@ Public Class Face
         uPass = ""
         company = "N"
         coPass = ""
+        username = "ADMIN"
+        company = "C"
         'username = "ADMIN"
         'uPass = ""
         'company = "A"
